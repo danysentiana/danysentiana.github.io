@@ -1,0 +1,413 @@
+@import url("https://fonts.googleapis.com/css2?family=Jaldi:wght@400;700&display=swap");
+
+* {
+  font-family: "Jaldi", sans-serif;
+}
+
+#title {
+  text-align: center;
+}
+
+#title h2 {
+  font-size: 40px;
+  font-weight: bold;
+}
+
+#title p {
+  font-size: 20px;
+}
+
+body {
+  background-color: white;
+  border-right: 2px solid black;
+  border-left: 2px solid black;
+}
+
+.navbar {
+  background-color: wheat;
+  border-style: solid;
+  border-width: 2px;
+  border-color: black;
+}
+
+.navbar-nav {
+  margin-right: 70px;
+}
+
+.nav-link {
+  font-size: 24px;
+  font-weight: 500;
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+.navbar-toggler {
+  border: 0;
+}
+
+.active {
+  color: white;
+}
+
+.nav-link :hover {
+  color: white;
+}
+
+.scrolled-down {
+  transform: translateY(-100%);
+  transition: all 0.3s ease-in-out;
+}
+.scrolled-up {
+  transform: translateY(0);
+  transition: all 0.3s ease-in-out;
+}
+.autohide {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1030;
+}
+
+/* Contents */
+
+/* Home--------------------------------------------------------------------------------------- */
+#home {
+  padding: 170px 0px 70px 0px;
+  height: 600px;
+}
+
+.typewrite {
+  text-decoration: none;
+  color: black;
+}
+.typewrite :hover {
+  color: black;
+}
+
+#home h1 {
+  font-weight: bold;
+  font-size: 90px;
+}
+
+#home p {
+  font-size: 24px;
+}
+
+#home button {
+  width: 205px;
+  height: 50px;
+  border-radius: 30px;
+  border: none;
+  font-size: 20px;
+  font-weight: bold;
+  outline: none;
+  color: white;
+  background: black;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+#home button:hover {
+  transform: scale(1.05);
+  background: red;
+}
+
+#photo {
+  align-items: flex-end;
+}
+
+.photo {
+  width: 70%;
+  float: right;
+}
+
+/* Projects-------------------------------------------------------------------------------------- */
+#projects {
+  border-bottom: 2px solid black;
+  padding: 100px 0;
+}
+
+#projects .fa {
+  font-size: 40px;
+  margin: 0px 10px 30px 10px;
+  color: black;
+  transition: 0.5s;
+  text-align: center;
+}
+#projects .fa:hover {
+  transform: scale(1.25);
+  color: red;
+}
+
+.card {
+  margin: 5px 5px 25px 5px;
+  border-radius: 10px;
+  padding: 5px;
+  transition: 0.5s;
+  opacity: 0.8;
+  filter: grayscale(100%);
+  /* width: 30rem;
+  height: 27.5rem; */
+}
+
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12), 0 4px 8px rgba(0, 0, 0, 0.06);
+  border: 2px solid black;
+  opacity: 1;
+  filter: grayscale(0);
+}
+
+.card h4 {
+  font-weight: 500;
+}
+
+.b-project {
+  width: 140px;
+  height: 30px;
+  border: none;
+  border-radius: 30px;
+  background: black;
+  color: white;
+  transition: 0.5s;
+}
+.b-project:hover {
+  transform: scale(1.05);
+  background: red;
+  color: white;
+}
+
+/* Tools----------------------------------------------------------------------------------------- */
+#tools {
+  padding: 70px 0;
+  background-color: black;
+}
+
+#tools h2 {
+  color: white;
+}
+#tools p {
+  color: white;
+}
+
+/* Slider */
+.slider {
+  padding: 40px 0;
+}
+.slider img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.logo-area p {
+  color: white;
+  text-align: center;
+  margin-top: 10px;
+}
+
+/* Contact--------------------------------------------------------------------------------------- */
+#contact {
+  padding: 80px 0 70px 0;
+  height: 700px;
+}
+
+#contact button {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  background: black;
+  border-radius: 30px;
+  border: none;
+  color: white;
+  width: 160px;
+  height: 50px;
+  transition: 0.5s;
+  font-weight: bold;
+}
+#contact button:hover {
+  background: red;
+  transform: scale(1.05);
+}
+
+.btn-form {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.form-control {
+  border: 2px solid black;
+}
+
+/* Footer---------------------------------------------------------------------------------------- */
+
+/* footer {
+  background-color: red;
+  height: 150px;
+  width: 100%;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+footer .bi {
+  font-size: 25px;
+} */
+
+footer {
+  background: black;
+}
+
+.ftr-btm {
+  background: black;
+  height: 56px;
+}
+
+footer a {
+  margin: 0 10px;
+  font-size: 20px;
+}
+footer a:link {
+  color: #fff;
+  text-decoration: none;
+}
+footer a:visited {
+  color: #fff;
+  text-decoration: none;
+}
+footer a:hover {
+  color: red;
+  text-decoration: none;
+  transform: scale(1.05);
+}
+footer i:hover {
+  transform: scale(1.05);
+}
+footer a:active {
+  color: #fff;
+  text-decoration: none;
+}
+
+/* Contacts-------------------------------------------------------------------------------------- */
+
+/* Type */
+
+/* Media Q */
+@media only screen and (min-width: 0px) and (max-width: 770px) {
+  #title h2 {
+    text-align: center;
+  }
+
+  #title p {
+    text-align: center;
+  }
+  .navbar-nav {
+    margin-right: 0px;
+  }
+  #home {
+    padding: 70px 0px 70px 0px;
+    height: 800px;
+  }
+  #photo {
+    width: 80%;
+    margin-bottom: 30px;
+  }
+
+  .photo {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  #home .row {
+    justify-content: center;
+    align-items: center;
+  }
+
+  #home h1 {
+    font-size: 55px;
+    text-align: center;
+  }
+  #home p {
+    font-size: 20px;
+    text-align: center;
+  }
+  #home button {
+    align-items: center;
+  }
+
+  #home #desc {
+    align-items: center;
+  }
+
+  .ftr-btm {
+    background: black;
+    height: 76px;
+  }
+}
+
+@media only screen and (min-width: 770px) and (max-width: 990px) {
+  #title h2 {
+    text-align: center;
+  }
+
+  #title p {
+    text-align: center;
+  }
+  .navbar-nav {
+    margin-right: 0px;
+  }
+  #home {
+    padding: 50px 0px 70px 0px;
+    height: 800px;
+  }
+  #photo {
+    width: 60%;
+    margin-bottom: 30px;
+  }
+
+  .photo {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  #home .row {
+    justify-content: center;
+    align-items: center;
+  }
+
+  #home h1 {
+    font-size: 55px;
+    text-align: center;
+  }
+  #home p {
+    font-size: 20px;
+    text-align: center;
+  }
+  #home button {
+    align-items: center;
+  }
+
+  #home #desc {
+    align-items: center;
+  }
+}
+
+@media only screen and (min-width: 990px) and (max-width: 1200px) {
+  #home .row {
+    justify-content: start;
+    align-items: none;
+  }
+  #home h1 {
+    font-size: 50px;
+    text-align: left;
+  }
+  #photo {
+    width: 40%;
+  }
+}

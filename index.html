@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Slick -->
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css" />
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous" />
+
+    <!-- Bootstrap Icon -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" />
+
+    <!-- FA -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+
+    <link rel="stylesheet" href="./css/style.css" />
+
+    <script src="./js/script.js"></script>
+
+    <title>Dany Sentiana</title>
+    <link rel="icon" href="assets/DS title.png" type="image/x-icon" />
+  </head>
+  <body>
+    <!-- Navigation -->
+    <header>
+      <nav class="autohide navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+          <a class="navbar-brand"></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+              <li class="nav-item mx-auto">
+                <a class="nav-link active" href="#home">Home</a>
+              </li>
+              <li class="nav-item mx-auto">
+                <a class="nav-link" href="#projects">Projects</a>
+              </li>
+              <li class="nav-item mx-auto">
+                <a class="nav-link" href="#tools">Tools</a>
+              </li>
+              <li class="nav-item mx-auto">
+                <a class="nav-link" href="#contact">Contact</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <!-- Content -->
+
+    <!-- Home -->
+    <section id="home">
+      <div class="container">
+        <div class="row flex-column-reverse flex-lg-row">
+          <div class="col-md-7 d-flex flex-column justify-content-center" id="desc">
+            <h1>I'm Dany Sentiana</h1>
+            <h1>
+              <a href="" class="typewrite" data-period="2000" data-type='[ "Programmer.", "Website Developer.", "Learner." ]'>
+                <span class="wrap"></span>
+              </a>
+            </h1>
+            <p>Welcome to my Portofolio website</p>
+            <button type="button">Download CV</button>
+          </div>
+          <div class="col-md-5 d-flex flex-column justify-content-center" id="photo">
+            <img class="photo" src="./assets/logos/photo.png" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects">
+      <div class="container">
+        <div class="row">
+          <div class="col" id="title">
+            <h2>My Projects</h2>
+            <p>Here are some of the projects I'm working on, press the button below to see more.</p>
+            <div>
+              <a href="https://gitlab.com/dsentiana" target="_blank"><i class="fa fa-gitlab" aria-hidden="true"></i></a>
+              <a href="https://github.com/codesant" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="card">
+              <img src="./assets/projects/tuwaapp.png" class="card-img-top" alt="..." />
+              <div class="card-body">
+                <h4>Tuwa App</h4>
+                <p class="card-text">Tuwaapp is an app to save contacts. developed with react native framework and firebase for database and user authentication</p>
+                <a href="https://gitlab.com/dsentiana/finalprojectjcc" target="_blank"><button type="button" class="b-project">See this project</button></a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="card">
+              <img src="./assets/projects/dssstore.png" class="card-img-top" alt="..." />
+              <div class="card-body">
+                <h4>dsstore</h4>
+                <p class="card-text">dsstore is an online store website that I developed with wordpress cms.</p>
+                <a href="http://danysstore.epizy.com/" target="_blank"><button type="button" class="b-project">See this project</button></a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="card">
+              <img src="./assets/projects/sempit.png" class="card-img-top" alt="..." />
+              <div class="card-body">
+                <h4>SEMPIT (Self EMPloyed IT)</h4>
+                <p class="card-text">SEMPIT is a website user interface for freelancers, designed by RENCAF group</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="card">
+              <img src="./assets/projects/timemaker.png" class="card-img-top" alt="..." />
+              <div class="card-body">
+                <h4>Time Maker</h4>
+                <p class="card-text">Time Maker is an android app for planning activities, built in java programming language using android studio.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tools -->
+    <section id="tools">
+      <div class="container">
+        <div id="title">
+          <h2>Tools</h2>
+          <p>This is all my project</p>
+        </div>
+        <section class="logo-area slider">
+          <div class="slide">
+            <img src="./assets/logos/andro.png" alt="" />
+            <p>Android Studio</p>
+          </div>
+          <div class="slide">
+            <img src="./assets/logos/bs.png" alt="" />
+            <p>Bootstrap</p>
+          </div>
+          <div class="slide">
+            <img src="./assets/logos/expo.png" alt="" />
+            <p>Expo</p>
+          </div>
+          <div class="slide">
+            <img src="./assets/logos/figma.png" alt="" />
+            <p>Figma</p>
+          </div>
+          <div class="slide">
+            <img src="./assets/logos/firebase.png" alt="" />
+            <p>Firebase</p>
+          </div>
+          <div class="slide">
+            <img src="./assets/logos/github.png" alt="" />
+            <p>Github</p>
+          </div>
+          <div class="slide">
+            <img src="./assets/logos/gitlab.png" alt="" />
+            <p>Gitlab</p>
+          </div>
+          <div class="slide">
+            <img src="./assets/logos/mysql.png" alt="" />
+            <p>Mysql</p>
+          </div>
+          <div class="slide">
+            <img src="./assets/logos/ps.png" alt="" />
+            <p>Photoshop</p>
+          </div>
+          <div class="slide">
+            <img src="./assets/logos/RN.png" alt="" />
+            <p>React Native</p>
+          </div>
+          <div class="slide">
+            <img src="./assets/logos/wp.png" alt="" />
+            <p>Wordpress</p>
+          </div>
+          <div class="slide">
+            <img src="./assets/logos/xampp.png" alt="" />
+            <p>XAMPP</p>
+          </div>
+        </section>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container">
+        <div id="title">
+          <h2>Contact</h2>
+          <p>contact</p>
+        </div>
+        <div class="row justify-content-center mt-4">
+          <div class="col-md-6" id="form-contact">
+            <form>
+              <div class="mb-3">
+                <label for="name" class="form-label">Name</label>
+                <input type="name" class="form-control" id="name" aria-describedby="name" placeholder="Your Name" required />
+              </div>
+              <div class="mb-3">
+                <label for="email" class="form-label">Email address</label>
+                <input type="email" class="form-control" id="email" aria-describedby="email" placeholder="Your email" required />
+              </div>
+              <div class="mb-3">
+                <label for="message" class="form-label">Messages</label>
+                <textarea class="form-control" id="message" rows="3" placeholder="Messages"></textarea>
+              </div>
+              <div class="btn-form">
+                <button type="submit">Submit</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <div class="container" style="padding: 15px 0" align="center">
+        <a href="tel:+62 821 1470 6081">
+          <i class="bi bi-telephone-fill"></i>
+        </a>
+        <a href="mailto:danysentiana1912@gmail.com">
+          <i class="bi bi-envelope-fill"></i>
+        </a>
+      </div>
+
+      <div class="ftr-btm">
+        <p style="font-size: large; color: white; padding: 5px 0 15px 0" align="center">This Website created with <i class="bi bi-emoji-smile-fill" style="color: yellow"></i> by Dany Sentiana, myself.</p>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+
+    <!-- slider -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        $(".logo-area").slick({
+          slidesToShow: 6,
+          slidesToScroll: 1,
+          autoplay: true,
+          autoplaySpeed: 500,
+          arrow: false,
+          dots: false,
+          pauseOnHover: false,
+          pauseOnFocus: false,
+          prevArrow: false,
+          nextArrow: false,
+          responsive: [
+            {
+              breakpoint: 768,
+              settings: {
+                slidesToShow: 4,
+              },
+            },
+            {
+              breakpoint: 520,
+              settings: {
+                slidesToShow: 3,
+              },
+            },
+          ],
+        });
+      });
+    </script>
+  </body>
+</html>
