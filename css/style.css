@@ -181,7 +181,7 @@ body {
 
 /* Tools----------------------------------------------------------------------------------------- */
 #tools {
-  padding: 70px 0;
+  padding: 50px 0 30px 0;
   background-color: black;
 }
 
@@ -190,6 +190,10 @@ body {
 }
 #tools p {
   color: white;
+}
+
+#tools img {
+  width: 60px;
 }
 
 /* Slider */
@@ -260,6 +264,7 @@ footer .bi {
 
 footer {
   background: black;
+  margin-top: auto;
 }
 
 .ftr-btm {
@@ -343,6 +348,17 @@ footer a:active {
   #home #desc {
     align-items: center;
   }
+
+  /* Tools */
+  #tools img {
+    width: 50px;
+  }
+
+  #tools {
+    padding: 30px 0 25px 0;
+  }
+
+  /* Footer */
 
   .ftr-btm {
     background: black;
