@@ -30,6 +30,10 @@ body {
   border-color: black;
 }
 
+.toggler-icon {
+  font-size: 40px;
+}
+
 .navbar-nav {
   margin-right: 70px;
 }
