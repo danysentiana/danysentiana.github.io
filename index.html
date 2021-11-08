@@ -26,7 +26,7 @@
   <body>
     <!-- Navigation -->
     <header>
-      <nav class="autohide navbar navbar-expand-lg navbar-light bg-light">
+      <nav class="autohide navbar navbar-expand-lg bg-light">
         <div class="container-fluid">
           <a class="navbar-brand"></a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
@@ -35,7 +35,7 @@
           <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
             <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
               <li class="nav-item mx-auto">
-                <a class="nav-link active" href="#home">Home</a>
+                <a class="nav-link" href="#home">Home</a>
               </li>
               <li class="nav-item mx-auto">
                 <a class="nav-link" href="#projects">Projects</a>
@@ -60,15 +60,15 @@
           <div class="col-md-7 d-flex flex-column justify-content-center" id="desc">
             <h1>I'm Dany Sentiana</h1>
             <h1>
-              <a href="" class="typewrite" data-period="2000" data-type='[ "Programmer.", "Website Developer.", "Learner." ]'>
+              <a href="" style="color: red" class="typewrite" data-period="2000" data-type='[ "Programmer.", "Website Dev.", "Mobile Dev.", "70/110 WPM AVG." ]'>
                 <span class="wrap"></span>
               </a>
             </h1>
             <p>Welcome to my Portofolio website</p>
-            <button type="button">Download CV</button>
+            <a href="./assets/CV.pdf" target="_blank"><button type="button">Download CV</button></a>
           </div>
           <div class="col-md-5 d-flex flex-column justify-content-center" id="photo">
-            <img class="photo" src="./assets/logos/photo.png" />
+            <img class="photo" src="./assets/logos/photod.png" />
           </div>
         </div>
       </div>
@@ -123,6 +123,16 @@
               <div class="card-body">
                 <h4>Time Maker</h4>
                 <p class="card-text">Time Maker is an android app for planning activities, built in java programming language using android studio.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="card">
+              <img src="./assets/projects/TranslatorApp.png" class="card-img-top" alt="..." />
+              <div class="card-body">
+                <h4>Translator App</h4>
+                <p class="card-text">TranslatorApp is a web app to translate.</p>
+                <a href="https://gitlab.com/dsentiana/translator-app/" target="_blank"><button type="button" class="b-project">See this project</button></a>
               </div>
             </div>
           </div>
