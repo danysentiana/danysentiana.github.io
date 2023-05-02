@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="dist/output.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css" />
+    <link rel="icon" type="image/ico" href="dist/img/DS_title.svg" />
+    <title>Dany's Portfolio</title>
+    <script>
+      // Dark Mode
+      if (localStorage.getItem("color-theme") === "dark" || (!("color-theme" in localStorage) && window.matchMedia("(prefers-color-scheme: dark)").matches)) {
+        document.documentElement.classList.add("dark");
+      } else {
+        document.documentElement.classList.remove("dark");
+      }
+    </script>
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/572104c9c2.js" crossorigin="anonymous"></script>
+    <!-- Montserrat -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+    <!-- open sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+    <!-- Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  </head>
+  <!-- bg alt color: bg-gradient-to-b from-slate-900 via-gray-800 to-slate-900 -->
+  <!-- px-2 lg:px-32 for body -->
+  <body class="bg-slate-50 dark:bg-slate-900 lg:px-32">
+    <!-- Notification -->
+    <div id="notif">
+      <div class="container">
+        <div class="text-center fixed inset-x-0 mx-auto p-4 md:px-8 z-[999] top-14">
+          <div id="toast-default" class="flex items-center mx-auto w-full max-w-xs p-4 text-gray-500 bg-white rounded-lg shadow-md dark:text-gray-400 dark:bg-gray-800" role="alert">
+            <div class="inline-flex items-center justify-center flex-shrink-0 w-8 h-8 text-yellow-300 bg-slate-700 rounded-lg dark:bg-blue-800 dark:text-blue-200">
+              <i class="fa-solid fa-hand animate-wiggle"></i>
+              <span class="sr-only">Fire icon</span>
+            </div>
+            <div class="ml-3 text-sm font-normal">Welcome to my portfolio website</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div data-scroll-container style="perspective: 1px">
+      <!-- Home -->
+      <div data-scroll-section data-scroll-speed="1" class="w-full bg-transparent dark:bg-slate-900 pt-2">
+        <!-- Navbar -->
+        <nav class="pl-4 pr-1 py-2.5 lg:px-14">
+          <div class="container mx-auto flex flex-wrap items-center justify-between">
+            <span class="text-xl font-pop font-bold whitespace-nowrap text-dark dark:text-white">DS<span class="text-3xl dark:text-red-600">.</span></span>
+            <!-- <a href="#home" class="flex">
+            </a> -->
+            <div class="flex md:order-2">
+              <button
+                id="theme-toggle"
+                type="button"
+                class="ease-in-out duration-300 text-gray-500 dark:text-gray-400 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5"
+              >
+                <svg id="theme-toggle-dark-icon" class="w-6 h-6 hidden text-dark" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+                </svg>
+                <svg id="theme-toggle-light-icon" class="w-6 h-6 hidden text-white animate-pulse" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                  ></path>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </nav>
+        <!-- Hero -->
+        <div data-scroll class="container mx-auto flex flex-col w-full pt-40 pb-36">
+          <div class="flex flex-col text-center">
+            <h5 data class="font-pop font-bold text-[2.5rem] sm:text-[5rem] lg:text-[6rem] xl:text-[8rem] tracking-wide leading-snug text-dark dark:text-white -mt-10 mb-3">Dany Sentiana</h5>
+            <h5 class="font-pop font-normal text-[2rem] sm:text-[4rem] lg:text-[5rem] xl:text-[7rem] text-dark dark:text-white lg:-mt-10 mb-4">Web Developer</h5>
+          </div>
+          <div class="flex flex-wrap flex-col lg:flex-row items-center justify-center pt-4 lg:pt-4">
+            <a href="#projects" data-scroll-to>
+              <button
+                type="button"
+                class="font-pop text-lg text-white bg-slate-800 border-2 dark:border-none hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 rounded-full px-9 py-3.5 mr-2 mb-2 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700 uppercase duration-700"
+              >
+                My Projects
+              </button>
+            </a>
+            <button
+              type="button"
+              class="text-lg text-dark bg-transparent border border-black hover:bg-gray-900 hover:text-white focus:outline-none focus:ring-4 focus:ring-gray-300 rounded-full px-6 py-3.5 mr-2 mb-2 dark:text-white dark:bg-red-700 dark:hover:bg-red-600 dark:focus:ring-red-700 dark:border-red-700 uppercase duration-700"
+            >
+              Download CV
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slider -->
+      <div data-scroll-section>
+        <div class="container mx-auto">
+          <div class="w-full px-1 lg:px-7 xl:px-24">
+            <div class="splide mt-10 bg-white rounded-md shadow-md border m-4 dark:border-none dark:bg-blue-950 py-5 px-4" id="splide">
+              <div class="splide__track">
+                <ul class="splide__list">
+                  <li class="splide__slide self-center">
+                    <img src="dist/img/tools/Laravel.png" class="w-14 lg:w-20 h-auto" alt="Laravel" />
+                  </li>
+                  <!-- <li class="splide__slide self-center">
+                    <img src="dist/img/tools/VueJs.png" class="w-20 h-auto" alt="VueJs" />
+                  </li> -->
+                  <li class="splide__slide self-center">
+                    <img src="dist/img/tools/Bootstrap.png" class="w-16 lg:w-24 h-auto" alt="Bootstrap" />
+                  </li>
+                  <li class="splide__slide self-center">
+                    <img src="dist/img/tools/Tailwind.png" class="w-16 lg:w-24 h-auto" alt="Tailwind" />
+                  </li>
+                  <li class="splide__slide self-center">
+                    <img src="dist/img/tools/ReactNative.png" class="w-14 lg:w-20 h-auto" alt="ReactNative" />
+                  </li>
+                  <li class="splide__slide self-center">
+                    <img src="dist/img/tools/PHP.png" class="w-16 lg:w-24 h-auto" alt="PHP" />
+                  </li>
+                  <li class="splide__slide self-center">
+                    <img src="dist/img/tools/JS.png" class="w-14 lg:w-20 h-auto" alt="JS" />
+                  </li>
+                  <li class="splide__slide self-center">
+                    <img src="dist/img/tools/HTML.png" class="w-12 lg:w-16 h-auto" alt="HTML" />
+                  </li>
+                  <li class="splide__slide self-center">
+                    <img src="dist/img/tools/CSS.png" class="w-14 lg:w-20 h-auto" alt="CSS" />
+                  </li>
+                  <li class="splide__slide self-center">
+                    <img src="dist/img/tools/Figma.png" class="w-14 lg:w-20 h-auto" alt="Figma" />
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- About -->
+      <div data-scroll-section class="py-36 lg:px-32 px-4">
+        <div data-scroll data-scroll-direction="vertical" data-scroll-speed="1" class="container mx-auto">
+          <div class="flex flex-wrap">
+            <div class="w-full self-center">
+              <h1 class="font-mon text-4xl lg:text-5xl font-bold text-center text-dark dark:text-white mb-7">About Me</h1>
+              <p class="first-letter:float-left first-letter:text-4xl first-letter:font-bold font-osan mb-3 lg:text-xl font-normal text-justify text-dark mt-3 dark:text-white leading-relaxed lg:leading-10 tracking-wide">
+                Hello everyone, I am a recent graduate with a Bachelor's degree in Information System. My passion for coding and web development has driven me to become a web developer. As a beginner in this field, I am eager to learn and
+                grow my skills. During my studies, I have learned various programming languages. I am constantly looking to expand my knowledge and expertise in web development, which has led me to explore the latest trends in the industry.
+                I enjoy collaborating with other developers and designers to create innovative and engaging websites. In my free time, I enjoy working on personal coding projects and learning new coding languages. Thank you for visiting my
+                portfolio website. I am excited about the opportunities to work with others in this industry and I am eager to apply my knowledge and skills to create high-quality websites.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Diamond -->
+      <div data-scroll-section class="mt-10">
+        <div class="container mx-auto">
+          <div class="flex flex-wrap">
+            <div class="w-full text-center">
+              <div class="flex flex-wrap flex-row items-center justify-center pt-4 lg:pt-4">
+                <i class="fa-sharp fa-solid fa-diamond text-dark dark:text-white text-3xl"></i>
+                <i class="fa-sharp fa-solid fa-diamond text-dark dark:text-white text-4xl"></i>
+                <i class="fa-sharp fa-solid fa-diamond text-dark dark:text-white text-3xl"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 1-->
+      <div data-scroll-section class="py-10 lg:py-20" id="projects">
+        <div data-scroll class="container mx-auto">
+          <div class="w-full lg:px-12 xl:px-20 justify-center">
+            <div class="mb-14 lg:mb-24 text-dark dark:text-white lg:text-left text-center">
+              <h2 class="font-mon text-4xl lg:text-5xl font-bold">My Projects</h2>
+            </div>
+          </div>
+          <div class="w-full px-4 justify-center">
+            <!-- Web -->
+            <div class="invisible hidden xl:visible lg:visible xl:block lg:block">
+              <div class="flex flex-row">
+                <div data-scroll data-scroll-speed="1" class="flex flex-col mx-auto xl:w-1/2 lg:w-1/2 pt-1 xl:pt-8">
+                  <h5 class="font-osan mb-2 text-3xl font-bold text-gray-900 dark:text-white">Bisa Design Academy</h5>
+                  <p class="font-osan mb-3 text-xl font-extralight text-dark dark:text-white tracking-wide leading-normal lg:leading-relaxed xl:leading-loose text-justify">
+                    Bisa Design Academy is a web application that was built for users to learn everything related to design, the goal of this project is to develop a web application using the Laravel PHP framework for a design course app
+                    and collaborate with backend for api integration.
+                  </p>
+                  <div class="flex flex-wrap justify-between mt-2">
+                    <a href="https://bisa.design/" target="_blank">
+                      <button type="button" class="text-white bg-slate-900 hover:bg-slate-800 dark:bg-red-700 dark:hover:bg-red-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center duration-500">
+                        See this Project
+                      </button>
+                    </a>
+                    <div class="flex justify-end my-auto">
+                      <img src="dist/img/tools/JS.png" class="h-8 mr-1" />
+                      <img src="dist/img/tools/PHP.png" class="h-8 mr-1" />
+                      <img src="dist/img/tools/Bootstrap.png" class="h-8 mr-1" />
+                      <img src="dist/img/tools/Laravel.png" class="h-8" />
+                    </div>
+                  </div>
+                  <!-- <div class="bg-white border-2 dark:bg-blue-950 dark:border-none p-4 rounded-lg">
+                  </div> -->
+                </div>
+                <div data-scroll data-scroll-speed="2" class="mx-auto bg-red-700 dark:bg-slate-50 rounded-xl object-cover lg:w-1/3 xl:w-96">
+                  <img src="dist/img/projects/BisaDesign.png" class="xl:h-auto object-cover h-96 w-screen xl:w-96 rounded-xl" alt="" />
+                </div>
+              </div>
+            </div>
+            <!-- Mobile -->
+            <div class="visible block xl:invisible lg:invisible xl:hidden lg:hidden border shadow-sm dark:border-none dark:bg-gray-800 rounded-lg over">
+              <div class="flex flex-col-reverse">
+                <div class="flex flex-col mx-auto pt-5 px-3 pb-4">
+                  <h5 class="font-osan mb-2 text-xl font-bold text-gray-900 dark:text-white">Bisa Design Website</h5>
+                  <p class="font-osan mb-3 font-extralight text-dark dark:text-white tracking-wide leading-relaxed text-justify">
+                    Bisa Design Academy is a web application that was built for users to learn everything related to design, the goal of this project is to develop a web application using the Laravel PHP framework for a design course app
+                    and collaborate with backend for api integration.
+                  </p>
+                  <div class="flex flex-wrap justify-between mt-2">
+                    <a href="https://bisa.design/" target="_blank">
+                      <button type="button" class="text-white bg-slate-900 hover:bg-slate-800 dark:bg-red-700 dark:hover:bg-red-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center duration-500">
+                        <i class="fa-solid fa-link mr-2"> </i>
+                        See this Project
+                      </button>
+                    </a>
+                    <div class="flex justify-end my-auto">
+                      <!-- <img src="dist/img/tools/JS.png" class="h-6 mr-1" />
+                      <img src="dist/img/tools/PHP.png" class="h-6 mr-1" /> -->
+                      <img src="dist/img/tools/Bootstrap.png" class="h-6 mr-1" />
+                      <img src="dist/img/tools/Laravel.png" class="h-6" />
+                    </div>
+                  </div>
+                </div>
+                <div class="mx-auto bg-red-700 dark:bg-slate-50 rounded-t-lg">
+                  <img src="dist/img/projects/BisaDesign_m.png" class="object-cover h-80 w-screen rounded-t-lg" alt="" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 2 -->
+      <div data-scroll-section class="py-10 lg:py-20">
+        <div data-scroll class="container mx-auto">
+          <div class="w-full px-4 justify-center">
+            <!-- Web -->
+            <div class="invisible hidden xl:visible lg:visible xl:block lg:block">
+              <div class="flex flex-row-reverse">
+                <div data-scroll data-scroll-speed="1" class="flex flex-col mx-auto xl:w-1/2 lg:w-1/2 pt-16 lg:pt-2 xl:pt-16">
+                  <h5 class="font-osan mb-2 text-3xl font-bold text-gray-900 dark:text-white">Stobar</h5>
+                  <p class="font-osan mb-3 text-xl font-extralight text-dark dark:text-white tracking-wide leading-loose lg:leading-relaxed xl:leading-loose text-justify">
+                    Stobar is a web application that was built for inventory management, this app implements ABC (Always Better Control) and Min-Max methods which are used to determine the priority of goods and the minimum stock of goods.
+                  </p>
+                  <div class="flex flex-wrap justify-between mt-2">
+                    <a href="https://gitlab.com/dsentiana/stobar" target="_blank">
+                      <button type="button" class="text-white bg-slate-900 hover:bg-slate-800 dark:bg-red-700 dark:hover:bg-red-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center duration-500">
+                        <i class="fa-brands fa-gitlab mr-2"></i>
+                        See this Project
+                      </button>
+                    </a>
+                    <div class="flex justify-end my-auto">
+                      <img src="dist/img/tools/JS.png" class="h-8 mr-1" />
+                      <img src="dist/img/tools/PHP.png" class="h-8 mr-1" />
+                      <img src="dist/img/tools/Bootstrap.png" class="h-8 mr-1" />
+                    </div>
+                  </div>
+                </div>
+                <div data-scroll data-scroll-speed="2" class="mx-auto bg-blue-900 dark:bg-slate-50 rounded-xl object-cover lg:w-1/3 xl:w-96">
+                  <img src="dist/img/projects/Stobar.png" class="xl:h-auto object-cover h-96 w-screen xl:w-96 rounded-xl" alt="" />
+                </div>
+              </div>
+            </div>
+            <!-- Mobile -->
+            <div class="visible block xl:invisible lg:invisible xl:hidden lg:hidden border shadow-sm dark:border-none dark:bg-gray-800 rounded-lg">
+              <div class="flex flex-col-reverse">
+                <div class="flex flex-col mx-auto pt-5 px-3 pb-4">
+                  <h5 class="font-osan mb-2 text-xl font-bold text-gray-900 dark:text-white">Stobar</h5>
+                  <p class="font-osan mb-3 font-extralight text-dark dark:text-white tracking-wide leading-relaxed text-justify">
+                    Stobar is a web application that was built for inventory management, this app implements ABC (Always Better Control) and Min-Max methods which are used to determine the priority of goods and the minimum stock of goods.
+                  </p>
+                  <div class="flex flex-wrap justify-between mt-2">
+                    <a href="https://gitlab.com/dsentiana/stobar" target="_blank">
+                      <button type="button" class="text-white bg-slate-900 hover:bg-slate-800 dark:bg-red-700 dark:hover:bg-red-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center duration-500">
+                        <i class="fa-brands fa-gitlab mr-2"></i>
+                        See this Project
+                      </button>
+                    </a>
+                    <div class="flex justify-end my-auto">
+                      <img src="dist/img/tools/JS.png" class="h-6 mr-1" />
+                      <img src="dist/img/tools/PHP.png" class="h-6 mr-1" />
+                      <img src="dist/img/tools/Bootstrap.png" class="h-6" />
+                    </div>
+                  </div>
+                </div>
+                <div class="mx-auto bg-red-700 dark:bg-slate-50 rounded-t-lg">
+                  <img src="dist/img/projects/Stobar_m.png" class="object-cover h-80 w-screen rounded-t-lg" alt="" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 3 -->
+      <div data-scroll-section class="py-10 lg:py-20">
+        <div data-scroll data-scroll-speed="1" class="container mx-auto">
+          <div class="w-full px-4 justify-center">
+            <!-- Web -->
+            <div class="invisible hidden xl:visible lg:visible xl:block lg:block">
+              <div class="flex flex-row">
+                <div data-scroll data-scroll-speed="1" class="flex flex-col mx-auto xl:w-1/2 lg:w-1/2 pt-16 lg:pt-2 xl:pt-16">
+                  <h5 class="font-osan mb-2 text-3xl font-bold text-gray-900 dark:text-white">Tuwa App</h5>
+                  <p class="font-osan mb-3 text-xl font-extralight text-dark dark:text-white tracking-wide leading-loose lg:leading-relaxed xl:leading-loose text-justify">
+                    TuwaApp is a simple mobile application to save contacts, built using react native and firebase for database and user auth.
+                  </p>
+                  <div class="flex flex-wrap justify-between mt-2">
+                    <a href="https://gitlab.com/dsentiana/finalprojectjcc" target="_blank">
+                      <button type="button" class="text-white bg-slate-900 hover:bg-slate-800 dark:bg-red-700 dark:hover:bg-red-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center">
+                        <i class="fa-brands fa-gitlab mr-2"></i>
+                        See this Project
+                      </button>
+                    </a>
+                    <div class="flex justify-end my-auto">
+                      <img src="dist/img/tools/JS.png" class="h-8 mr-1" />
+                      <img src="dist/img/tools/ReactNative.png" class="h-8 mr-1 hover:scale-95 duration-500" />
+                    </div>
+                  </div>
+                </div>
+                <div data-scroll data-scroll-speed="2" class="mx-auto bg-red-700 dark:bg-slate-50 rounded-xl object-cover lg:w-1/3 xl:w-96">
+                  <img src="dist/img/projects/Tuwaapp.png" class="xl:h-auto object-cover h-96 w-screen xl:w-96 rounded-xl duration-500" alt="" />
+                </div>
+              </div>
+            </div>
+            <!-- Mobile -->
+            <div class="visible block xl:invisible lg:invisible xl:hidden lg:hidden border shadow-sm dark:border-none dark:bg-gray-800 rounded-lg">
+              <div class="flex flex-col-reverse">
+                <div class="flex flex-col mx-auto pt-5 px-3 pb-4">
+                  <h5 class="font-osan mb-2 text-xl font-bold text-gray-900 dark:text-white">Tuwa App</h5>
+                  <p class="font-osan mb-3 font-extralight text-dark dark:text-white tracking-wide leading-relaxed text-justify">
+                    TuwaApp is a simple mobile application to save contacts, built using react native and firebase for database and user auth.
+                  </p>
+                  <div class="flex flex-wrap justify-between mt-2">
+                    <a href="https://gitlab.com/dsentiana/finalprojectjcc" target="_blank">
+                      <button type="button" class="text-white bg-slate-900 hover:bg-slate-800 dark:bg-red-700 dark:hover:bg-red-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center duration-500">
+                        <i class="fa-brands fa-gitlab mr-2"></i>
+                        See this Project
+                      </button>
+                    </a>
+                    <div class="flex justify-end my-auto">
+                      <img src="dist/img/tools/JS.png" class="h-6 mr-1" />
+                      <img src="dist/img/tools/ReactNative.png" class="h-6" />
+                    </div>
+                  </div>
+                </div>
+                <div class="mx-auto bg-red-700 dark:bg-slate-50 rounded-t-lg">
+                  <img src="dist/img/projects/Tuwaapp_m.png" class="object-cover h-80 w-screen rounded-t-lg" alt="" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer -->
+      <section data-scroll-section class="mt-20 pb-1">
+        <footer class="bg-white rounded-lg shadow-lg m-4 dark:bg-blue-950 border dark:border-none items-center">
+          <div class="w-full mx-auto max-w-screen-xl px-7 py-5 items-center justify-between sm:flex-none md:flex lg:flex xl:flex text-center">
+            <span class="font-osan font-light text-base sm:text-center dark:text-white"
+              >This website made by <span class="font-semibold">Dany Sentiana</span> with <i class="fa-solid fa-heart ml-1 text-red-600 animate-pulse duration-300"></i>
+            </span>
+            <ul class="flex text-slate-700 dark:text-gray-400 sm:flex-none mt-3 md:mt-0 xl:mt-0 lg:mt-0 justify-center">
+              <li>
+                <a href="https://www.linkedin.com/in/dany-s-7311a4241/" target="_blank" class="mr-4 md:mr-6 hover:text-blue-400"><i class="fa-brands fa-linkedin text-2xl transform hover:rotate-12 duration-300"></i></a>
+              </li>
+              <li>
+                <a href="mailto:danysentiana1200@gmail.com" class="mr-4 md:mr-6 hover:text-red-500"><i class="fa-solid fa-envelope text-2xl transform hover:-rotate-12 transition duration-300"></i></a>
+              </li>
+              <li>
+                <a href="https://gitlab.com/dsentiana" target="_blank" class="hover:text-yellow-300"><i class="fa-brands fa-gitlab text-2xl transform hover:rotate-12 transition duration-300"></i></a>
+              </li>
+              <!-- <li>
+                <a href="#" class=""><i class="fa-brands fa-instagram text-2xl hover:text-pink-400 transform hover:-rotate-12 transition duration-300"></i></a>
+              </li> -->
+            </ul>
+          </div>
+        </footer>
+      </section>
+
+      <!-- <div data-scroll-section class="h-2"></div> -->
+    </div>
+
+    <!-- Locomotive -->
+    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js"></script>
+    <!-- Slider -->
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide-extension-auto-scroll@0.5.3/dist/js/splide-extension-auto-scroll.min.js"></script>
+    <!-- Flowbite -->
+    <script src="../path/to/flowbite/dist/flowbite.bundle.js"></script>
+    <script src="dist/js/script.js"></script>
+  </body>
+</html>
