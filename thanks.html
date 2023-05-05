@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="dist/output.css" rel="stylesheet" />
+    <link rel="icon" type="image/ico" href="dist/img/DS_title.svg" />
+    <title>Dany's Portfolio</title>
+    <script>
+      // Dark Mode
+      if (localStorage.getItem("color-theme") === "dark" || (!("color-theme" in localStorage) && window.matchMedia("(prefers-color-scheme: dark)").matches)) {
+        document.documentElement.classList.add("dark");
+      } else {
+        document.documentElement.classList.remove("dark");
+      }
+    </script>
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/572104c9c2.js" crossorigin="anonymous"></script>
+    <!-- Montserrat -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+    <!-- open sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+    <!-- Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  </head>
+  <!-- bg alt color: bg-gradient-to-b from-slate-900 via-gray-800 to-slate-900 -->
+  <!-- px-2 lg:px-32 for body -->
+  <body class="bg-slate-50 dark:bg-slate-900 lg:px-32">
+    <div class="container mx-auto">
+      <div class="flex flex-col items-center justify-center h-screen text-center">
+        <div class="flex flex-col items-center justify-center">
+          <h1 class="font-pop text-6xl sm:text-8xl font-extrabold text-center text-slate-900 dark:text-slate-50">Thank you for your <span class="text-red-700">message</span>!</h1>
+          <p class="mt-4 text-xl sm:text-2xl font-semibold text-center text-slate-900 dark:text-slate-50">I will get back to you as soon as possible.</p>
+          <hr class="w-48 h-1 mx-auto my-4 bg-slate-900 border-0 rounded md:my-10 dark:bg-white" />
+          <a href="index.html" class="text-lg text-center text-slate-900 dark:text-slate-50 hover:text-slate-700 dark:hover:text-slate-200 underline">Go back to the homepage</a>
+        </div>
+      </div>
+    </div>
+    <!-- Flowbite -->
+    <script src="../path/to/flowbite/dist/flowbite.bundle.js"></script>
+    <script src="dist/js/script.js"></script>
+  </body>
+</html>
