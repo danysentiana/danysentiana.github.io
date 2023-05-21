@@ -53,10 +53,10 @@ window.addEventListener("load", () => {
   setTimeout(function () {
     scroll.init();
   }, 100);
+  setTimeout(() => {
+    scroll.update();
+  }, 5000);
 });
-// setTimeout(() => {
-//   scroll.update();
-// }, 5000);
 
 // splide autoscroll
 document.addEventListener("DOMContentLoaded", function () {
