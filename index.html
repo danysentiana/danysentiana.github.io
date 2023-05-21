@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en" style="overflow: hidden;">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -80,16 +80,20 @@
           </div>
         </nav>
         <!-- Hero -->
-        <div data-scroll class="container mx-auto flex flex-col w-full pt-40 pb-36">
-          <div class="flex flex-col text-center">
-            <h5 data class="font-pop font-bold text-[2.5rem] sm:text-[5rem] lg:text-[6rem] xl:text-[8rem] tracking-wide leading-snug text-dark dark:text-white -mt-10 mb-3">Dany Sentiana</h5>
-            <h5 class="font-pop font-normal text-[2rem] sm:text-[4rem] lg:text-[5rem] xl:text-[7rem] text-dark dark:text-white lg:-mt-10 mb-4">Web Developer</h5>
+        <div data-scroll class="container mx-auto flex flex-col w-full pt-40 pb-36" id="Home">
+          <div class="flex flex-col text-center mb-0 sm:mb-8">
+            <!-- <h5 class="font-pop font-bold text-[2.5rem] sm:text-[5rem] lg:text-[6rem] xl:text-[8rem] tracking-wide leading-snug text-dark dark:text-white -mt-10 mb-3 ">Dany Setiana</h5> -->
+            <div class="font-pop font-extrabold tracking-wide leading-snug text-dark dark:text-white -mt-10 mb-4  sm:mb-8 md:mb-8 lg:mb-20 justify-center flex flex-col sm:flex-row ">
+              <h5 class="mr-0 sm:mr-3 xl:mr-8 text-7xl sm:text-[5rem] lg:text-[6rem] xl:text-[8rem] mb-2">DANY</h5>
+              <h5 class="text-6xl sm:text-[5rem] lg:text-[6rem] xl:text-[8rem]">SENTIANA</h5>
+            </div>
+            <h5 class="font-pop font-normal text-4xl sm:text-[4rem] lg:text-[5rem] xl:text-[7rem] text-dark dark:text-white lg:-mt-10 mb-4">Web Developer</h5>
           </div>
-          <div class="flex flex-wrap flex-col lg:flex-row items-center justify-center pt-4 lg:pt-4">
+          <div class="flex flex-wrap flex-col sm:flex-row items-center justify-center pt-2 lg:pt-4">
             <a href="#projects" data-scroll-to>
               <button
                 type="button"
-                class="font-pop text-lg text-white bg-slate-800 border-2 dark:border-none hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 rounded-full px-9 py-3.5 mr-2 mb-2 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700 uppercase duration-700"
+                class="font-pop text-lg text-white bg-slate-800 border-2 dark:border-none hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 rounded-full px-8 py-3.5 mr-2 mb-2 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700 uppercase duration-700"
               >
                 My Projects
               </button>
@@ -402,7 +406,10 @@
                 <a href="mailto:danysentiana1200@gmail.com" class="mr-4 md:mr-6 hover:text-red-500"><i class="fa-solid fa-envelope text-2xl transform hover:-rotate-12 transition duration-300"></i></a>
               </li>
               <li>
-                <a href="https://gitlab.com/dsentiana" target="_blank" class="hover:text-yellow-300"><i class="fa-brands fa-gitlab text-2xl transform hover:rotate-12 transition duration-300"></i></a>
+                <a href="https://gitlab.com/dsentiana" target="_blank" class="mr-4 md:mr-6 hover:text-yellow-300"><i class="fa-brands fa-gitlab text-2xl transform hover:rotate-12 transition duration-300"></i></a>
+              </li>
+              <li>
+                <a href="https://github.com/danysentiana" target="_blank" class="hover:text-purple-700"><i class="fa-brands fa-github text-2xl transform hover:rotate-12 transition duration-300"></i></a>
               </li>
               <!-- <li>
                 <a href="#" class=""><i class="fa-brands fa-instagram text-2xl hover:text-pink-400 transform hover:-rotate-12 transition duration-300"></i></a>
@@ -418,7 +425,7 @@
     <div id="overlay" tabindex="-1" aria-hidden="true" class="fixed top-0 left-0 right-0 z-50 hidden w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-full bg-black bg-opacity-40">
       <div class="relative w-full max-w-2xl max-h-full mx-auto self-center">
         <!-- Modal content -->
-        <div class="relative bg-white rounded-lg shadow dark:bg-blue-950">
+        <div class="relative bg-white rounded-lg shadow dark:bg-slate-900">
           <!-- Modal header -->
           <div class="flex items-start justify-between p-4 rounded-t">
             <h3 class="text-xl font-extrabold font-pop text-gray-900 dark:text-white">Contact Me</h3>
@@ -450,7 +457,7 @@
                   <input
                     type="text"
                     id="name" name="name"
-                    class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-blue-800 dark:border-blue-500 dark:placeholder:text-white dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"
+                    class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-blue-950 dark:border-blue-900 dark:placeholder:text-white dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"
                     placeholder="name"
                     required
                   />
@@ -460,7 +467,7 @@
                   <input
                     type="email"
                     id="email" name="email"
-                    class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-blue-800 dark:border-blue-500 dark:placeholder:text-white dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"
+                    class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-blue-950 dark:border-blue-900 dark:placeholder:text-white dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"
                     placeholder="name@mail.com"
                     required
                   />
@@ -470,7 +477,7 @@
               <textarea
                 id="message" name="message"
                 rows="4"
-                class="block w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-blue-800 dark:border-blue-500 dark:placeholder:text-white dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                class="block w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-blue-950 dark:border-blue-900 dark:placeholder:text-white dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                 placeholder="Leave a comment..."
               ></textarea>
               
@@ -480,7 +487,7 @@
               <button
                 data-modal-hide="defaultModal"
                 type="button"
-                class="text-slate-800 bg-white dark:bg-transparent dark:text-white focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-full text-sm px-5 py-2.5 mr-2 mb-2"
+                class="text-slate-800 bg-white dark:bg-transparent dark:text-white dark:hover:underline focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-full text-sm px-5 py-2.5 mr-2 mb-2"
                 id="close-modal-body"
               >
                 Close
@@ -488,7 +495,7 @@
               <button 
                 data-modal-hide="defaultModal"
                 type="submit"
-                class="font-pop text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 rounded-full text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-700 dark:hover:bg-blue-600 duration-700 dark:focus:ring-gray-700 dark:border-gray-700"
+                class="font-pop text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 rounded-full text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-red-800 dark:hover:bg-red-700 duration-700 dark:focus:ring-gray-700 dark:border-gray-700"
               >
                 Send
               </button>

@@ -43,14 +43,20 @@ setTimeout(function () {
 }, 5500);
 
 window.addEventListener("load", () => {
-  const scroller = new LocomotiveScroll({
+  const scroll = new LocomotiveScroll({
     el: document.querySelector("[data-scroll-container]"),
     smooth: true,
   });
+
+  scroll.destroy();
+
+  setTimeout(function () {
+    scroll.init();
+  }, 100);
 });
-setTimeout(() => {
-  scroll.update();
-}, 5000);
+// setTimeout(() => {
+//   scroll.update();
+// }, 5000);
 
 // splide autoscroll
 document.addEventListener("DOMContentLoaded", function () {
