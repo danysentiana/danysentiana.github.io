@@ -37,27 +37,6 @@ themeToggleBtn.addEventListener("click", function () {
   }
 });
 
-// hide notification
-setTimeout(function () {
-  document.getElementById("notif").style.display = "none";
-}, 5500);
-
-window.addEventListener("load", () => {
-  const scroll = new LocomotiveScroll({
-    el: document.querySelector("[data-scroll-container]"),
-    smooth: true,
-  });
-
-  scroll.destroy();
-
-  setTimeout(function () {
-    scroll.init();
-  }, 100);
-  setTimeout(() => {
-    scroll.update();
-  }, 5000);
-});
-
 // splide autoscroll
 document.addEventListener("DOMContentLoaded", function () {
   new Splide(".splide", {
@@ -82,3 +61,30 @@ document.addEventListener("DOMContentLoaded", function () {
     },
   }).mount(window.splide.Extensions);
 });
+
+// hide notification
+setTimeout(function () {
+  document.getElementById("notif").style.display = "none";
+}, 3000);
+
+window.addEventListener("load", () => {
+  const scroll = new LocomotiveScroll({
+    el: document.querySelector("[data-scroll-container]"),
+    smooth: true,
+  });
+
+  new ResizeObserver(() => scroll.update()).observe(document.querySelector("[data-scroll-container]"));
+
+  scroll.destroy();
+  setTimeout(() => {
+    scroll.update();
+  }, 3000);
+
+  setTimeout(() => {
+    scroll.init();
+  }, 100);
+});
+
+window.onbeforeunload = function () {
+  window.scrollTo(0, 0);
+};
