@@ -65,7 +65,7 @@ document.addEventListener("DOMContentLoaded", function () {
 // hide notification
 setTimeout(function () {
   document.getElementById("notif").style.display = "none";
-}, 3000);
+}, 5000);
 
 window.addEventListener("load", () => {
   const scroll = new LocomotiveScroll({
@@ -73,18 +73,14 @@ window.addEventListener("load", () => {
     smooth: true,
   });
 
-  new ResizeObserver(() => scroll.update()).observe(document.querySelector("[data-scroll-container]"));
+  // new ResizeObserver(() => scroll.update()).observe(document.querySelector("[data-scroll-container]"));
 
-  scroll.destroy();
-  setTimeout(() => {
-    scroll.update();
-  }, 3000);
+  // scroll.destroy();
+  // setTimeout(() => {
+  //   scroll.update();
+  // }, 3000);
 
-  setTimeout(() => {
-    scroll.init();
-  }, 100);
+  // setTimeout(() => {
+  //   scroll.init();
+  // }, 100);
 });
-
-window.onbeforeunload = function () {
-  window.scrollTo(0, 0);
-};
