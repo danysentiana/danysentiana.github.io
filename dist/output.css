@@ -1099,10 +1099,6 @@ input:checked + .toggle-bg {
   margin: 1rem;
 }
 
-.m-auto {
-  margin: auto;
-}
-
 .mx-auto {
   margin-left: auto;
   margin-right: auto;
@@ -1331,16 +1327,16 @@ input:checked + .toggle-bg {
   width: 2rem;
 }
 
+.w-auto {
+  width: auto;
+}
+
 .w-full {
   width: 100%;
 }
 
 .w-screen {
   width: 100vw;
-}
-
-.w-auto {
-  width: auto;
 }
 
 .max-w-2xl {
