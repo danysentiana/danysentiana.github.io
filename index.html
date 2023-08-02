@@ -58,7 +58,7 @@
 
     <div data-scroll-container style="perspective: 1px">
       <!-- Home -->
-      <div data-scroll-section data-scroll-speed="1" class="w-full bg-transparent dark:bg-slate-900 pt-2">
+      <div data-scroll-section data-scroll-speed="1" class="w-full bg-transparent pt-2">
         <!-- Navbar -->
         <nav class="pl-4 pr-1 py-2.5 lg:px-14">
           <div class="container mx-auto flex flex-wrap items-center justify-between">
@@ -88,8 +88,7 @@
         <!-- Hero -->
         <div data-scroll class="container mx-auto flex flex-col w-full pt-40 pb-36" id="Home">
           <div class="flex flex-col text-center mb-0 sm:mb-8">
-            <!-- <h5 class="font-pop font-bold text-[2.5rem] sm:text-[5rem] lg:text-[6rem] xl:text-[8rem] tracking-wide leading-snug text-dark dark:text-white -mt-10 mb-3 ">Dany Setiana</h5> -->
-            <div class="font-pop font-extrabold tracking-wide leading-snug text-dark dark:text-white -mt-10 mb-4  sm:mb-8 md:mb-8 lg:mb-20 justify-center flex flex-col sm:flex-row ">
+            <div class="font-pop font-extrabold tracking-wide leading-snug text-dark dark:text-white -mt-10 mb-4  sm:mb-8 md:mb-8 lg:mb-20 justify-center flex flex-col sm:flex-row">
               <h5 class="mr-0 sm:mr-3 xl:mr-8 text-7xl sm:text-[5rem] lg:text-[6rem] xl:text-[8rem] mb-2">DANY</h5>
               <h5 class="text-6xl sm:text-[5rem] lg:text-[6rem] xl:text-[8rem]">SENTIANA</h5>
             </div>
@@ -579,6 +578,14 @@
         </div>
       </div>
     </div>
+
+    <css-doodle>
+      :doodle { @grid: 1x3 / 100vmax; position: absolute; top: 0; left: 0; z-index: -10; } @size: 100% 150%; position: absolute; background: @m(100, ( linear-gradient(transparent, @p( #FFFDE1@repeat(2, @p([0-9a-f])), #FB3569@repeat(2,
+      @p([0-9a-f])) )) @r(0%, 100%) @r(0%, 100%) / @r(1px) @r(23vmin) no-repeat )); will-change: transform; animation: f 50s linear calc(-50s / @size() * @i()) infinite; @keyframes f { from { transform: translateY(-100%) } to { transform:
+      translateY(100%) } }
+    </css-doodle>
+
+    <script src="https://unpkg.com/css-doodle@0.6.1/css-doodle.min.js"></script>
 
     <script>
       window.addEventListener("DOMContentLoaded", () => {
