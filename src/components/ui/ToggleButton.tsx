@@ -1,4 +1,4 @@
-import { Moon, Sun } from "lucide-react"
+import { Moon, Sun, Cog } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
 import {
@@ -9,15 +9,26 @@ import {
 } from "@/components/ui/dropdown-menu"
 import { useTheme } from "@/context/ThemeContext"
 
-export function ModeToggle() {
-  const { setTheme } = useTheme()
+interface ThemeToggleProps {
+  className?: string
+}
+
+export function ThemeToggle({className}: ThemeToggleProps) {
+  const { theme, setTheme } = useTheme()
+
+  const getCurrentIcon = () => {
+    if (theme === "dark")
+      return <Moon className="h-5 w-5 transition-all dark:rotate-0 dark:scale-100 d-flex mx-auto justify-center" />;
+    if (theme === "light")
+      return <Sun className="h-5 w-5 transition-all dark:-rotate-90 dark:scale-0 d-flex mx-auto justify-center" />;
+    return <Cog className="h-5 w-5 d-flex mx-auto justify-center" />;
+  };
 
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button variant="outline" size="icon">
-          <Sun className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
-          <Moon className="absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
+        <Button variant="outline" size="icon" className={className}>
+          {getCurrentIcon()}
           <span className="sr-only">Toggle theme</span>
         </Button>
       </DropdownMenuTrigger>

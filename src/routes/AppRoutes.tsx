@@ -1,8 +1,6 @@
 import { Routes, Route } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import Home from "../pages/Home";
-// import TechStack from "../pages/TechStack";
-// import Projects from "../pages/Projects";
 
 const AppRoutes = () => {
   return (

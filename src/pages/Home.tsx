@@ -1,7 +1,7 @@
 const Home = () => {
     return (
         <>
-            <section id="hero" className="min-h-screen flex flex-col justify-center items-center bg-gray-50 dark:bg-gray-900 text-center">
+            <section id="hero" className="min-h-screen flex flex-col justify-center items-center bg-neutral-50 dark:bg-neutral-900 text-center">
                 <h1 className="text-4xl md:text-6xl font-bold text-gray-800 dark:text-white">
                 Welcome to My Portfolio
                 </h1>
@@ -16,7 +16,7 @@ const Home = () => {
                 </a>
             </section>
 
-            <section id="about" className="min-h-screen flex flex-col justify-center items-center bg-gray-50 dark:bg-gray-900 text-center">
+            <section id="about" className="min-h-screen flex flex-col justify-center items-center bg-neutral-50 dark:bg-neutral-900 text-center">
                 <h2 className="text-4xl md:text-6xl font-bold text-gray-800 dark:text-white">
                     About Me
                 </h2>
