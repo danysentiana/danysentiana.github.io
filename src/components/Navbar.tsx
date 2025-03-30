@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { Menu, X } from "lucide-react";
+import { X, Equal } from "lucide-react";
 import { ThemeToggle } from "@/components/ui/ToggleButton";
 import { AnimatePresence, motion } from "framer-motion";
 import { Button } from "@/components/ui/button"
@@ -61,7 +61,8 @@ const Navbar = () => {
   
   return (
     <motion.nav 
-      className="bg-neutral-50 dark:bg-neutral-900 fixed top-3.5 rounded-4xl border-1 border-neutral-400 dark:border-neutral-700 left-1/2 transform -translate-x-1/2 w-[90%] max-w-6xl z-50"
+    layout="position" // Prevents shifting
+      className="bg-neutral-100 dark:bg-neutral-950 shadow-sm dark:shadow-none fixed top-3.5 rounded-4xl border left-1/2 transform -translate-x-1/2 w-[90%] max-w-6xl z-50"
       variants={MenuVariants}
       initial="hidden"
       animate="visible"
@@ -81,17 +82,16 @@ const Navbar = () => {
             </li>
           ))}
           <li className="d-flex justify-center text-center my-auto">
-            <ThemeToggle className="hidden md:block rounded-4xl"/>
+            <ThemeToggle className="hidden md:block rounded-4xl bg-neutral-800 text-white hover:bg-neutral-700 hover:text-white"/>
           </li>
         </ul>
 
-
         {/* Mobile Menu Button */}
         <div className="flex justify-center text-center py-auto md:hidden">
-          <button onClick={() => setMenuOpen(!menuOpen)} className="mr-4">
-            {menuOpen ? <X className="w-6 h-6 text-gray-700 dark:text-gray-300" /> : <Menu className="w-6 h-6 text-gray-700 dark:text-gray-300" />}
-          </button>
-          <ThemeToggle className="rounded-4xl"/>
+          <Button variant="outline" size="icon" onClick={() => setMenuOpen(!menuOpen)} className="mr-2 rounded-4xl bg-neutral-950 text-white">
+            {menuOpen ? <X className="w-6 h-6 dark:text-gray-300" /> : <Equal className="w-6 h-6 dark:text-gray-300" />}
+          </Button>
+          <ThemeToggle className="rounded-4xl bg-neutral-900 text-white hover:bg-neutral-800 hover:text-white"/>
         </div>
       </div>
 
@@ -100,9 +100,7 @@ const Navbar = () => {
 
       {menuOpen && (
         <motion.div 
-        // animate={{ opacity: 1, scale: 1, y: 0 }}
-        // transition={{ duration: 0.1 }}
-        className="md:hidden bg-neutral-50 dark:bg-neutral-900 p-4 rounded-4xl"
+        className="md:hidden bg-neutral-50 dark:bg-neutral-950 p-4 rounded-4xl"
         >
           <motion.ul 
             variants={mobileMenuVariants} 
