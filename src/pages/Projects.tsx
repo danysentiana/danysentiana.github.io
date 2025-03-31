@@ -22,7 +22,7 @@ const Projects = () => {
   return (
     <>
     <section id="projects" className="w-full px-6 lg:px-40">
-      <div className="container bg-transparent py-40 mx-auto min-h-screen">
+      <div className="container bg-transparent pt-40 pb-28 mx-auto min-h-screen">
         <h1 className="text-4xl font-bold text-center mb-6">My Projects</h1>
 
         {/* Search Bar */}
@@ -63,7 +63,6 @@ const Projects = () => {
             </button>
           </div>
       </div>
-
     </section>
 
     <Footer />

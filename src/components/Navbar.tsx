@@ -4,9 +4,17 @@ import { X, Equal } from "lucide-react";
 import { ThemeToggle } from "@/components/ui/ToggleButton";
 import { AnimatePresence, motion } from "framer-motion";
 import { Button } from "@/components/ui/button"
+import { useTheme } from "@/context/ThemeContext";
 
 const Navbar = () => {
   const [ menuOpen, setMenuOpen ] = useState(false);
+  const { theme } = useTheme();
+
+  const isDarkMode =
+    theme === "dark" ||
+    (theme === "system" &&
+      window.matchMedia("(prefers-color-scheme: dark)").matches);
+
   const menuItems = [
     { path: "/", label: "Home" },
     { path: "/about", label: "About Me" },
@@ -70,7 +78,13 @@ const Navbar = () => {
     >
       <div className="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
         {/* Logo */}
-        <h1 className="text-xl font-bold text-gray-800 dark:text-white">Name</h1>
+        <Link to="/">
+          <img
+            src={isDarkMode ? "/ds-logo-white.png" : "/ds-logo-black.png"}
+            alt="Logo"
+            className="md:h-8 h-12"
+          />
+        </Link>
 
         {/* Desktop Menu */}
         <ul className="hidden md:flex space-x-6">
