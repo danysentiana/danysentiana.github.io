@@ -1,0 +1,73 @@
+export const projects = [
+    {
+      id: 1,
+      title: "Portfolio Website",
+      description: "A personal website built with React and Tailwind CSS.",
+      techStack: ["React", "TypeScript", "TailwindCSS"],
+      link: "https://example.com",
+    },
+    {
+      id: 2,
+      title: "E-commerce App",
+      description: "A full-stack e-commerce application with Next.js and Stripe.",
+      techStack: ["Next.js", "Node.js", "Stripe"],
+      link: "https://example.com",
+    },
+    {
+      id: 3,
+      title: "Task Manager",
+      description: "A simple task management app using Laravel and Vue.",
+      techStack: ["Laravel", "Vue", "MySQL"],
+      link: "https://example.com",
+    },
+    {
+      id: 4,
+      title: "Task Manager",
+      description: "A simple task management app using Laravel and Vue.",
+      techStack: ["Laravel", "Vue", "MySQL"],
+      link: "https://example.com",
+    },
+    {
+      id: 5,
+      title: "Task Manager",
+      description: "A simple task management app using Laravel and Vue.",
+      techStack: ["Laravel", "Vue", "MySQL"],
+      link: "https://example.com",
+    },
+    {
+      id: 6,
+      title: "Task Manager",
+      description: "A simple task management app using Laravel and Vue.",
+      techStack: ["Laravel", "Vue", "MySQL"],
+      link: "https://example.com",
+    },
+    {
+      id: 7,
+      title: "Task Manager",
+      description: "A simple task management app using Laravel and Vue.",
+      techStack: ["Laravel", "Vue", "MySQL"],
+      link: "https://example.com",
+    },
+    {
+      id: 8,
+      title: "Task Manager",
+      description: "A simple task management app using Laravel and Vue.",
+      techStack: ["Laravel", "Vue", "MySQL"],
+      link: "https://example.com",
+    },
+    {
+      id: 9,
+      title: "Task Manager",
+      description: "A simple task management app using Laravel and Vue.",
+      techStack: ["Laravel", "Vue", "MySQL"],
+      link: "https://example.com",
+    },
+    {
+      id: 10,
+      title: "Task Manager",
+      description: "A simple task management app using Laravel and Vue.",
+      techStack: ["Laravel", "Vue", "MySQL"],
+      link: "https://example.com",
+    },
+];
+  
