@@ -1,14 +1,24 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { X, Equal } from "lucide-react";
 import { ThemeToggle } from "@/components/ui/ToggleButton";
 import { AnimatePresence, motion } from "framer-motion";
 import { Button } from "@/components/ui/button"
 import { useTheme } from "@/context/ThemeContext";
+import logoWhite from "@/assets/logo/ds-logo-white.png";
+import logoBlack from "@/assets/logo/ds-logo-black.png";
 
 const Navbar = () => {
   const [ menuOpen, setMenuOpen ] = useState(false);
   const { theme } = useTheme();
+  const location = useLocation();
+
+  const handleScroll = (id: string) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  }
 
   const isDarkMode =
     theme === "dark" ||
@@ -17,8 +27,8 @@ const Navbar = () => {
 
   const menuItems = [
     { path: "/", label: "Home" },
-    { path: "/about", label: "About Me" },
-    { path: "/tech-stack", label: "Tech Stack" },
+    { path: "/#about", label: "About Me" },
+    { path: "/#tech-stack", label: "Tech Stack" },
     { path: "/projects", label: "Projects" },
   ];
 
@@ -80,21 +90,41 @@ const Navbar = () => {
         {/* Logo */}
         <Link to="/">
           <img
-            src={isDarkMode ? "/ds-logo-white.png" : "/ds-logo-black.png"}
+            src={isDarkMode ? logoWhite : logoBlack}
             alt="Logo"
-            className="md:h-8 h-12"
+            className="h-8"
           />
         </Link>
 
         {/* Desktop Menu */}
         <ul className="hidden md:flex space-x-6">
-          {menuItems.map((item, index) => (
-            <li key={index} className="d-flex justify-center text-center my-auto">
-              <Link to={item.path} className="text-gray-700 dark:text-gray-300 hover:text-blue-500">
-                {item.label}
-              </Link>
-            </li>
-          ))}
+          {menuItems.map((item) => {
+            const isActive = location.pathname === item.path;
+            
+            return (
+              <li key={item.path} className="d-flex justify-center text-center my-auto">
+                {item.path.startsWith("/#") ? (
+                  <button
+                    onClick={() => handleScroll(item.path.replace("/#", ""))}
+                    className={`text-gray-700 dark:text-gray-300 hover:text-blue-500 ${
+                      isActive ? "text-blue-500 font-semibold" : ""
+                    }`}
+                  >
+                    {item.label}
+                  </button>
+                ) : (
+                  <Link
+                    to={item.path}
+                    className={`text-gray-700 dark:text-gray-300 hover:text-blue-500 ${
+                      isActive ? "text-blue-500 font-semibold" : ""
+                    }`}
+                  >
+                    {item.label}
+                  </Link>
+                )}
+              </li>
+            );
+          })}
           <li className="d-flex justify-center text-center my-auto">
             <ThemeToggle className="hidden md:block rounded-4xl bg-neutral-800 text-white hover:bg-neutral-700 hover:text-white"/>
           </li>
@@ -102,8 +132,8 @@ const Navbar = () => {
 
         {/* Mobile Menu Button */}
         <div className="flex justify-center text-center py-auto md:hidden">
-          <Button variant="outline" size="icon" onClick={() => setMenuOpen(!menuOpen)} className="mr-2 rounded-4xl bg-neutral-950 text-white">
-            {menuOpen ? <X className="w-6 h-6 dark:text-gray-300" /> : <Equal className="w-6 h-6 dark:text-gray-300" />}
+          <Button variant="outline" size="icon" onClick={() => setMenuOpen(!menuOpen)} className="mr-2 rounded-4xl bg-neutral-950 text-white hover:bg-neutral-800 hover:text-white">
+            {menuOpen ? <X className="w-6 h-6 dark:text-gray-300" /> : <Equal className="w-6 h-6 dark:text-gray-300 " />}
           </Button>
           <ThemeToggle className="rounded-4xl bg-neutral-900 text-white hover:bg-neutral-800 hover:text-white"/>
         </div>
@@ -123,17 +153,36 @@ const Navbar = () => {
             exit="exit"
             className="space-y-4 px-2 pb-4"
           >
-            {menuItems.map((item, index) => (
-              <motion.li key={item.path} variants={mobileMenuItemVariants} custom={index}>
-                <Link 
-                  to={item.path} 
-                  className="text-gray-700 dark:text-gray-300 hover:text-blue-500" 
-                  onClick={() => setMenuOpen(false)}
-                >
-                  {item.label}
-                </Link>
-              </motion.li>
-            ))}
+            {menuItems.map((item) => {
+              const isActive = location.pathname === item.path;
+              return (
+                <motion.li key={item.path} variants={mobileMenuItemVariants}>
+                  {item.path.startsWith("/#") ? (
+                    <button
+                      onClick={() => {
+                        handleScroll(item.path.replace("/#", ""));
+                        setMenuOpen(false);
+                      }}
+                      className={`text-gray-700 dark:text-gray-300 hover:text-blue-500 ${
+                        isActive ? "text-blue-500 font-semibold" : ""
+                      }`}
+                    >
+                      {item.label}
+                    </button>
+                  ) : (
+                    <Link
+                      to={item.path}
+                      className={`text-gray-700 dark:text-gray-300 hover:text-blue-500 ${
+                        isActive ? "text-blue-500 font-semibold" : ""
+                      }`}
+                      onClick={() => setMenuOpen(false)}
+                    >
+                      {item.label}
+                    </Link>
+                  )}
+                </motion.li>
+              );
+            })}
           </motion.ul>
         </motion.div>
       )}
