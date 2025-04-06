@@ -14,7 +14,6 @@ const techStack = [
   { name: "Tailwind CSS", icon: siTailwindcss },
 ];
 
-import clearenceImage from "@/assets/projects/Clarence.png";
 import marissaImage from "@/assets/projects/marissa.png";
 import bayarajaImage from "@/assets/projects/bayaraja.png";
 import rakitWeb from "@/assets/projects/rakit-web.png";
