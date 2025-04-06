@@ -17,14 +17,13 @@
     <meta property="og:url" content="https://danysentiana.github.io/" />
     <meta property="og:image" content="/ds-logo-white.png" />
     <meta property="og:type" content="website" />
+
+    <script>
+      const redirectTo = '/' + location.pathname.slice(1) + location.search + location.hash;
+      location.replace('/?redirect=' + encodeURIComponent(redirectTo));
+    </script>
   </head>
   <body class="bg-neutral-50 dark:bg-neutral-950">
-    <script>
-      if (location.pathname !== "/" && !location.pathname.includes(".")) {
-        location.replace("/?redirect=" + location.pathname);
-      }
-    </script>
-    
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
