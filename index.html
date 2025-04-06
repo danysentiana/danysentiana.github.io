@@ -32,7 +32,14 @@
     </script>
   </head>
   <body class="bg-neutral-50 dark:bg-neutral-950">
-    
+    <script>
+      if (
+        location.pathname !== "/" &&
+        !location.pathname.includes(".")
+      ) {
+        location.replace("/?redirect=" + location.pathname);
+      }
+    </script>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>

@@ -2,21 +2,13 @@ import { useEffect, useState } from "react";
 import Navbar from "@/components/Navbar";
 import Home from "@/pages/Home";
 import Projects from "@/pages/Projects";
-// import NotFound from "@/pages/NotFound";
+import NotFound from "@/pages/NotFound";
 import useLenis from "@/hooks/useLenis";
 
 function App() {
   useLenis();
 
   const [currentPath, setCurrentPath] = useState(window.location.pathname);
-
-  useEffect(() => {
-    const onPopState = () => {
-      setCurrentPath(window.location.pathname);
-    };
-    window.addEventListener("popstate", onPopState);
-    return () => window.removeEventListener("popstate", onPopState);
-  }, []);
 
   const navigate = (path: string) => {
     window.history.pushState({}, "", path);
@@ -28,7 +20,7 @@ function App() {
     if (redirectPath) {
       navigate(redirectPath);
     }
-  }, []);
+  }, []);  
 
   const renderRoute = () => {
     switch (currentPath) {
@@ -38,7 +30,7 @@ function App() {
       case "/projects":
         return <Projects  />;
       default:
-        // return <NotFound  />;
+        return <NotFound  />;
     }
   };
 
