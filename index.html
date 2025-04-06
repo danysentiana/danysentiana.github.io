@@ -16,10 +16,16 @@
     <meta property="og:url" content="https://danysentiana.github.io/" />
     <meta property="og:image" content="/ds-logo-white.png" />
     <meta property="og:type" content="website" />
-    <script type="module" crossorigin src="/assets/index-Y4Id5r82.js"></script>
+    <script type="module" crossorigin src="/assets/index-DbMOL6yj.js"></script>
     <link rel="stylesheet" crossorigin href="/assets/index-ZVJgjxD8.css">
   </head>
   <body class="bg-neutral-50 dark:bg-neutral-950">
+    <script>
+      if (location.pathname !== "/" && !location.pathname.includes(".")) {
+        location.replace("/?redirect=" + location.pathname);
+      }
+    </script>
+    
     <div id="root"></div>
   </body>
 </html>
