@@ -11,20 +11,21 @@
     <meta name="author" content="Dany Sentiana" />
     <meta name="robots" content="index, follow" />
 
-    <meta property="og:title" content="Dany Sentiana | Portfolio" />
+    <!-- <meta property="og:title" content="Dany Sentiana | Portfolio" />
     <meta property="og:description" content="Check out my projects, tech stack, and background!" />
     <meta property="og:url" content="https://danysentiana.github.io/" />
     <meta property="og:image" content="/ds-logo-white.png" />
-    <meta property="og:type" content="website" />
-
-    <!-- <script>
-      const redirectTo = '/' + location.pathname.slice(1) + location.search + location.hash;
-      location.replace('/?redirect=' + encodeURIComponent(redirectTo));
-    </script> -->
+    <meta property="og:type" content="website" /> -->
+    <script>
+      if (location.pathname !== "/" && !location.pathname.includes(".")) {
+        location.replace("/?redirect=" + location.pathname);
+      }
+    </script>
     <script type="module" crossorigin src="/assets/index-BIcSHyO-.js"></script>
     <link rel="stylesheet" crossorigin href="/assets/index-CnXORcU-.css">
   </head>
   <body class="bg-neutral-50 dark:bg-neutral-950">
+    
     <div id="root"></div>
   </body>
 </html>
