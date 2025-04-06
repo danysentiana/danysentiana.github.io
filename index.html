@@ -11,18 +11,26 @@
     <meta name="author" content="Dany Sentiana" />
     <meta name="robots" content="index, follow" />
 
-    <!-- <meta property="og:title" content="Dany Sentiana | Portfolio" />
+    <meta property="og:title" content="Dany Sentiana | Portfolio" />
     <meta property="og:description" content="Check out my projects, tech stack, and background!" />
     <meta property="og:url" content="https://danysentiana.github.io/" />
     <meta property="og:image" content="/ds-logo-white.png" />
-    <meta property="og:type" content="website" /> -->
-    <script>
-      if (location.pathname !== "/" && !location.pathname.includes(".")) {
-        location.replace("/?redirect=" + location.pathname);
-      }
+    <meta property="og:type" content="website" />
+
+    <script type="text/javascript">
+      (function(l) {
+        if (l.search[1] === '/' ) {
+          var decoded = l.search.slice(1).split('&').map(function(s) { 
+            return s.replace(/~and~/g, '&')
+          }).join('?');
+          window.history.replaceState(null, null,
+              l.pathname.slice(0, -1) + decoded + l.hash
+          );
+        }
+      }(window.location))
     </script>
-    <script type="module" crossorigin src="/assets/index-BIcSHyO-.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/index-CnXORcU-.css">
+    <script type="module" crossorigin src="/danysentiana.github.io/assets/index-DLuXzy4v.js"></script>
+    <link rel="stylesheet" crossorigin href="/danysentiana.github.io/assets/index-CnXORcU-.css">
   </head>
   <body class="bg-neutral-50 dark:bg-neutral-950">
     
