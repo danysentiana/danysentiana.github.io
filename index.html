@@ -20,11 +20,7 @@
   </head>
   <body class="bg-neutral-50 dark:bg-neutral-950">
     <script>
-      if (
-        location.pathname !== "/" &&
-        !location.pathname.includes(".") &&
-        !location.search.includes("redirect")
-      ) {
+      if (location.pathname !== "/" && !location.pathname.includes(".")) {
         location.replace("/?redirect=" + location.pathname);
       }
     </script>
