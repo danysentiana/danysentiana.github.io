@@ -23,7 +23,13 @@ const Projects = () => {
     <>
     <section id="projects" className="w-full px-6 lg:px-40">
       <div className="container bg-transparent pt-40 pb-28 mx-auto min-h-screen">
-        <h1 className="text-4xl font-bold text-center mb-6">My Projects</h1>
+        <h1 className="font-bebas text-7xl font-bold text-center mb-3">My Projects</h1>
+
+        <div className="flex justify-center mb-5">
+          <p className="font-roboto text-lg text-gray-600 dark:text-gray-300 max-w-3xl text-justify md:text-center">
+              Here are a few projects I've worked on recently. Each project is an opportunity to learn and grow, and I'm excited to share them with you.
+          </p>
+        </div>
 
         {/* Search Bar */}
         <div className ="mb-10 w-[80%] md:w-[50%] mx-auto">
@@ -31,14 +37,16 @@ const Projects = () => {
         </div>
 
         {/* Project List */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 min-h-96">
           {paginatedProjects.length > 0 ? (
             paginatedProjects.map((project) => (
               <ProjectCard key={project.id} {...project} />
             ))) : (
-              <p className="text-center col-span-full text-gray-600">
-                No projects found.
-              </p>
+              <div className="col-span-full flex items-center justify-center min-h-64">
+                <p className="text-gray-600 dark:text-neutral-50 text-center px-4 py-2 rounded-md">
+                  No projects found.
+                </p>
+              </div>
             ) }
         </div>
 

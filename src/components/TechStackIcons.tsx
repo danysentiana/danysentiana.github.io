@@ -2,7 +2,8 @@ import {
     siReact, siNodedotjs, siTailwindcss, siTypescript, 
     siPhp, siLaravel, siExpress, siFigma, siVuedotjs,
     siBootstrap, siMysql, siPostgresql, siDbeaver, siTermius, 
-    siHtml5, siJavascript, siCss3, siGit, siGithub, siGitlab
+    siHtml5, siJavascript, siCss3, siGit, siGithub, siGitlab,
+    siPostman
 } from "simple-icons";
 
 import {
@@ -10,13 +11,13 @@ import {
     TooltipContent,
     TooltipProvider,
     TooltipTrigger,
-  } from "@/components/ui/tooltip"
+} from "@/components/ui/tooltip"
 
 const techIcons = [
     siReact, siNodedotjs, siTailwindcss, siTypescript, siPhp, 
     siLaravel, siExpress, siFigma, siVuedotjs, siBootstrap,
     siMysql, siPostgresql, siDbeaver, siTermius, siHtml5, 
-    siJavascript, siCss3, siGit, siGithub, siGitlab
+    siJavascript, siCss3, siGit, siGithub, siGitlab, siPostman
 ];
 
 const TechStackIcons = () => {

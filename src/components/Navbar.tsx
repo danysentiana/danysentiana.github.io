@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { X, Equal } from "lucide-react";
 import { ThemeToggle } from "@/components/ui/ToggleButton";
 import { AnimatePresence, motion } from "framer-motion";
@@ -12,24 +12,51 @@ const Navbar = () => {
   const [ menuOpen, setMenuOpen ] = useState(false);
   const { theme } = useTheme();
   const location = useLocation();
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (location.hash) {
+      const id = location.hash.replace("#", "");
+      const element = document.getElementById(id);
+      if (element) {
+        setTimeout(() => {
+          element.scrollIntoView({ behavior: "smooth" });
+        }, 100); // Delay ensures element is loaded
+      }
+    }
+  }, [location]);
 
   const handleScroll = (id: string) => {
+    setMenuOpen(false); // Close mobile menu
     const element = document.getElementById(id);
+    
     if (element) {
       element.scrollIntoView({ behavior: "smooth" });
+    } else {
+      // Navigate to home if not on it
+      if (location.pathname !== "/") {
+        navigate(`/#${id}`); // Change URL to hash
+        setTimeout(() => {
+          const targetElement = document.getElementById(id);
+          if (targetElement) {
+            targetElement.scrollIntoView({ behavior: "smooth" });
+          }
+        }, 300); // Delay to ensure React renders
+      }
     }
-  }
-
+  };
+  
   const isDarkMode =
     theme === "dark" ||
     (theme === "system" &&
       window.matchMedia("(prefers-color-scheme: dark)").matches);
 
   const menuItems = [
-    { path: "/", label: "Home" },
+    // { path: "/", label: "Home" },
     { path: "/#about", label: "About Me" },
     { path: "/#tech-stack", label: "Tech Stack" },
     { path: "/projects", label: "Projects" },
+    { path: "/#contact", label: "Contact" },
   ];
 
   // Framer Motion Mobile Variants 
@@ -79,7 +106,6 @@ const Navbar = () => {
   
   return (
     <motion.nav 
-    layout="position" // Prevents shifting
       className="bg-neutral-100 dark:bg-neutral-950 shadow-sm dark:shadow-none fixed top-3.5 rounded-4xl border left-1/2 transform -translate-x-1/2 w-[90%] max-w-6xl z-50"
       variants={MenuVariants}
       initial="hidden"
@@ -88,13 +114,18 @@ const Navbar = () => {
     >
       <div className="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
         {/* Logo */}
-        <Link to="/">
-          <img
+        <button onClick={() => handleScroll("hero")}>
+          <motion.img
             src={isDarkMode ? logoWhite : logoBlack}
             alt="Logo"
-            className="h-8"
+            className="h-8 cursor-pointer"
+            whileHover={{
+              rotate: [0, 10, -10, 0], 
+              transition: { repeat: Infinity, duration: 1.5 }
+            }}
           />
-        </Link>
+        </button>
+
 
         {/* Desktop Menu */}
         <ul className="hidden md:flex space-x-6">
@@ -105,22 +136,22 @@ const Navbar = () => {
               <li key={item.path} className="d-flex justify-center text-center my-auto">
                 {item.path.startsWith("/#") ? (
                   <button
-                    onClick={() => handleScroll(item.path.replace("/#", ""))}
-                    className={`text-gray-700 dark:text-gray-300 hover:text-blue-500 ${
-                      isActive ? "text-blue-500 font-semibold" : ""
-                    }`}
-                  >
-                    {item.label}
-                  </button>
-                ) : (
-                  <Link
-                    to={item.path}
-                    className={`text-gray-700 dark:text-gray-300 hover:text-blue-500 ${
-                      isActive ? "text-blue-500 font-semibold" : ""
-                    }`}
-                  >
-                    {item.label}
-                  </Link>
+                      onClick={() => handleScroll(item.path.replace("/#", ""))}
+                      className={`cursor-pointer text-neutral-950 dark:text-neutral-50 hover:text-blue-500 ${
+                        isActive ? "text-blue-500 font-semibold" : ""
+                      }`}
+                    >
+                      {item.label}
+                    </button>
+                  ) : (
+                    <Link
+                      to={item.path}
+                      className={`text-gray-700 dark:text-gray-300 hover:text-blue-500 ${
+                        isActive ? "text-blue-500 font-semibold" : ""
+                      }`}
+                    >
+                      {item.label}
+                    </Link>
                 )}
               </li>
             );
