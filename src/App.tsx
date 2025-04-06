@@ -1,44 +1,15 @@
-import { useEffect, useState } from "react";
-import Navbar from "@/components/Navbar";
-import Home from "@/pages/Home";
-import Projects from "@/pages/Projects";
-import NotFound from "@/pages/NotFound";
-import useLenis from "@/hooks/useLenis";
+import { BrowserRouter as Router } from "react-router-dom";
+
+import AppRoutes from "./routes/AppRoutes";
+import useLenis from "./hooks/useLenis";
 
 function App() {
-  useLenis();
-
-  const [currentPath, setCurrentPath] = useState(window.location.pathname);
-
-  const navigate = (path: string) => {
-    window.history.pushState({}, "", path);
-    setCurrentPath(path);
-  };
-
-  useEffect(() => {
-    const redirectPath = new URLSearchParams(window.location.search).get("redirect");
-    if (redirectPath) {
-      navigate(redirectPath);
-    }
-  }, []);  
-
-  const renderRoute = () => {
-    switch (currentPath) {
-      case "/":
-        // return <Home navigate={navigate} />;
-        return <Home  />;
-      case "/projects":
-        return <Projects  />;
-      default:
-        return <NotFound  />;
-    }
-  };
+  useLenis(); // Apply smooth scrolling globally
 
   return (
-    <>
-      <Navbar />
-      {renderRoute()}
-    </>
+    <Router>
+      <AppRoutes />
+    </Router>
   );
 }
 
