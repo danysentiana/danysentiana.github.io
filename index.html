@@ -29,11 +29,18 @@
         }
       }(window.location))
     </script>
-    <script type="module" crossorigin src="/danysentiana.github.io/assets/index-DLuXzy4v.js"></script>
-    <link rel="stylesheet" crossorigin href="/danysentiana.github.io/assets/index-CnXORcU-.css">
+    <script type="module" crossorigin src="/assets/index-CC0dvJ2g.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-CnXORcU-.css">
   </head>
   <body class="bg-neutral-50 dark:bg-neutral-950">
-    
+    <script>
+      if (
+        location.pathname !== "/" &&
+        !location.pathname.includes(".")
+      ) {
+        location.replace("/?redirect=" + location.pathname);
+      }
+    </script>
     <div id="root"></div>
   </body>
 </html>
