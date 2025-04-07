@@ -21,7 +21,7 @@ const Projects = () => {
 
   return (
     <>
-    <section id="projects" className="w-full px-6 lg:px-40">
+    <section id="projects" className="w-full px-6 lg:px-40 2xl:px-64">
       <div className="container bg-transparent pt-40 pb-28 mx-auto min-h-screen">
         <h1 className="font-bebas text-7xl font-bold text-center mb-3">My Projects</h1>
 
@@ -37,7 +37,7 @@ const Projects = () => {
         </div>
 
         {/* Project List */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 min-h-96">
+        <div className="grid md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-3 gap-6 lg:gap-7 min-h-96">
           {paginatedProjects.length > 0 ? (
             paginatedProjects.map((project) => (
               <ProjectCard key={project.id} {...project} />

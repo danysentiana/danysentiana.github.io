@@ -6,17 +6,18 @@ import { ArrowDownToLine, ChevronRight } from "lucide-react"
 const Hero = () => {
     return (
         <>
-            <section id="hero" className="w-full px-14 lg:px-40">
+            <section id="hero" className="w-full px-14 lg:px-40 xl:px-60 2xl:px-72 md:flex md:mx-auto md:justify-center">
                 <div className="container bg-transparent py-28 lg:min-h-screen flex flex-col-reverse lg:flex-row lg:justify-between lg:items-center lg:space-x-10">
-                    <div className="hero-text w-full text-left justify-items-start">
-                        <p className="text-3xl md:text-2xl font-roboto text-neutral-800 dark:text-neutral-50 mb-2 mt-3">
+                    <div className="hero-text w-full text-left justify-items-start md:justify-items-center xl:justify-items-start">
+                        <p className="text-3xl md:text-2xl lg:text-xl xl:text-2xl font-roboto text-neutral-800 dark:text-neutral-50 mb-2 mt-3">
                             Hello, I'm Danys
                         </p>
-                        <h1 className="text-5xl lg:text-8xl md:text-8xl text-neutral-950 dark:text-neutral-50 font-bebas font-semibold whitespace-nowrap">
+
+                        <h1 className="text-5xl md:text-8xl lg:text-6xl xl:text-8xl text-neutral-950 dark:text-neutral-50 font-bebas font-semibold whitespace-nowrap">
                             A Tech Enthusiast
                         </h1>
 
-                        <h1 className="text-5xl lg:text-8xl md:text-8xl text-neutral-950 dark:text-neutral-50 font-bebas font-semibold whitespace-nowrap">
+                        <h1 className="text-5xl md:text-8xl lg:text-6xl xl:text-8xl  text-neutral-950 dark:text-neutral-50 font-bebas font-semibold whitespace-nowrap">
                             Focusing on <br className="block md:hidden" />
                             <span className="text-blue-500 dark:text-yellow-400">
                                 <Typewriter
