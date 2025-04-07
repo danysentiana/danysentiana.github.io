@@ -19,6 +19,10 @@
     <meta property="og:type" content="website" />
   </head>
   <body class="bg-neutral-50 dark:bg-neutral-950">
+    <script>
+      sessionStorage.redirect = window.location.pathname + window.location.search + window.location.hash;
+    </script>
+    
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>

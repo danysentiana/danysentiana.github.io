@@ -1,7 +1,13 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta http-equiv="refresh" content="0; URL=/" />
+    <meta charset="utf-8" />
+    <script>
+      // Redirect to the original URL so React Router can handle it
+      const redirectTo = sessionStorage.redirect || "/";
+      sessionStorage.removeItem("redirect");
+      window.location.replace(redirectTo);
+    </script>
   </head>
   <body></body>
 </html>
