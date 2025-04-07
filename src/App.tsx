@@ -1,4 +1,4 @@
-import { BrowserRouter as Router } from "react-router-dom";
+import { HashRouter as Router } from "react-router-dom";
 
 import AppRoutes from "./routes/AppRoutes";
 import useLenis from "./hooks/useLenis";

@@ -9,7 +9,6 @@ const AppRoutes = () => {
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
-        {/* <Route path="/tech-stack" element={<TechStack />} /> */}
         <Route path="/projects" element={<Projects />} />
       </Routes>
     </>
