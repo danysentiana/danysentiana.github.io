@@ -132,6 +132,8 @@ const Navbar = () => {
             const isActive = item.path.startsWith("/#")
             ? activeSection === item.path.replace("/", "")
             : location.pathname === item.path;
+
+            console.log(item.path)
           
             return (
               <li key={item.path} className="d-flex my-auto justify-center lg:text-lg text-center">

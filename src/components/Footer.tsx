@@ -2,7 +2,7 @@ import { Button } from "./ui/button";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub, faLinkedin, faInstagram } from "@fortawesome/free-brands-svg-icons";
 import { faPhone, faEnvelope, faLocationDot, faHeart } from "@fortawesome/free-solid-svg-icons";
-// import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 import {
     Tooltip,
@@ -34,14 +34,14 @@ const Footer = () => {
                             variant={"outline"} 
                             className="rounded-full dark:border-neutral-200 hover:text-neutral-600"
                         >
-                            {/* <Link 
+                            <Link 
                                 to={social.url} 
                                 target={social.external ? "_blank" : undefined} 
                                 rel={social.external ? "noopener noreferrer" : undefined} 
                                 aria-label={social.name}
                             >
                                 <FontAwesomeIcon icon={social.icon} size="1x"/>
-                            </Link> */}
+                            </Link>
                         </Button>
                     ))}
                     

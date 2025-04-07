@@ -1,7 +1,8 @@
 import { Button } from "@/components/ui/button";
 import profileImage from "@/assets/profile-pic.jpeg";
 import { Typewriter } from 'react-simple-typewriter';
-import { ArrowDownToLine, ChevronRight } from "lucide-react"
+import { ArrowDownToLine, ChevronRight } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Hero = () => {
     return (
@@ -32,12 +33,12 @@ const Hero = () => {
                             </span>
                         </h1>
 
-                        <div className="flex flex-wrap justify-center lg:justify-start w-full mt-8 lg:mt-2 lg:pt-4">
-                            <Button variant={"outline"} size={"xl"} className="font-roboto rounded-4xl px-11 py-4 flex items-center gap-2 bg-neutral-950 text-neutral-50 dark:bg-neutral-50 dark:text-neutral-950 hover:bg-neutral-700 hover:text-neutral-50 dark:hover:bg-neutral-100">
-                                My Projects <ChevronRight className="w-6 h-6" /> 
+                        <div className="flex justify-center lg:justify-start w-full mt-8 lg:mt-2 lg:pt-4">
+                            <Button asChild variant={"outline"} size={"xl"} className="font-roboto rounded-4xl px-11 py-4 flex items-center bg-neutral-950 text-neutral-50 dark:bg-neutral-50 dark:text-neutral-950 hover:bg-neutral-700 hover:text-neutral-50 dark:hover:bg-neutral-100">
+                                <Link to={"/projects"}> My Projects <ChevronRight className="w-6 h-6" /> </Link>
                             </Button>
 
-                            <Button variant={"outline"} size={"xl"} className="ml-2 font-roboto rounded-4xl px-11 py-4 flex items-center gap-2">
+                            <Button variant={"outline"} size={"xl"} className="ml-2 font-roboto rounded-4xl px-11 py-4 flex items-center">
                                 Download CV <ArrowDownToLine className="w-6 h-6" /> 
                             </Button>
                         </div>

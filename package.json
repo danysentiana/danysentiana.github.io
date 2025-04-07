@@ -1,5 +1,6 @@
 {
   "name": "my-portfolio",
+  "homepage": "https://danysentiana.github.io/danysentiana.github.io",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -11,7 +12,6 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist"
   },
-  "homepage": "https://danysentiana.github.io/",
   "dependencies": {
     "@fortawesome/free-brands-svg-icons": "^6.7.2",
     "@fortawesome/free-regular-svg-icons": "^6.7.2",
