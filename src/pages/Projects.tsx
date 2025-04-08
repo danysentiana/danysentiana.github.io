@@ -37,7 +37,7 @@ const Projects = () => {
         </div>
 
         {/* Project List */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-3 gap-6 lg:gap-7 min-h-96">
+        <div className="grid md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-3 gap-6 min-h-96">
           {paginatedProjects.length > 0 ? (
             paginatedProjects.map((project) => (
               <ProjectCard key={project.id} {...project} />
@@ -51,7 +51,7 @@ const Projects = () => {
         </div>
 
         {/* Pagination Buttons */}
-        <div className="flex justify-center mt-6 space-x-4">
+        <div className="flex justify-center mt-12 space-x-4">
             <button
               onClick={() => setCurrentPage((prev) => Math.max(prev - 1, 1))}
               disabled={currentPage === 1}

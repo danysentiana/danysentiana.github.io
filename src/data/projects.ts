@@ -14,15 +14,18 @@ const techStack = [
   { name: "Tailwind CSS", icon: siTailwindcss },
 ];
 
+import clearenceImage from "@/assets/projects/Clarence.png";
 import marissaImage from "@/assets/projects/marissa.png";
 import bayarajaImage from "@/assets/projects/bayaraja.png";
 import rakitWeb from "@/assets/projects/rakit-web.png";
+import coopinImage from "@/assets/projects/coopin.png";
+import kutImage from "@/assets/projects/kinarya-tech.png";
 
 // projects data
 const projects = [
   {
     id: 1,
-    title: "Rakit Website",
+    title: "[Rakit] Website Profile",
     description: "A personal website built with React and Tailwind CSS.",
     techStack: ["React", "Tailwind CSS"],
     image: rakitWeb, 
@@ -43,6 +46,30 @@ const projects = [
     techStack: ["Laravel", "Bootstrap", "MySQL"],
     image: marissaImage,
     link: "https://marissa.kiselindonesia.com/",
+  },
+  {
+    id: 4,
+    title: "[Rakit] Coopin",
+    description: "A simple task management app using Laravel and Vue.",
+    techStack: ["Node.js", "Express", "Bootstrap", "MySQL"],
+    image: coopinImage,
+    link: "https://dashboardcoopin.kinarya-tech.com/",
+  },
+  {
+    id: 5,
+    title: "[Rakit] Trast",
+    description: "A simple task management app using Laravel and Vue.",
+    techStack: ["Node.js", "Express", "Bootstrap", "MySQL"],
+    image: clearenceImage,
+    link: "https://trast.kinarya-tech.com/",
+  },
+  {
+    id: 5,
+    title: "Kinarya Tech Company Profile",
+    description: "A simple task management app using Laravel and Vue.",
+    techStack: ["Node.js", "Express", "Bootstrap", "MySQL"],
+    image: kutImage,
+    link: "http://38.47.90.39:8200/",
   },
 ];
 
