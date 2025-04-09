@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { projects } from "@/data/projects";
 import ProjectCard from "@/components/ProjectCard";
 import SearchBar from "@/components/SearchBar";
@@ -8,6 +8,10 @@ const Projects = () => {
   const [query, setQuery] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
   const projectPerPage = 6;
+
+  useEffect(() => {
+    setCurrentPage(1);
+  }, [query])
 
   // Filter projects based on search query
   const filteredProjects = projects.filter((project) =>
