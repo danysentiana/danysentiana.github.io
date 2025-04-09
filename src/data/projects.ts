@@ -20,6 +20,7 @@ import bayarajaImage from "@/assets/projects/bayaraja.png";
 import rakitWeb from "@/assets/projects/rakit-web.png";
 import coopinImage from "@/assets/projects/coopin.png";
 import kutImage from "@/assets/projects/kinarya-tech.png";
+import kamilaImage from "@/assets/projects/kamila.png";
 
 // projects data
 const projects = [
@@ -64,12 +65,20 @@ const projects = [
     link: "https://trast.kinarya-tech.com/",
   },
   {
-    id: 5,
+    id: 6,
     title: "Kinarya Tech Company Profile",
     description: "A simple task management app using Laravel and Vue.",
     techStack: ["Node.js", "Express", "Bootstrap", "MySQL"],
     image: kutImage,
     link: "http://38.47.90.39:8200/",
+  },
+  {
+    id: 7,
+    title: "Kamila",
+    description: "A simple task management app using Laravel and Vue.",
+    techStack: ["Node.js", "Express", "Bootstrap", "MySQL"],
+    image: kamilaImage,
+    link: "https://kamila.ptkam.co.id/",
   },
 ];
 
