@@ -10,7 +10,7 @@ function App() {
     
     <div className="relative min-h-screen">
     {/* Background noise layer */}
-    <div className="absolute inset-0 bg-[url('noise.gif')] bg-repeat opacity-10 pointer-events-none z-[1]" />
+    <div className="absolute inset-0 bg-[url('/texture/noise.gif')] bg-repeat opacity-10 pointer-events-none z-[1]" />
 
     {/* Your main content */}
     <main className="relative z-10">
