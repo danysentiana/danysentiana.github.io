@@ -1,24 +1,25 @@
 import { HashRouter as Router } from "react-router-dom";
 
-import AppRoutes from "./routes/AppRoutes";
-import useLenis from "./hooks/useLenis";
+import AppRoutes from "@/routes/AppRoutes";
+import useLenis from "@/hooks/useLenis";
+import noise from "@/assets/texture/noise.gif";
 
 function App() {
   useLenis(); // Apply smooth scrolling globally
 
   return (
-    
     <div className="relative min-h-screen">
-    {/* Background noise layer */}
-    <div className="absolute inset-0 bg-[url('/texture/noise.gif')] bg-repeat opacity-10 pointer-events-none z-[1]" />
+      <div
+        className="absolute inset-0 bg-repeat opacity-10 pointer-events-none z-[1]"
+        style={{ backgroundImage: `url(${noise})` }}
+      />
 
-    {/* Your main content */}
-    <main className="relative z-10">
-      <Router>
-        <AppRoutes />
-      </Router>
-    </main>
-  </div>
+      <main className="relative z-10">
+        <Router>
+          <AppRoutes />
+        </Router>
+      </main>
+    </div>
   );
 }
 
