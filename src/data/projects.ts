@@ -1,6 +1,6 @@
 import { 
   siReact, siNodedotjs, siLaravel, siExpress, 
-  siBootstrap, siMysql, siTypescript, siTailwindcss
+  siBootstrap, siMysql, siTypescript, siTailwindcss, siPhp, siJavascript
 } from "simple-icons";
 
 const techStack = [
@@ -12,6 +12,8 @@ const techStack = [
   { name: "MySQL", icon: siMysql },
   { name: "TypeScript", icon: siTypescript },
   { name: "Tailwind CSS", icon: siTailwindcss },
+  { name: "PHP", icon: siPhp },
+  { name: "Javascript", icon: siJavascript },
 ];
 
 import clearenceImage from "@/assets/projects/Clarence.png";
@@ -21,6 +23,8 @@ import rakitWeb from "@/assets/projects/rakit-web.png";
 import coopinImage from "@/assets/projects/coopin.png";
 import kutImage from "@/assets/projects/kinarya-tech.png";
 import kamilaImage from "@/assets/projects/kamila.png";
+import bisaDesignImage from "@/assets/projects/bisa-design.png";
+import stobarImage from "@/assets/projects/stobar.png";
 
 // projects data
 const projects = [
@@ -79,6 +83,22 @@ const projects = [
     techStack: ["Node.js", "Express", "Bootstrap", "MySQL"],
     image: kamilaImage,
     link: "https://kamila.ptkam.co.id/",
+  },
+  {
+    id: 8,
+    title: "Stobar",
+    description: "A simple task management app using Laravel and Vue.",
+    techStack: ["PHP", "Javascript", "Bootstrap", "MySQL"],
+    image: stobarImage,
+    link: "",
+  },
+  {
+    id: 9,
+    title: "Bisa Design",
+    description: "A simple task management app using Laravel and Vue.",
+    techStack: ["Laravel", "Javascript", "Bootstrap"],
+    image: bisaDesignImage,
+    link: "https://bisa.design/",
   },
 ];
 
