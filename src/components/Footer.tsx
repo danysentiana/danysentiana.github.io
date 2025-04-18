@@ -22,7 +22,7 @@ const socialLinks = [
 const Footer = () => {
     return (
         <footer className="w-full px-5 lg:px-40 xl:px-72 ">
-            <div className="container flex flex-col-reverse md:flex-row justify-between items-center py-4 px-5 md:py-7 border shadow-md bg-neutral-50/90 dark:bg-neutral-900/90 text-neutral-950 dark:text-neutral-50 rounded-t-3xl md:rounded-t-4xl gap-3">
+            <div className="container flex flex-col-reverse md:flex-row justify-between items-center py-4 px-5 md:py-7 border shadow-md bg-neutral-50/95 dark:bg-neutral-950/95 text-neutral-950 dark:text-neutral-50 rounded-t-3xl md:rounded-t-4xl gap-3">
                 <p className="text-center font-roboto text-[12px] md:text-[16px]">This web was made with <FontAwesomeIcon icon={faHeart} size="1x" className="text-red-500" /> by me, Dany Sentiana © { new Date().getFullYear() }</p>
 
                 <div className="flex justify-center gap-1">

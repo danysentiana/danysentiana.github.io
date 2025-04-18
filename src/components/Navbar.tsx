@@ -106,7 +106,7 @@ const Navbar = () => {
 
   return (
     <motion.nav
-      className="bg-neutral-50/90 dark:bg-neutral-900/95 shadow-sm dark:shadow-none fixed top-3.5 rounded-4xl 2xl:rounded-[45px] border left-1/2 transform -translate-x-1/2 w-[90%] lg:w-[75%] 2xl:w-[100%] max-w-6xl 2xl:max-w-7xl z-50"
+      className="bg-neutral-50/90 dark:bg-neutral-950/95 shadow-sm dark:shadow-none fixed top-3.5 rounded-4xl 2xl:rounded-[45px] border left-1/2 transform -translate-x-1/2 w-[90%] lg:w-[75%] 2xl:w-[100%] max-w-6xl 2xl:max-w-7xl z-50"
       variants={MenuVariants}
       initial="hidden"
       animate="visible"

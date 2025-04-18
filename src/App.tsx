@@ -10,8 +10,12 @@ function App() {
   return (
     <div className="relative min-h-screen">
       <div
-        className="absolute inset-0 bg-repeat opacity-10 pointer-events-none z-[1]"
-        style={{ backgroundImage: `url(${noise})` }}
+        className="fixed inset-0 w-screen h-screen pointer-events-none z-[1000]"
+        style={{
+          backgroundImage: `url(${noise})`,
+          backgroundRepeat: "repeat",
+          opacity: 0.04,
+        }}
       />
 
       <main className="relative z-10">
