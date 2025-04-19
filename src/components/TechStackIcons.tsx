@@ -32,14 +32,14 @@ const TechStackIcons = () => {
     const isTouch = useIsTouchDevice();
     
     return (
-        <div className="mt-8 grid grid-cols-5 sm:grid-cols-6 md:grid-cols-9 gap-6">
+        <div className="mt-8 grid grid-cols-5 sm:grid-cols-6 md:grid-cols-9 gap-6 border rounded-2xl p-6">
             {techIcons.map((icon) => (
                 <div key={icon.title} className="flex justify-center items-center align-middle place-items-center content-center">
                     {isTouch ? (
                         <Popover>
                             <PopoverTrigger>
                                 <svg 
-                                    className="w-12 h-12 md:w-14 md:h-14"
+                                    className="w-10 h-10 md:w-12 md:h-12"
                                     viewBox="0 0 24 24" 
                                     fill="none"
                                 >
@@ -50,8 +50,8 @@ const TechStackIcons = () => {
                                     />
                                 </svg>
                             </PopoverTrigger>
-                            <PopoverContent className="max-w-[150px] text-center">
-                                <p className="text-sm font-semibold">{icon.title}</p>
+                            <PopoverContent className="w-auto px-2 py-1 text-sm font-semibold rounded-md">
+                                {icon.title}
                             </PopoverContent>
                         </Popover>
                     ) : (
@@ -59,7 +59,7 @@ const TechStackIcons = () => {
                             <Tooltip>
                                 <TooltipTrigger>
                                     <svg 
-                                        className="w-12 h-12 md:w-14 md:h-14"
+                                        className="w-10 h-10 md:w-12 md:h-12"
                                         viewBox="0 0 24 24" 
                                         fill="none"
                                     >

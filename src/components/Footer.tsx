@@ -11,6 +11,12 @@ import {
     TooltipTrigger,
 } from "@/components/ui/tooltip"
 
+import {
+    Popover,
+    PopoverTrigger,
+    PopoverContent,
+  } from "@/components/ui/popover";
+
 const socialLinks = [
     { name: "GitHub", icon: faGithub, url: "https://github.com", external: true },
     { name: "LinkedIn", icon: faLinkedin, url: "https://linkedin.com", external: true },
@@ -19,9 +25,13 @@ const socialLinks = [
     { name: "Phone", icon: faPhone, url: "tel:+1234567890" }
 ];
 
+import useIsTouchDevice from "@/hooks/useIsTouchDevice";
+
 const Footer = () => {
+    const isTouch = useIsTouchDevice();
+
     return (
-        <footer className="w-full px-5 lg:px-40 xl:px-72 ">
+        <footer className="w-full px-5 lg:px-40 xl:px-72 flex justify-center">
             <div className="container flex flex-col-reverse md:flex-row justify-between items-center py-4 px-5 md:py-7 border shadow-md bg-neutral-50 dark:bg-neutral-950 text-neutral-950 dark:text-neutral-50 rounded-t-3xl md:rounded-t-4xl gap-3">
                 <p className="text-center font-roboto text-[12px] md:text-[16px]">This web was made with <FontAwesomeIcon icon={faHeart} size="1x" className="text-red-500" /> by me, Dany Sentiana © { new Date().getFullYear() }</p>
 
@@ -44,19 +54,32 @@ const Footer = () => {
                             </Link>
                         </Button>
                     ))}
-                    
-                    <TooltipProvider>
-                        <Tooltip>
-                            <TooltipTrigger asChild>
+
+                    {isTouch ? (
+                        <Popover>
+                            <PopoverTrigger asChild>
                                 <Button size={"icon"} variant={"outline"} className="rounded-full dark:border-neutral-800 hover:text-neutral-600 cursor-pointer">
                                     <FontAwesomeIcon icon={faLocationDot} size="1x"/>
                                 </Button>
-                            </TooltipTrigger>
-                            <TooltipContent>
+                            </PopoverTrigger>
+                            <PopoverContent side="bottom" className="w-auto px-2 py-1 text-sm font-semibold rounded-md">
                                 <p>Depok, Indonesia</p>
-                            </TooltipContent>
-                        </Tooltip>
-                    </TooltipProvider>
+                            </PopoverContent>
+                        </Popover>
+                    ) : (
+                        <TooltipProvider>
+                            <Tooltip>
+                                <TooltipTrigger asChild>
+                                    <Button size={"icon"} variant={"outline"} className="rounded-full dark:border-neutral-800 hover:text-neutral-600 cursor-pointer">
+                                        <FontAwesomeIcon icon={faLocationDot} size="1x"/>
+                                    </Button>
+                                </TooltipTrigger>
+                                <TooltipContent>
+                                    <p>Depok, Indonesia</p>
+                                </TooltipContent>
+                            </Tooltip>
+                        </TooltipProvider>
+                    )}
                 </div>
             </div>
         </footer>
