@@ -89,7 +89,7 @@ const ProjectCard = ({ title, description, techStack, link, image }: ProjectProp
                     {isTouch ? (
                       <Popover>
                         <PopoverTrigger asChild>{iconSvg}</PopoverTrigger>
-                        <PopoverContent side="top" className="p-2 text-sm font-semibold">
+                        <PopoverContent side="bottom" className="w-auto px-2 py-1 text-sm font-semibold rounded-md">
                           {tech}
                         </PopoverContent>
                       </Popover>
