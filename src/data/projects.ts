@@ -25,6 +25,7 @@ import kutImage from "@/assets/projects/kinarya-tech.png";
 import kamilaImage from "@/assets/projects/kamila.png";
 import bisaDesignImage from "@/assets/projects/bisa-design.png";
 import stobarImage from "@/assets/projects/stobar.png";
+import trastImage from "@/assets/projects/trast.png";
 
 // projects data
 const projects = [
@@ -65,7 +66,7 @@ const projects = [
     title: "[Rakit] Trast",
     description: "A simple task management app using Laravel and Vue.",
     techStack: ["Node.js", "Express", "Bootstrap", "MySQL"],
-    image: clearenceImage,
+    image: trastImage,
     link: "https://trast.kinarya-tech.com/",
   },
   {
@@ -90,7 +91,7 @@ const projects = [
     description: "A simple task management app using Laravel and Vue.",
     techStack: ["PHP", "Javascript", "Bootstrap", "MySQL"],
     image: stobarImage,
-    link: "",
+    link: "https://gitlab.com/dsentiana/stobar",
   },
   {
     id: 9,
@@ -98,6 +99,30 @@ const projects = [
     description: "A simple task management app using Laravel and Vue.",
     techStack: ["Laravel", "Javascript", "Bootstrap"],
     image: bisaDesignImage,
+    link: "https://bisa.design/",
+  },
+  {
+    id: 10,
+    title: "FMC",
+    description: "A simple task management app using Laravel and Vue.",
+    techStack: ["Node.js", "Express", "Bootstrap", "MySQL"],
+    image: clearenceImage,
+    link: "https://bisa.design/",
+  },
+  {
+    id: 11,
+    title: "Project Management",
+    description: "A simple task management app using Laravel and Vue.",
+    techStack: ["Laravel", "Javascript", "Bootstrap"],
+    image: clearenceImage,
+    link: "https://bisa.design/",
+  },
+  {
+    id: 12,
+    title: "Dashboard",
+    description: "A simple task management app using Laravel and Vue.",
+    techStack: ["Node.js", "Express", "Bootstrap", "MySQL"],
+    image: clearenceImage,
     link: "https://bisa.design/",
   },
 ];
