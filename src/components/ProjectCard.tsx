@@ -15,6 +15,12 @@ import {
   TooltipTrigger,
 } from "@/components/ui/tooltip"
 
+import {
+  Popover,
+  PopoverTrigger,
+  PopoverContent,
+} from "@/components/ui/popover";
+
 import useIsTouchDevice from "@/hooks/useIsTouchDevice";
 
 interface ProjectProps {
@@ -39,7 +45,7 @@ const techStackIcons: Record<string, { hex: string; svg: string }> = {
 };
 
 const ProjectCard = ({ title, description, techStack, link, image }: ProjectProps) => {
-  const isTouch = useIsTouchDevice(); // ✅ Now inside component, valid usage
+  const isTouch = useIsTouchDevice();
 
   return (
     <Card className="rounded-2xl shadow-md dark:bg-neutral-900 overflow-hidden pt-0 pb-3">
@@ -80,8 +86,13 @@ const ProjectCard = ({ title, description, techStack, link, image }: ProjectProp
                     key={tech}
                     className="flex items-center gap-1 px-2 py-1 text-sm bg-neutral-100 dark:bg-neutral-800 rounded-md"
                   >
-                    {isTouch || !icon ? (
-                      iconSvg
+                    {isTouch ? (
+                      <Popover>
+                        <PopoverTrigger asChild>{iconSvg}</PopoverTrigger>
+                        <PopoverContent side="top" className="p-2 text-sm font-semibold">
+                          {tech}
+                        </PopoverContent>
+                      </Popover>
                     ) : (
                       <TooltipProvider>
                         <Tooltip>
