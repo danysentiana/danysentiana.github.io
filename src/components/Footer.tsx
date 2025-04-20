@@ -1,6 +1,6 @@
 import { Button } from "./ui/button";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faGithub, faLinkedin, faInstagram } from "@fortawesome/free-brands-svg-icons";
+import { faGithub, faLinkedin, faWhatsapp} from "@fortawesome/free-brands-svg-icons";
 import { faPhone, faEnvelope, faLocationDot, faHeart } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 
@@ -18,11 +18,12 @@ import {
   } from "@/components/ui/popover";
 
 const socialLinks = [
-    { name: "GitHub", icon: faGithub, url: "https://github.com", external: true },
-    { name: "LinkedIn", icon: faLinkedin, url: "https://linkedin.com", external: true },
-    { name: "Instagram", icon: faInstagram, url: "https://instagram.com", external: true },
-    { name: "Email", icon: faEnvelope, url: "mailto:example@email.com" },
-    { name: "Phone", icon: faPhone, url: "tel:+1234567890" }
+    { name: "GitHub", icon: faGithub, url: "https://github.com/danysentiana", external: true },
+    { name: "LinkedIn", icon: faLinkedin, url: "https://www.linkedin.com/in/danysentiana/", external: true },
+    // { name: "Instagram", icon: faInstagram, url: "https://instagram.com", external: true },
+    { name: "WhatsApp", icon: faWhatsapp, url: "https://wa.me/6285174378840", external: true },
+    { name: "Email", icon: faEnvelope, url: "mailto:danysentiana1200@gmail.com" },
+    { name: "Phone", icon: faPhone, url: "tel:+6285173216543" }
 ];
 
 import useIsTouchDevice from "@/hooks/useIsTouchDevice";
@@ -33,7 +34,7 @@ const Footer = () => {
     return (
         <footer className="w-full px-5 lg:px-40 xl:px-72 flex justify-center">
             <div className="container flex flex-col-reverse md:flex-row justify-between items-center py-4 px-5 md:py-7 border shadow-md bg-neutral-50 dark:bg-neutral-950 text-neutral-950 dark:text-neutral-50 rounded-t-3xl md:rounded-t-4xl gap-3">
-                <p className="text-center font-roboto text-[12px] md:text-[16px]">This web was made with <FontAwesomeIcon icon={faHeart} size="1x" className="text-red-500" /> by me, Dany Sentiana © { new Date().getFullYear() }</p>
+                <p className="text-center font-roboto text-[12px] md:text-[16px]">This site was made with <FontAwesomeIcon icon={faHeart} size="1x" className="text-red-500" /> by me, Dany Sentiana © { new Date().getFullYear() }</p>
 
                 <div className="flex justify-center gap-1">
                     {socialLinks.map((social) => (

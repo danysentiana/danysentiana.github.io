@@ -27,10 +27,10 @@ const Projects = () => {
     <>
     <section id="projects" className="w-full px-6 lg:px-40 2xl:px-64">
       <div className="container bg-transparent pt-40 pb-28 mx-auto min-h-screen">
-        <h1 className="font-bebas text-7xl font-bold text-center mb-3">My Projects</h1>
+        <h1 className="font-bebas text-4xl md:text-7xl font-bold text-center mb-3">My Projects</h1>
 
         <div className="flex justify-center mb-5">
-          <p className="font-roboto text-lg text-gray-600 dark:text-gray-300 max-w-3xl text-justify md:text-center">
+          <p className="font-roboto text-base md:text-lg text-gray-600 dark:text-gray-300 max-w-3xl text-justify md:text-center">
               Here are a few projects I've worked on recently. Each project is an opportunity to learn and grow, and I'm excited to share them with you.
           </p>
         </div>

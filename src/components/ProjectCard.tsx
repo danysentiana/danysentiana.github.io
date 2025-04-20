@@ -1,6 +1,7 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Link } from "lucide-react";
+import { useState } from "react";
 import { 
   siReact, siNodedotjs, siLaravel, siExpress, siBootstrap, 
   siMysql, siTailwindcss, 
@@ -45,6 +46,7 @@ const techStackIcons: Record<string, { hex: string; svg: string }> = {
 };
 
 const ProjectCard = ({ title, description, techStack, link, image }: ProjectProps) => {
+  const [expanded, setExpanded] = useState(false);
   const isTouch = useIsTouchDevice();
 
   return (
@@ -59,7 +61,14 @@ const ProjectCard = ({ title, description, techStack, link, image }: ProjectProp
       </CardHeader>
       <CardContent className="-mt-4 px-0">
         <div className="px-4">
-          <p className="text-gray-600 dark:text-gray-300">{description}</p>
+          <p
+            onClick={() => setExpanded(!expanded)}
+            className={`text-gray-600 dark:text-gray-300 text-sm md:text-base cursor-pointer transition-all duration-300 ease-in-out ${
+              expanded ? "" : "line-clamp-2"
+            }`}
+          >
+            {description}
+          </p>
 
           <div className="md:min-h-7">
             <div className="mt-3 flex flex-wrap gap-2">

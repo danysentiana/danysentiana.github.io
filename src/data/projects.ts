@@ -32,15 +32,15 @@ const projects = [
   {
     id: 1,
     title: "[Rakit] Website Profile",
-    description: "A personal website built with React and Tailwind CSS.",
-    techStack: ["React", "Tailwind CSS"],
+    description: "A company profile website, built to showcase services, contact info, and key company details.",
+    techStack: ["Node.js", "Express", "Bootstrap", "MySQL"],
     image: rakitWeb, 
     link: "http://www.rakitaja.com/",
   },
   {
     id: 2,
     title: "BayarAja",
-    description: "A full-stack e-commerce application with Next.js and Stripe.",
+    description: "An admin dashboard for manages users, transactions, and reports efficiently in real-time.",
     techStack: ["Express", "Node.js", "Bootstrap", "MySQL"],
     image: bayarajaImage,
     link: "https://adminbayaraja.kiselindonesia.com/",
@@ -48,7 +48,7 @@ const projects = [
   {
     id: 3,
     title: "Marissa",
-    description: "A simple task management app using Laravel and Vue.",
+    description: "A web based HRIS dashboard for managing employees, payroll, and other HR activities.",
     techStack: ["Laravel", "Bootstrap", "MySQL"],
     image: marissaImage,
     link: "https://marissa.kiselindonesia.com/",
@@ -56,7 +56,7 @@ const projects = [
   {
     id: 4,
     title: "[Rakit] Coopin",
-    description: "A simple task management app using Laravel and Vue.",
+    description: "A dashboard for managing cooperative activities, including member data, transactions, reports, etc.",
     techStack: ["Node.js", "Express", "Bootstrap", "MySQL"],
     image: coopinImage,
     link: "https://dashboardcoopin.kinarya-tech.com/",
@@ -64,7 +64,7 @@ const projects = [
   {
     id: 5,
     title: "[Rakit] Trast",
-    description: "A simple task management app using Laravel and Vue.",
+    description: "A management system for drivers, vehicles, users, and car pooling operations",
     techStack: ["Node.js", "Express", "Bootstrap", "MySQL"],
     image: trastImage,
     link: "https://trast.kinarya-tech.com/",
@@ -72,7 +72,7 @@ const projects = [
   {
     id: 6,
     title: "Kinarya Tech Company Profile",
-    description: "A simple task management app using Laravel and Vue.",
+    description: "A company profile website, built to showcase services, contact info, and key company details.",
     techStack: ["Node.js", "Express", "Bootstrap", "MySQL"],
     image: kutImage,
     link: "http://38.47.90.39:8200/",
@@ -80,15 +80,15 @@ const projects = [
   {
     id: 7,
     title: "Kamila",
-    description: "A simple task management app using Laravel and Vue.",
+    description: "A web based HRIS dashboard for managing employees, payroll, and other HR activities.",
     techStack: ["Node.js", "Express", "Bootstrap", "MySQL"],
     image: kamilaImage,
     link: "https://kamila.ptkam.co.id/",
   },
   {
     id: 8,
-    title: "Stobar",
-    description: "A simple task management app using Laravel and Vue.",
+    title: "Stobar (Thesis Project)",
+    description: "A stock management system for retail stores, built to track inventory and manage stock levels.",
     techStack: ["PHP", "Javascript", "Bootstrap", "MySQL"],
     image: stobarImage,
     link: "https://gitlab.com/dsentiana/stobar",
@@ -96,7 +96,7 @@ const projects = [
   {
     id: 9,
     title: "Bisa Design",
-    description: "A simple task management app using Laravel and Vue.",
+    description: "An online design learning platform, certification, and publishing features for aspiring designers.",
     techStack: ["Laravel", "Javascript", "Bootstrap"],
     image: bisaDesignImage,
     link: "https://bisa.design/",
