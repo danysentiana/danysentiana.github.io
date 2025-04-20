@@ -38,9 +38,11 @@ const Hero = () => {
                                 <Link to={"/projects"}> My Projects <ChevronRight className="w-6 h-6" /> </Link>
                             </Button>
 
-                            <Button variant={"outline"} size={"xl"} className="ml-2 font-roboto rounded-4xl px-11 py-4 flex items-center">
-                                Download CV <ArrowDownToLine className="w-6 h-6" /> 
-                            </Button>
+                            <a href="/files/CV_DANY_SENTIANA.pdf" download>
+                                <Button variant="outline" size="xl" className="ml-2 font-roboto rounded-4xl px-11 py-4 flex items-center">
+                                    Download CV <ArrowDownToLine className="w-6 h-6 ml-2" />
+                                </Button>
+                            </a>
                         </div>
                     </div>
 

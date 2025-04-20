@@ -16,7 +16,6 @@ const techStack = [
   { name: "Javascript", icon: siJavascript },
 ];
 
-import clearenceImage from "@/assets/projects/Clarence.png";
 import marissaImage from "@/assets/projects/marissa.png";
 import bayarajaImage from "@/assets/projects/bayaraja.png";
 import rakitWeb from "@/assets/projects/rakit-web.png";
@@ -26,6 +25,8 @@ import kamilaImage from "@/assets/projects/kamila.png";
 import bisaDesignImage from "@/assets/projects/bisa-design.png";
 import stobarImage from "@/assets/projects/stobar.png";
 import trastImage from "@/assets/projects/trast.png";
+import fmcImage from "@/assets/projects/fmc.png";
+import pmImage from "@/assets/projects/pm.png";
 
 // projects data
 const projects = [
@@ -104,26 +105,18 @@ const projects = [
   {
     id: 10,
     title: "FMC",
-    description: "A simple task management app using Laravel and Vue.",
+    description: "A dashboard for managing regional activities, including member data, transactions, reports, etc.",
     techStack: ["Node.js", "Express", "Bootstrap", "MySQL"],
-    image: clearenceImage,
-    link: "https://bisa.design/",
+    image: fmcImage,
+    link: "https://admin-fmc.kinarya-tech.com/",
   },
   {
     id: 11,
     title: "Project Management",
-    description: "A simple task management app using Laravel and Vue.",
+    description: "A management system for project management, including member data, transactions, reports, etc.",
     techStack: ["Laravel", "Javascript", "Bootstrap"],
-    image: clearenceImage,
-    link: "https://bisa.design/",
-  },
-  {
-    id: 12,
-    title: "Dashboard",
-    description: "A simple task management app using Laravel and Vue.",
-    techStack: ["Node.js", "Express", "Bootstrap", "MySQL"],
-    image: clearenceImage,
-    link: "https://bisa.design/",
+    image: pmImage,
+    link: "https://projectmanagement.kinarya-tech.com/login",
   },
 ];
 
