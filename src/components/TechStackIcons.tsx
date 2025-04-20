@@ -32,7 +32,7 @@ const TechStackIcons = () => {
     const isTouch = useIsTouchDevice();
     
     return (
-        <div className="mt-8 grid grid-cols-5 sm:grid-cols-6 md:grid-cols-9 gap-6 border rounded-2xl p-6">
+        <div className="mt-8 grid grid-cols-5 sm:grid-cols-6 md:grid-cols-9 gap-6 border rounded-2xl p-6 shadow bg-neutral-100 dark:bg-neutral-900">
             {techIcons.map((icon) => (
                 <div key={icon.title} className="flex justify-center items-center align-middle place-items-center content-center">
                     {isTouch ? (
