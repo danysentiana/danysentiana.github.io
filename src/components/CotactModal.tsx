@@ -11,46 +11,25 @@ import {
   import { Textarea } from "@/components/ui/textarea"
   import { useState } from "react"
   import { toast } from "sonner"
+  import { useForm, ValidationError } from '@formspree/react';
+  import { useEffect } from "react";
   
   const ContactModal = () => {
     const [isOpen, setIsOpen] = useState(false)
-    const [formData, setFormData] = useState({ name: "", message: "" })
-    const [isSubmitting, setIsSubmitting] = useState(false)
-  
-    const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-      setFormData({ ...formData, [e.target.name]: e.target.value })
-    }
-  
-    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-      e.preventDefault()
-      setIsSubmitting(true)
-  
-      try {
-        const response = await fetch("https://formspree.io/f/meqwnkge", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/x-www-form-urlencoded",
-          },
-          body: new URLSearchParams({
-            name: formData.name,
-            message: formData.message,
-            _captcha: "false",
-          }),
-        })
-  
-        if (response.ok) {
-          toast.success("Message sent successfully!")
-          setFormData({ name: "", message: "" })
-          setIsOpen(false)
-        } else {
-          toast.error("Failed to send. Please try again.")
+    const [state, handleSubmit] = useForm("meqwnkge");
+
+    useEffect(() => {
+        if (state.succeeded) {
+            toast.success("Message sent successfully!")
+            setIsOpen(false)
         }
-      } catch (error) {
-        toast.error("Something went wrong.")
-      } finally {
-        setIsSubmitting(false)
-      }
-    }
+    }, [state.succeeded])
+
+    useEffect(() => {
+        if (state.errors) {
+            toast.error("Please fill out all fields.")
+        }
+    }, [state.errors])
   
     return (
       <Dialog open={isOpen} onOpenChange={setIsOpen}>
@@ -64,7 +43,7 @@ import {
                 <span>Send Message</span>
             </Button>
         </DialogTrigger>
-        <DialogContent className="md:max-w-md md:w-full md:max-w-lg">
+        <DialogContent className="md:max-w-md md:w-full">
           <DialogHeader>
             <DialogTitle>Send me a message</DialogTitle>
             <DialogDescription>I'll get back to you via email.</DialogDescription>
@@ -75,20 +54,26 @@ import {
               type="text"
               name="name"
               placeholder="Your Name"
-              value={formData.name}
-              onChange={handleChange}
               required
+            />
+            <ValidationError 
+              field="name"
+              prefix="Name"
+              errors={state.errors}
             />
             <Textarea
               name="message"
               placeholder="Your Message"
-              value={formData.message}
-              onChange={handleChange}
               required
             />
+            <ValidationError 
+              field="message"
+              prefix="Message"
+              errors={state.errors}
+            />
             <div className="flex justify-end items-end pt-4">
-                <Button type="submit" className="" disabled={isSubmitting}>
-                    {isSubmitting ? "Sending..." : "Send"}
+                <Button type="submit" className="" disabled={state.submitting}>
+                    {state.submitting ? "Sending..." : "Send"}
                 </Button>
             </div>
           </form>
