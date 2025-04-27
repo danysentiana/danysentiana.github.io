@@ -201,8 +201,9 @@ const Navbar = () => {
             className="space-y-4 px-2 pb-4"
           >
             {menuItems.map((item) => {
+              const isHome = location.pathname === "/";
               const isActive = item.path.startsWith("/#")
-              ? activeSection === item.path.replace("/", "")
+              ? isHome && activeSection === item.path.replace("/", "")
               : location.pathname === item.path;
             
               return (
