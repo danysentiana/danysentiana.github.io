@@ -16,7 +16,7 @@ const Hero = () => {
                 transition={{ duration: 1, ease: "easeInOut" }}
             >
                 <div className="container bg-transparent py-28 lg:min-h-screen flex flex-col-reverse lg:flex-row lg:justify-between lg:items-center lg:space-x-10">
-                    <div className="hero-text w-full text-left justify-items-center lg:justify-items-start">
+                    <div className="hero-text w-full text-left md:justify-items-center lg:justify-items-start">
                         <p className="text-3xl md:text-2xl lg:text-xl xl:text-2xl font-roboto text-neutral-800 dark:text-neutral-50 mb-2 mt-3">
                             Hello, I'm Danys
                         </p>

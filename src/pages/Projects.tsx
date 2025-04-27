@@ -3,6 +3,7 @@ import { projects } from "@/data/projects";
 import ProjectCard from "@/components/ProjectCard";
 import SearchBar from "@/components/SearchBar";
 import Footer from "@/components/Footer";
+import { motion } from "framer-motion";
 
 const Projects = () => {
   const [query, setQuery] = useState("");
@@ -25,7 +26,14 @@ const Projects = () => {
 
   return (
     <>
-    <section id="projects" className="w-full px-6 lg:px-40 2xl:px-64">
+    <motion.section 
+      id="projects" 
+      className="w-full px-6 lg:px-40 2xl:px-64"
+      initial={{ opacity: 0 }} 
+      whileInView={{ opacity: 1 }}
+      viewport={{ once: true }}  
+      transition={{ duration: 1, ease: "easeInOut" }}
+    >
       <div className="container bg-transparent pt-40 pb-28 mx-auto min-h-screen">
         <h1 className="font-bebas text-4xl md:text-7xl font-bold text-center mb-3">My Projects</h1>
 
@@ -75,7 +83,7 @@ const Projects = () => {
             </button>
           </div>
       </div>
-    </section>
+    </motion.section>
 
     <Footer />
     </>
