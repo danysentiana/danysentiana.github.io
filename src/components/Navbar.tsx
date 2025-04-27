@@ -129,8 +129,10 @@ const Navbar = () => {
         {/* Desktop Menu */}
         <ul className="hidden lg:flex space-x-6">
           {menuItems.map((item) => {
+            const isHome = location.pathname === "/";
+            
             const isActive = item.path.startsWith("/#")
-            ? activeSection === item.path.replace("/", "")
+            ? isHome && activeSection === item.path.replace("/", "")
             : location.pathname === item.path;
             return (
               <li key={item.path} className="d-flex my-auto justify-center lg:text-lg text-center">

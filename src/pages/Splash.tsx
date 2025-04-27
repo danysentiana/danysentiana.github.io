@@ -44,8 +44,6 @@ const Splash = () => {
                 transition={{
                     duration: 3,
                     ease: "easeInOut",
-                    repeat: Infinity,
-                    repeatType: "loop",
                 }}
             />
             <h1 className="text-2xl md:text-3xl font-bold font-bebas text-neutral-950 dark:text-neutral-50">

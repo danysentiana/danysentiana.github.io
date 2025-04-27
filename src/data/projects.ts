@@ -41,7 +41,7 @@ const projects = [
   {
     id: 2,
     title: "BayarAja",
-    description: "An admin dashboard for manages users, transactions, and reports efficiently in real-time.",
+    description: "An admin dashboard for manages users, transactions, and reports efficiently.",
     techStack: ["Express", "Node.js", "Bootstrap", "MySQL"],
     image: bayarajaImage,
     link: "https://adminbayaraja.kiselindonesia.com/",
