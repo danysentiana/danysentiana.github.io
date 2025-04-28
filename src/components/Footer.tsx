@@ -24,7 +24,7 @@ const socialLinks = [
     // { name: "Instagram", icon: faInstagram, url: "https://instagram.com", external: true },
     { name: "WhatsApp", icon: faWhatsapp, url: "https://wa.me/6285174378840", external: true },
     { name: "Email", icon: faEnvelope, url: "mailto:danysentiana1200@gmail.com" },
-    { name: "Phone", icon: faPhone, url: "tel:+6285173216543" }
+    { name: "Phone", icon: faPhone, url: "tel:+6285117326543" }
 ];
 
 import useIsTouchDevice from "@/hooks/useIsTouchDevice";
@@ -70,7 +70,7 @@ const Footer = () => {
                                     <FontAwesomeIcon icon={faLocationDot} size="1x"/>
                                 </Button>
                             </PopoverTrigger>
-                            <PopoverContent side="bottom" className="w-auto px-2 py-1 text-sm font-semibold rounded-md">
+                            <PopoverContent side="top" className="w-auto px-2 py-1 text-sm font-semibold rounded-md">
                                 <p>Depok, Indonesia</p>
                             </PopoverContent>
                         </Popover>
