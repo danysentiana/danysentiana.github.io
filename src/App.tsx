@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { HashRouter as Router } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
+import ScrollToTop from "@/components/ScrollToTop";
 
 import AppRoutes from "@/routes/AppRoutes";
 import useLenis from "@/hooks/useLenis";
@@ -42,6 +43,7 @@ function App() {
       {!loading && (
         <main className="relative z-10">
           <Router>
+            <ScrollToTop />
             <AppRoutes />
           </Router>
         </main>

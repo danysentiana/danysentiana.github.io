@@ -46,10 +46,10 @@ import {
         <DialogContent className="md:max-w-md md:w-full">
           <DialogHeader>
             <DialogTitle>Send me a message</DialogTitle>
-            <DialogDescription>I'll get back to you via email.</DialogDescription>
+            {/* <DialogDescription>I'll get back to you via email.</DialogDescription> */}
           </DialogHeader>
   
-          <form className="space-y-4" onSubmit={handleSubmit}>
+          <form className="space-y-4 pt-3" onSubmit={handleSubmit}>
             <Input
               type="text"
               name="name"

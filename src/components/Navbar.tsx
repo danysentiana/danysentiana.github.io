@@ -58,7 +58,7 @@ const Navbar = () => {
     { path: "/#about", label: "About Me" },
     { path: "/#tech-stack", label: "Tech Stack" },
     { path: "/projects", label: "Projects" },
-    { path: "/#contact", label: "Contact" },
+    { path: "/#contact", label: "Contact Me" },
   ];
 
   const mobileMenuVariants = {

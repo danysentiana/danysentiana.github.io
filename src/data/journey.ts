@@ -32,7 +32,7 @@ export const journeyData: JourneyItem[] = [
     {
         id: 3,
         title: "Fullstack IT Bootcamp",
-        date: "Feb 2024 - Jul 2024",
+        date: "Feb 2024 - Apr 2024",
         description: "Selected to join Fullstack IT Bootcamp by PT Lawencon International to learn more about fullstack web development.",
         type: "Education",
         companyOrSchool: "PT Lawencon International",

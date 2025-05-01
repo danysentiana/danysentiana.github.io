@@ -18,7 +18,7 @@ const SearchBar = ({ query, setQuery }: SearchBarProps) => {
         placeholder="Search projects title..."
         value={query}
         onChange={(e) => setQuery(e.target.value)}
-        className="w-full p-3 pl-12 text-lg border shadow-sm rounded-4xl dark:bg-neutral-800 dark:border-neutral-700"
+        className="w-full p-3 pl-12 xl:py-7 text-lg border shadow-sm rounded-4xl dark:bg-neutral-800 dark:border-neutral-700"
       />
     </div>
   );

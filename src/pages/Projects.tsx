@@ -14,6 +14,10 @@ const Projects = () => {
     setCurrentPage(1);
   }, [query])
 
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, [currentPage]);
+
   // Filter projects based on search query
   const filteredProjects = projects.filter((project) =>
     project.title.toLowerCase().includes(query.toLowerCase())
