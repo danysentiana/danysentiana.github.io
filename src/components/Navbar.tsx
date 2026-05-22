@@ -156,7 +156,7 @@ const Navbar = () => {
                     <Link
                       to={item.path}
                       className={`
-                        cursor-pointer 
+                        cursor-pointer inline-block
                         text-neutral-700 dark:text-neutral-50 
                         transition duration-300 ease-in-out 
                         transform hover:-translate-y-0.5 hover:scale-105 
@@ -231,7 +231,7 @@ const Navbar = () => {
                     <Link
                       to={item.path}
                       className={`
-                        cursor-pointer 
+                        cursor-pointer inline-block
                         text-neutral-700 dark:text-neutral-50 
                         transition duration-300 ease-in-out 
                         transform hover:-translate-y-0.5 hover:scale-105 

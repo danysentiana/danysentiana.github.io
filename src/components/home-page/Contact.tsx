@@ -1,27 +1,109 @@
 import ContactModal from "@/components/ContactModal";
 import { motion } from "framer-motion";
+
+const containerVariants = {
+    hidden: { opacity: 0, y: 60 },
+    visible: {
+        opacity: 1,
+        y: 0,
+        transition: {
+            duration: 0.8,
+            ease: "easeOut",
+        },
+    },
+};
+
+const headingVariants = {
+    hidden: { opacity: 0, y: 30, filter: "blur(12px)" },
+    visible: {
+        opacity: 1,
+        y: 0,
+        filter: "blur(0px)",
+        transition: { duration: 0.7, ease: "easeOut", delay: 0.3 },
+    },
+};
+
+const accentVariants = {
+    hidden: { scaleX: 0 },
+    visible: {
+        scaleX: 1,
+        transition: { duration: 0.5, ease: "easeOut", delay: 0.5 },
+    },
+};
+
+const textVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+        opacity: 1,
+        y: 0,
+        transition: { duration: 0.6, ease: "easeOut", delay: 0.6 },
+    },
+};
+
+const buttonVariants = {
+    hidden: { opacity: 0, scale: 0.8 },
+    visible: {
+        opacity: 1,
+        scale: 1,
+        transition: { duration: 0.5, ease: "easeOut", delay: 0.8 },
+    },
+};
+
 const Contact = () => {
     return (
         <section id="contact" className="w-full px-6 lg:px-40 2xl:px-80 my-32">
             <motion.div 
-                initial={{ opacity: 0 }} 
-                whileInView={{ opacity: 1 }}
-                viewport={{ once: true }}  
-                transition={{ duration: 1, ease: "easeInOut" }}
+                variants={containerVariants}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.3 }}
                 className="flex flex-col gap-2 md:flex-row w-full justify-between container shadow border rounded-xl p-7 md:p-20 mx-auto bg-neutral-100 dark:bg-neutral-900"
             >
                 {/* Left - Text */}
                 <div className="w-full md:basis-6/12 text-center md:text-start flex flex-col justify-center">
-                    <h1 className="font-bebas text-4xl md:text-7xl font-bold mb-3">Contact Me</h1>
-                    <p className="font-roboto text-base md:text-lg text-justify text-gray-600 dark:text-gray-300 max-w-3xl">
+                    <motion.h1 
+                        className="font-bebas text-4xl md:text-7xl font-bold mb-3"
+                        variants={headingVariants}
+                    >
+                        Contact Me
+                    </motion.h1>
+                    <motion.div
+                        className="w-16 h-1 bg-blue-500 dark:bg-yellow-400 rounded-full origin-center md:origin-left"
+                        variants={accentVariants}
+                    />
+                    <motion.p 
+                        className="font-roboto text-base md:text-lg text-justify text-gray-600 dark:text-gray-300 max-w-3xl mt-4"
+                        variants={textVariants}
+                    >
                         If you have any questions or would like to work together, please don't hesitate to contact me. I look forward to hearing from you!
-                    </p>
+                    </motion.p>
                 </div>
-                <div className="w-full md:basis-6/12 flex items-center justify-center md:justify-end">
-                    <ContactModal />
-                </div>
+
+                {/* Right - Button */}
+                <motion.div 
+                    className="w-full md:basis-6/12 flex items-center justify-center md:justify-end"
+                    variants={buttonVariants}
+                >
+                    <motion.div
+                        animate={{ 
+                            boxShadow: [
+                                "0 0 0 0 rgba(59, 130, 246, 0)",
+                                "0 0 0 10px rgba(59, 130, 246, 0.1)",
+                                "0 0 0 0 rgba(59, 130, 246, 0)",
+                            ],
+                        }}
+                        transition={{ 
+                            duration: 2.5, 
+                            repeat: Infinity, 
+                            ease: "easeInOut",
+                            delay: 1.5,
+                        }}
+                        className="rounded-full"
+                    >
+                        <ContactModal />
+                    </motion.div>
+                </motion.div>
             </motion.div>
-            
         </section>
     )
 }
