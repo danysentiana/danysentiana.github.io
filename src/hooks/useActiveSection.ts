@@ -1,9 +1,14 @@
 import { useEffect, useState } from "react";
+import { useLocation } from "react-router-dom";
 
 export const useActiveSection = (ids: string[]) => {
   const [activeSection, setActiveSection] = useState<string>("");
+  const location = useLocation();
 
   useEffect(() => {
+    // Only observe on home page
+    if (location.pathname !== "/") return;
+
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -18,13 +23,19 @@ export const useActiveSection = (ids: string[]) => {
       }
     );
 
-    ids.forEach((id) => {
-      const el = document.getElementById(id);
-      if (el) observer.observe(el);
-    });
+    // Small delay to ensure DOM elements are rendered after navigation
+    const timeoutId = setTimeout(() => {
+      ids.forEach((id) => {
+        const el = document.getElementById(id);
+        if (el) observer.observe(el);
+      });
+    }, 100);
 
-    return () => observer.disconnect();
-  }, [JSON.stringify(ids)]);
+    return () => {
+      clearTimeout(timeoutId);
+      observer.disconnect();
+    };
+  }, [JSON.stringify(ids), location.pathname]);
 
   return activeSection;
 };

@@ -2,6 +2,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Link } from "lucide-react";
 import { useState } from "react";
+import { motion } from "framer-motion";
 import { techStackIconMap } from "@/data/techIcons";
 
 import {
@@ -33,7 +34,10 @@ const ProjectCard = ({ title, description, techStack, link, image }: ProjectProp
   const isTouch = useIsTouchDevice();
 
   const content = (
-    <Card className="rounded-2xl shadow-md dark:bg-neutral-900 overflow-hidden pt-0 pb-3">
+    <motion.div
+      whileHover={{ y: -5, transition: { type: "spring", stiffness: 300, damping: 20 } }}
+    >
+    <Card className="rounded-2xl shadow-md dark:bg-neutral-900 overflow-hidden pt-0 pb-3 hover:shadow-xl dark:hover:shadow-neutral-800/50 transition-shadow duration-300">
       <CardHeader className="p-0">
         <img 
           src={image}
@@ -134,6 +138,7 @@ const ProjectCard = ({ title, description, techStack, link, image }: ProjectProp
         </div>
       </CardContent>
     </Card>
+    </motion.div>
   );
   
   if (isTouch) return content;
