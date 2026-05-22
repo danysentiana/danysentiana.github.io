@@ -1,4 +1,4 @@
-import ContactModal from "@/components/CotactModal";
+import ContactModal from "@/components/ContactModal";
 import { motion } from "framer-motion";
 const Contact = () => {
     return (

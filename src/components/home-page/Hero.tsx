@@ -54,7 +54,7 @@ const Hero = () => {
                     </div>
 
                     <div className="flex justify-center lg:w-1/2">
-                        <img src={profileImage} alt="Profile" className="w-full max-w-xs lg:max-w-md h-auto rounded-2xl" />
+                        <img src={profileImage} alt="Profile" loading="lazy" decoding="async" className="w-full max-w-xs lg:max-w-md h-auto rounded-2xl" />
                     </div>
                 </div>
             </motion.section>

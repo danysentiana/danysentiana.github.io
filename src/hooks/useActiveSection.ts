@@ -24,7 +24,7 @@ export const useActiveSection = (ids: string[]) => {
     });
 
     return () => observer.disconnect();
-  }, [ids]);
+  }, [JSON.stringify(ids)]);
 
   return activeSection;
 };

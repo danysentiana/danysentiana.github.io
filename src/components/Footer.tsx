@@ -16,23 +16,22 @@ import {
     Popover,
     PopoverTrigger,
     PopoverContent,
-  } from "@/components/ui/popover";
+} from "@/components/ui/popover";
+
+import useIsTouchDevice from "@/hooks/useIsTouchDevice";
 
 const socialLinks = [
     { name: "GitHub", icon: faGithub, url: "https://github.com/danysentiana", external: true },
     { name: "LinkedIn", icon: faLinkedin, url: "https://www.linkedin.com/in/danysentiana/", external: true },
-    // { name: "Instagram", icon: faInstagram, url: "https://instagram.com", external: true },
     { name: "WhatsApp", icon: faWhatsapp, url: "https://wa.me/6285174378840", external: true },
     { name: "Email", icon: faEnvelope, url: "mailto:danysentiana1200@gmail.com" },
     { name: "Phone", icon: faPhone, url: "tel:+6285117326543" }
 ];
 
-import useIsTouchDevice from "@/hooks/useIsTouchDevice";
-
 const Footer = () => {
     const isTouch = useIsTouchDevice();
 
-    return (
+    const content = (
         <footer className="w-full px-5 lg:px-40 xl:px-72 flex justify-center">
             <motion.div 
                 initial={{ opacity: 0 }} 
@@ -75,23 +74,25 @@ const Footer = () => {
                             </PopoverContent>
                         </Popover>
                     ) : (
-                        <TooltipProvider>
-                            <Tooltip>
-                                <TooltipTrigger asChild>
-                                    <Button size={"icon"} variant={"outline"} className="rounded-full dark:border-neutral-800 hover:text-neutral-600 cursor-pointer">
-                                        <FontAwesomeIcon icon={faLocationDot} size="1x"/>
-                                    </Button>
-                                </TooltipTrigger>
-                                <TooltipContent>
-                                    <p>Depok, Indonesia</p>
-                                </TooltipContent>
-                            </Tooltip>
-                        </TooltipProvider>
+                        <Tooltip>
+                            <TooltipTrigger asChild>
+                                <Button size={"icon"} variant={"outline"} className="rounded-full dark:border-neutral-800 hover:text-neutral-600 cursor-pointer">
+                                    <FontAwesomeIcon icon={faLocationDot} size="1x"/>
+                                </Button>
+                            </TooltipTrigger>
+                            <TooltipContent>
+                                <p>Depok, Indonesia</p>
+                            </TooltipContent>
+                        </Tooltip>
                     )}
                 </div>
             </motion.div>
         </footer>
-    )
+    );
+
+    if (isTouch) return content;
+
+    return <TooltipProvider delayDuration={0}>{content}</TooltipProvider>;
 }
 
 export default Footer

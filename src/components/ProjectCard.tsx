@@ -2,12 +2,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Link } from "lucide-react";
 import { useState } from "react";
-import { 
-  siReact, siNodedotjs, siLaravel, siExpress, siBootstrap, 
-  siMysql, siTailwindcss, 
-  siJavascript,
-  siPhp
-} from "simple-icons";
+import { techStackIconMap } from "@/data/techIcons";
 
 import {
   Tooltip,
@@ -33,28 +28,18 @@ interface ProjectProps {
   image: string;
 }
 
-const techStackIcons: Record<string, { hex: string; svg: string }> = {
-  React: siReact,
-  "Node.js": siNodedotjs,
-  Laravel: siLaravel,
-  Express: siExpress,
-  Bootstrap: siBootstrap,
-  MySQL: siMysql,
-  "Tailwind CSS": siTailwindcss,
-  Javascript: siJavascript,
-  PHP: siPhp
-};
-
 const ProjectCard = ({ title, description, techStack, link, image }: ProjectProps) => {
   const [expanded, setExpanded] = useState(false);
   const isTouch = useIsTouchDevice();
 
-  return (
+  const content = (
     <Card className="rounded-2xl shadow-md dark:bg-neutral-900 overflow-hidden pt-0 pb-3">
       <CardHeader className="p-0">
         <img 
           src={image}
           alt={title}
+          loading="lazy"
+          decoding="async"
           className="w-full h-48 object-cover"
         />
         <CardTitle className="text-xl font-semibold px-4 font-roboto">{title}</CardTitle>
@@ -73,21 +58,22 @@ const ProjectCard = ({ title, description, techStack, link, image }: ProjectProp
           <div className="md:min-h-7">
             <div className="mt-3 flex flex-wrap gap-2">
               {techStack.map((tech) => {
-                const icon = techStackIcons[tech];
+                const icon = techStackIconMap[tech];
                 const iconSvg = icon && (
                   <svg 
                     width="16" 
                     height="16" 
                     viewBox="0 0 24 24" 
                     fill="currentColor"
-                    dangerouslySetInnerHTML={{ __html: icon.svg }}
                     className="text-gray-500 dark:text-gray-300 transition-colors duration-200 ease-in-out"
                     style={{
                       "--hover-color": `#${icon.hex}`,
                     } as React.CSSProperties}
                     onMouseEnter={(e) => (e.currentTarget.style.color = `#${icon.hex}`)}
                     onMouseLeave={(e) => (e.currentTarget.style.color = "")}
-                  />
+                  >
+                    <path d={icon.path} />
+                  </svg>
                 );
 
                 return (
@@ -103,14 +89,12 @@ const ProjectCard = ({ title, description, techStack, link, image }: ProjectProp
                         </PopoverContent>
                       </Popover>
                     ) : (
-                      <TooltipProvider>
-                        <Tooltip>
-                          <TooltipTrigger asChild>{iconSvg}</TooltipTrigger>
-                          <TooltipContent>
-                            <p className="text-sm font-semibold">{tech}</p>
-                          </TooltipContent>
-                        </Tooltip>
-                      </TooltipProvider>
+                      <Tooltip>
+                        <TooltipTrigger asChild>{iconSvg}</TooltipTrigger>
+                        <TooltipContent>
+                          <p className="text-sm font-semibold">{tech}</p>
+                        </TooltipContent>
+                      </Tooltip>
                     )}
                   </span>
                 );
@@ -119,11 +103,24 @@ const ProjectCard = ({ title, description, techStack, link, image }: ProjectProp
           </div>
 
           <div className="flex justify-end mt-5 md:mt-3">
-            <TooltipProvider>
+            {isTouch ? (
+              <Popover>
+                <PopoverTrigger asChild>
+                  <Button className="font-light rounded-md" size="sm">
+                    <a href={link} target="_blank" rel="noopener noreferrer">
+                      <Link />
+                    </a>
+                  </Button>
+                </PopoverTrigger>
+                <PopoverContent side="bottom" className="w-auto px-2 py-1 text-sm font-semibold rounded-md">
+                  View Project
+                </PopoverContent>
+              </Popover>
+            ) : (
               <Tooltip>
                 <TooltipTrigger>
                   <Button className="font-light rounded-md" size="sm">
-                    <a href={link} target="_blank">
+                    <a href={link} target="_blank" rel="noopener noreferrer">
                       <Link />
                     </a>
                   </Button>
@@ -132,11 +129,15 @@ const ProjectCard = ({ title, description, techStack, link, image }: ProjectProp
                   <p className="text-sm font-semibold">View Project</p>
                 </TooltipContent>
               </Tooltip>
-            </TooltipProvider>
+            )}
           </div>
         </div>
       </CardContent>
     </Card>
   );
+  
+  if (isTouch) return content;
+  
+  return <TooltipProvider delayDuration={0}>{content}</TooltipProvider>;
 };
 export default ProjectCard;

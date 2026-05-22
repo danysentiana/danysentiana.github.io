@@ -1,21 +1,3 @@
-import { 
-  siReact, siNodedotjs, siLaravel, siExpress, 
-  siBootstrap, siMysql, siTypescript, siTailwindcss, siPhp, siJavascript
-} from "simple-icons";
-
-const techStack = [
-  { name: "React", icon: siReact },
-  { name: "Node.js", icon: siNodedotjs },
-  { name: "Laravel", icon: siLaravel },
-  { name: "Express", icon: siExpress },
-  { name: "Bootstrap", icon: siBootstrap },
-  { name: "MySQL", icon: siMysql },
-  { name: "TypeScript", icon: siTypescript },
-  { name: "Tailwind CSS", icon: siTailwindcss },
-  { name: "PHP", icon: siPhp },
-  { name: "Javascript", icon: siJavascript },
-];
-
 import marissaImage from "@/assets/projects/marissa.png";
 import bayarajaImage from "@/assets/projects/bayaraja.png";
 import rakitWeb from "@/assets/projects/rakit-web.png";
@@ -120,5 +102,4 @@ const projects = [
   },
 ];
 
-export { techStack, projects };
-
+export { projects };

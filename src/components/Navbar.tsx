@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { X, Equal } from "lucide-react";
 import { ThemeToggle } from "@/components/ui/ToggleButton";
@@ -49,10 +49,12 @@ const Navbar = () => {
     }
   };
 
-  const isDarkMode =
+  const isDarkMode = useMemo(() =>
     theme === "dark" ||
     (theme === "system" &&
-      window.matchMedia("(prefers-color-scheme: dark)").matches);
+      window.matchMedia("(prefers-color-scheme: dark)").matches),
+    [theme]
+  );
 
   const menuItems = [
     { path: "/#about", label: "About Me" },
