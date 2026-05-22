@@ -7,6 +7,7 @@ import AppRoutes from "@/routes/AppRoutes";
 import useLenis from "@/hooks/useLenis";
 import Splash from "@/pages/Splash";
 import noise from "@/assets/texture/noise.gif";
+import { Toaster } from '@/components/ui/sonner';
 
 function App() {
   useLenis();
@@ -44,6 +45,7 @@ function App() {
         <main className="relative z-10">
           <Router>
             <ScrollToTop />
+            <Toaster richColors position="bottom-right" />
             <AppRoutes />
           </Router>
         </main>

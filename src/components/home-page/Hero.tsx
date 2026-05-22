@@ -30,7 +30,7 @@ const Hero = () => {
                             <span className="text-blue-500 dark:text-yellow-400">
                                 <Typewriter
                                     words={[' Web', ' Back End']}
-                                    loop={0} // Infinite loop
+                                    loop={true}
                                     cursor
                                     cursorStyle="."
                                     typeSpeed={200} // Speed of typing

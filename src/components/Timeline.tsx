@@ -22,7 +22,7 @@ export default function Timeline() {
                             className="flex flex-col text-center items-center"
                         >
                             <h2 className="text-4xl md:text-7xl font-bold text-neutral-950 dark:text-neutral-50 font-bebas">Experience</h2>
-                            <p className="max-w-3xl mt-4 font-robotolg:text-xl text-gray-600 dark:text-gray-300 md:leading-relaxed md:tracking-wide text-justify">
+                            <p className="max-w-3xl mt-4 font-roboto text-lg md:text-xl text-gray-600 dark:text-gray-300 md:leading-relaxed md:tracking-wide text-justify">
                                 Career and education timeline
                             </p>
                         </motion.div>
