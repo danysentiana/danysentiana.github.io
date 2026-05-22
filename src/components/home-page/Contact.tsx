@@ -57,8 +57,27 @@ const Contact = () => {
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true, amount: 0.3 }}
-                className="flex flex-col gap-2 md:flex-row w-full justify-between container shadow border rounded-xl p-7 md:p-20 mx-auto bg-neutral-100 dark:bg-neutral-900"
+                className="flex flex-col gap-2 md:flex-row w-full justify-between container shadow border rounded-xl p-7 md:p-20 mx-auto bg-neutral-100 dark:bg-neutral-900 relative overflow-hidden"
             >
+                {/* Animated background glow */}
+                <motion.div
+                    className="absolute -top-20 -right-20 w-60 h-60 rounded-full opacity-20 dark:opacity-10 blur-3xl pointer-events-none"
+                    style={{ background: "radial-gradient(circle, #3f4c6b, transparent)" }}
+                    animate={{ 
+                        scale: [1, 1.3, 1],
+                        opacity: [0.2, 0.35, 0.2],
+                    }}
+                    transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
+                />
+                <motion.div
+                    className="absolute -bottom-20 -left-20 w-60 h-60 rounded-full opacity-15 dark:opacity-10 blur-3xl pointer-events-none"
+                    style={{ background: "radial-gradient(circle, #606c88, transparent)" }}
+                    animate={{ 
+                        scale: [1, 1.2, 1],
+                        opacity: [0.15, 0.3, 0.15],
+                    }}
+                    transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+                />
                 {/* Left - Text */}
                 <div className="w-full md:basis-6/12 text-center md:text-start flex flex-col justify-center">
                     <motion.h1 

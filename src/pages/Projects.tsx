@@ -32,12 +32,41 @@ const Projects = () => {
     <>
     <motion.section 
       id="projects" 
-      className="w-full px-6 lg:px-40 2xl:px-64"
+      className="w-full px-6 lg:px-40 2xl:px-64 relative overflow-hidden"
       initial={{ opacity: 0 }} 
       animate={{ opacity: 1 }}
       transition={{ duration: 0.5, ease: "easeOut" }}
     >
-      <div className="container bg-transparent pt-40 pb-28 mx-auto min-h-screen">
+      {/* Floating gradient decorations — Ash color scheme */}
+      <motion.div
+        className="absolute top-40 -left-32 w-96 h-96 rounded-full opacity-15 dark:opacity-10 blur-3xl pointer-events-none"
+        style={{ background: "radial-gradient(circle, #3f4c6b, transparent)" }}
+        animate={{ 
+          y: [0, 40, 0],
+          x: [0, 20, 0],
+        }}
+        transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
+      />
+      <motion.div
+        className="absolute bottom-40 -right-32 w-80 h-80 rounded-full opacity-10 dark:opacity-10 blur-3xl pointer-events-none"
+        style={{ background: "radial-gradient(circle, #606c88, transparent)" }}
+        animate={{ 
+          y: [0, -30, 0],
+          x: [0, -20, 0],
+        }}
+        transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
+      />
+      <motion.div
+        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full opacity-5 dark:opacity-5 blur-3xl pointer-events-none"
+        style={{ background: "radial-gradient(circle, #f59e0b, transparent)" }}
+        animate={{ 
+          scale: [1, 1.2, 1],
+          opacity: [0.05, 0.1, 0.05],
+        }}
+        transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
+      />
+
+      <div className="container bg-transparent pt-40 pb-28 mx-auto min-h-screen relative z-10">
         {/* Title */}
         <motion.h1 
           className="font-bebas text-4xl md:text-7xl font-bold text-center mb-3"

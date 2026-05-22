@@ -3,7 +3,8 @@ import profileImage from "@/assets/profile-pic.jpeg";
 import { Typewriter } from 'react-simple-typewriter';
 import { ArrowDownToLine, ChevronRight } from "lucide-react";
 import { Link } from "react-router-dom";
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { useRef } from "react";
 
 // Staggered container for text elements
 const textContainerVariants = {
@@ -51,9 +52,22 @@ const buttonItemVariants = {
 };
 
 const Hero = () => {
+    const sectionRef = useRef<HTMLElement>(null);
+    const { scrollYProgress } = useScroll({
+        target: sectionRef,
+        offset: ["start start", "end start"],
+    });
+
+    // Parallax transforms
+    const textY = useTransform(scrollYProgress, [0, 1], [0, 150]);
+    const imageY = useTransform(scrollYProgress, [0, 1], [0, 80]);
+    const imageScale = useTransform(scrollYProgress, [0, 1], [1, 1.1]);
+    const opacity = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
+
     return (
         <>
             <motion.section 
+                ref={sectionRef}
                 id="hero" 
                 className="w-full px-14 lg:px-40 xl:px-60 2xl:px-72 md:flex md:mx-auto md:justify-center"
                 initial={{ opacity: 0 }}
@@ -66,6 +80,7 @@ const Hero = () => {
                         variants={textContainerVariants}
                         initial="hidden"
                         animate="visible"
+                        style={{ y: textY, opacity }}
                     >
                         <motion.p 
                             className="text-3xl md:text-2xl lg:text-xl xl:text-2xl font-roboto text-neutral-800 dark:text-neutral-50 mb-2 mt-3"
@@ -124,17 +139,31 @@ const Hero = () => {
                         initial={{ opacity: 0, scale: 0.8, x: 60 }}
                         animate={{ opacity: 1, scale: 1, x: 0 }}
                         transition={{ duration: 1, ease: "easeOut", delay: 0.5 }}
+                        style={{ y: imageY, scale: imageScale }}
                     >
                         <motion.div
                             whileHover={{ scale: 1.05 }}
                             transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                            className="relative"
                         >
+                            {/* Glow behind image — Ash color scheme */}
+                            <motion.div
+                                className="absolute inset-0 rounded-2xl blur-3xl opacity-30 dark:opacity-20"
+                                style={{
+                                    background: "linear-gradient(135deg, #3f4c6b, #606c88)",
+                                }}
+                                animate={{ 
+                                    scale: [1, 1.2, 1],
+                                    opacity: [0.3, 0.5, 0.3],
+                                }}
+                                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+                            />
                             <motion.img 
                                 src={profileImage} 
                                 alt="Profile" 
                                 loading="lazy" 
                                 decoding="async" 
-                                className="w-full max-w-xs lg:max-w-md h-auto rounded-2xl"
+                                className="w-full max-w-xs lg:max-w-md h-auto rounded-2xl relative z-10"
                                 animate={{ 
                                     y: [0, -8, 0],
                                 }}
