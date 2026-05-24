@@ -1,13 +1,26 @@
 import { motion } from "framer-motion";
-import { useMemo } from "react";
+import { useEffect, useMemo, useState } from "react";
 
 interface StarFieldProps {
     count?: number;
+    mobileCount?: number;
 }
 
-const StarField = ({ count = 50 }: StarFieldProps) => {
+const StarField = ({ count = 50, mobileCount = 25 }: StarFieldProps) => {
+    const [isMobile, setIsMobile] = useState(false);
+
+    useEffect(() => {
+        const mediaQuery = window.matchMedia("(max-width: 768px)");
+        setIsMobile(mediaQuery.matches);
+
+        const listener = (e: MediaQueryListEvent) => setIsMobile(e.matches);
+        mediaQuery.addEventListener("change", listener);
+        return () => mediaQuery.removeEventListener("change", listener);
+    }, []);
+
     const stars = useMemo(() => {
-        return Array.from({ length: count }, (_, i) => ({
+        const starCount = isMobile ? mobileCount : count;
+        return Array.from({ length: starCount }, (_, i) => ({
             id: i,
             x: Math.random() * 100,
             y: Math.random() * 100,
@@ -16,7 +29,7 @@ const StarField = ({ count = 50 }: StarFieldProps) => {
             delay: Math.random() * 3,
             duration: Math.random() * 2 + 1.5,
         }));
-    }, [count]);
+    }, [count, mobileCount, isMobile]);
 
     return (
         <>
