@@ -3,6 +3,7 @@ import { projects } from "@/data/projects";
 import ProjectCard from "@/components/ProjectCard";
 import SearchBar from "@/components/SearchBar";
 import Footer from "@/components/Footer";
+import StarField from "@/components/StarField";
 import { motion, AnimatePresence } from "framer-motion";
 
 const Projects = () => {
@@ -37,6 +38,11 @@ const Projects = () => {
       animate={{ opacity: 1 }}
       transition={{ duration: 0.5, ease: "easeOut" }}
     >
+      {/* Stars in the sky */}
+      <div className="absolute inset-0 pointer-events-none overflow-hidden">
+        <StarField count={40} />
+      </div>
+
       {/* Floating gradient decorations — Ash color scheme */}
       <motion.div
         className="absolute top-40 -left-32 w-96 h-96 rounded-full opacity-15 dark:opacity-10 blur-3xl pointer-events-none"
@@ -76,6 +82,14 @@ const Projects = () => {
         >
           My Projects
         </motion.h1>
+
+        {/* Accent line */}
+        <motion.div
+          className="w-20 h-1 bg-blue-500 dark:bg-yellow-400 mx-auto mt-4 mb-8 rounded-full origin-center"
+          initial={{ scaleX: 0 }}
+          animate={{ scaleX: 1 }}
+          transition={{ duration: 0.6, ease: "easeOut", delay: 0.3 }}
+        />
 
         {/* Description */}
         <motion.div 

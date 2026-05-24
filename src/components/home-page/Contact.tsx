@@ -87,7 +87,7 @@ const Contact = () => {
                         Contact Me
                     </motion.h1>
                     <motion.div
-                        className="w-16 h-1 bg-blue-500 dark:bg-yellow-400 rounded-full origin-center md:origin-left"
+                        className="w-16 h-1 bg-blue-500 dark:bg-yellow-400 rounded-full origin-center md:origin-left mx-auto md:mx-0"
                         variants={accentVariants}
                     />
                     <motion.p 
