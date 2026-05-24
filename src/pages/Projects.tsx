@@ -4,6 +4,7 @@ import ProjectCard from "@/components/ProjectCard";
 import SearchBar from "@/components/SearchBar";
 import Footer from "@/components/Footer";
 import StarField from "@/components/StarField";
+import GitHubCalendar from "@/components/GitHubCalendar";
 import { motion, AnimatePresence } from "framer-motion";
 
 const Projects = () => {
@@ -73,6 +74,16 @@ const Projects = () => {
       />
 
       <div className="container bg-transparent pt-40 pb-28 mx-auto min-h-screen relative z-10">
+        {/* GitHub Contributions */}
+        <motion.div
+          className="mb-12 max-w-4xl mx-auto"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.1, ease: "easeOut" }}
+        >
+          <GitHubCalendar username="danysentiana" />
+        </motion.div>
+
         {/* Title */}
         <motion.h1 
           className="font-bebas text-4xl md:text-7xl font-bold text-center mb-3"
@@ -194,6 +205,7 @@ const Projects = () => {
               Next
             </motion.button>
         </motion.div>
+
       </div>
     </motion.section>
 
