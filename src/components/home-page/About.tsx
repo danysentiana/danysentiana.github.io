@@ -41,9 +41,9 @@ const paragraphChunkVariants = {
 
 const About = () => {
     const paragraphs = [
-        "Hello everyone, I am a recent graduate with a Bachelor's degree in Information System. My passion for coding and web development has driven me to become a web developer. As a beginner in this field, I am eager to learn and grow my skills.",
-        "During my studies, I have learned various programming languages. I am constantly looking to expand my knowledge and expertise in web development, which has led me to explore the latest trends in the industry. I enjoy collaborating with other developers and designers to create innovative and engaging websites.",
-        "In my free time, I enjoy working on personal coding projects and learning new coding languages. Thank you for visiting my portfolio website. I am excited about the opportunities to work with others in this industry and I am eager to apply my knowledge and skills to create high-quality websites."
+        "Hello everyone, I hold a Bachelor's degree in Information Systems and have over 2 years of professional experience as a web developer. What started as a passion for coding has grown into a career where I continuously sharpen my skills and deliver meaningful digital solutions.",
+        "Over the years, I've worked with various programming languages and modern web technologies. I enjoy collaborating with other developers and designers to build innovative, high-quality websites. Currently, I'm exploring agentic AI and integrating AI-powered tools into my workflow to stay ahead of the curve and boost productivity.",
+        "Beyond work, I love taking on personal projects and experimenting with new technologies. Thank you for visiting my portfolio — I'm excited about the opportunities ahead and always open to collaborating on impactful projects."
     ];
 
     return (
