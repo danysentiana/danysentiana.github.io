@@ -57,6 +57,14 @@ const GitHubCalendar = ({ username }: { username: string }) => {
         fetchContributions();
     }, [fetchContributions]);
 
+    // Format date using LOCAL timezone (not UTC) to match ghchart dates
+    const toLocalDateStr = (date: Date): string => {
+        const y = date.getFullYear();
+        const m = String(date.getMonth() + 1).padStart(2, "0");
+        const d = String(date.getDate()).padStart(2, "0");
+        return `${y}-${m}-${d}`;
+    };
+
     // Generate 52-week grid
     const generateGrid = (): ContributionDay[][] => {
         const today = new Date();
@@ -70,7 +78,7 @@ const GitHubCalendar = ({ username }: { username: string }) => {
             for (let d = 0; d < 7; d++) {
                 const date = new Date(startDate);
                 date.setDate(date.getDate() + w * 7 + d);
-                const dateStr = date.toISOString().split("T")[0];
+                const dateStr = toLocalDateStr(date);
                 week.push({
                     date: dateStr,
                     count: contributions.get(dateStr) ?? -1,
