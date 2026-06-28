@@ -3,8 +3,8 @@ import gsap from "gsap";
 
 const TAIL_LENGTH = 60;
 const LERP = 0.35;
-const TIP_RADIUS = 3;
-const MAX_WIDTH = 3;
+const TIP_RADIUS = 4;
+const MAX_WIDTH = 2;
 
 export function useInkCursor(canvasRef: RefObject<HTMLCanvasElement | null>) {
   useEffect(() => {
@@ -56,6 +56,11 @@ export function useInkCursor(canvasRef: RefObject<HTMLCanvasElement | null>) {
 
     const onWheel = (e: WheelEvent) => {
       if (!active) return;
+      lastMoveTime = Date.now();
+      if (idleProgress > 0 && !transitioningOut) {
+        transitioningOut = true;
+        transitionOutStart = Date.now();
+      }
       const atTop = window.scrollY <= 0;
       const atBottom = window.scrollY + window.innerHeight >= document.documentElement.scrollHeight;
       if ((e.deltaY < 0 && atTop) || (e.deltaY > 0 && atBottom)) return;

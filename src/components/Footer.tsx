@@ -69,7 +69,7 @@ const Footer = () => {
 
     const content = (
         <footer className="w-full px-5 lg:px-40 xl:px-72 flex justify-center">
-            <motion.div 
+            <motion.div
                 variants={containerVariants}
                 initial="hidden"
                 whileInView="visible"
@@ -79,19 +79,19 @@ const Footer = () => {
                 {/* Main Row: Text Left | Icons Right */}
                 <div className="w-full flex flex-col md:flex-row items-center justify-between gap-4">
                     {/* Copyright - Left */}
-                    <motion.p 
+                    <motion.p
                         className="text-center md:text-left font-roboto text-[12px] md:text-[16px] order-2 md:order-1"
                         variants={iconVariants}
                     >
                         This site was made with{" "}
                         <motion.span
                             className="inline-block"
-                            animate={{ 
+                            animate={{
                                 scale: [1, 1.3, 1],
                             }}
-                            transition={{ 
-                                duration: 1.2, 
-                                repeat: Infinity, 
+                            transition={{
+                                duration: 1.2,
+                                repeat: Infinity,
                                 ease: "easeInOut",
                                 repeatDelay: 0.8,
                             }}
@@ -107,23 +107,23 @@ const Footer = () => {
                             <motion.div
                                 key={social.name}
                                 variants={iconVariants}
-                                whileHover={{ 
-                                    scale: 1.2, 
+                                whileHover={{
+                                    scale: 1.2,
                                     y: -3,
                                     transition: { type: "spring", stiffness: 400, damping: 15 }
                                 }}
                                 whileTap={{ scale: 0.9 }}
                             >
-                                <Button 
-                                    asChild 
-                                    size={"icon"} 
-                                    variant={"outline"} 
+                                <Button
+                                    asChild
+                                    size={"icon"}
+                                    variant={"outline"}
                                     className="rounded-full dark:border-neutral-800 hover:text-neutral-600 hover:border-blue-400 dark:hover:border-yellow-400 transition-colors duration-300"
                                 >
-                                    <Link 
-                                        to={social.url} 
-                                        target={social.external ? "_blank" : undefined} 
-                                        rel={social.external ? "noopener noreferrer" : undefined} 
+                                    <Link
+                                        to={social.url}
+                                        target={social.external ? "_blank" : undefined}
+                                        rel={social.external ? "noopener noreferrer" : undefined}
                                         aria-label={social.name}
                                     >
                                         <FontAwesomeIcon icon={social.icon} size="1x"/>
@@ -134,8 +134,8 @@ const Footer = () => {
 
                         <motion.div
                             variants={iconVariants}
-                            whileHover={{ 
-                                scale: 1.2, 
+                            whileHover={{
+                                scale: 1.2,
                                 y: -3,
                                 transition: { type: "spring", stiffness: 400, damping: 15 }
                             }}
