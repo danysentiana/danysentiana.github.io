@@ -6,6 +6,7 @@ import ScrollToTop from "@/components/ScrollToTop";
 import AppRoutes from "@/routes/AppRoutes";
 import useLenis from "@/hooks/useLenis";
 import Splash from "@/pages/Splash";
+import InkCursor from "@/components/InkCursor";
 import noise from "@/assets/texture/noise.gif";
 import { Toaster } from '@/components/ui/sonner';
 
@@ -24,6 +25,7 @@ function App() {
 
   return (
     <div className="relative min-h-screen">
+      <InkCursor />
       {/* Texture */}
       <div
         className="fixed inset-0 w-screen h-screen pointer-events-none z-[1000]"

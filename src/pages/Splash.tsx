@@ -1,33 +1,29 @@
 import { motion } from "framer-motion";
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { useTheme } from "@/context/ThemeContext";
-import logoWhite from "@/assets/logo/ds-logo-white.png";
-import logoBlack from "@/assets/logo/ds-logo-black.png";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
 
-// Staggered letter animation variants
-const titleContainerVariants = {
-    hidden: {},
-    visible: {
-        transition: {
-            staggerChildren: 0.05,
-            delayChildren: 0.8,
-        },
-    },
-};
-
-const letterVariants = {
-    hidden: { opacity: 0, y: 20, filter: "blur(8px)" },
-    visible: {
-        opacity: 1,
-        y: 0,
-        filter: "blur(0px)",
-        transition: { duration: 0.4, ease: "easeOut" },
-    },
-};
 
 const Splash = () => {
   const { theme } = useTheme();
   const [resolvedTheme, setResolvedTheme] = useState<"dark" | "light">("light");
+  const svgRef = useRef<SVGSVGElement>(null);
+
+  useGSAP(() => {
+    if (!svgRef.current) return;
+    const elements = svgRef.current.querySelectorAll<SVGGeometryElement>("circle, path");
+    elements.forEach((el) => {
+      const length = el.getTotalLength();
+      gsap.set(el, { strokeDasharray: length, strokeDashoffset: length });
+    });
+    gsap.to(Array.from(elements), {
+      strokeDashoffset: 0,
+      duration: 1.2,
+      ease: "power2.inOut",
+      stagger: 0.25,
+    });
+  }, { scope: svgRef });
 
   useEffect(() => {
     if (theme === "system") {
@@ -46,8 +42,6 @@ const Splash = () => {
       setResolvedTheme(theme);
     }
   }, [theme]);
-
-  const title = "Welcome to my Portfolio";
 
   // Generate random stars — positions are stable across renders
   const stars = useMemo(() => {
@@ -69,7 +63,7 @@ const Splash = () => {
       initial={{ opacity: 1 }}
       animate={{ opacity: 0 }}
       exit={{ opacity: 0 }}
-      transition={{ duration: 3, ease: "easeInOut" }}
+      transition={{ duration: 5, ease: "easeInOut" }}
     >
         {/* Animated gradient mesh background */}
         <motion.div
@@ -129,48 +123,21 @@ const Splash = () => {
         <div className="flex flex-col items-center gap-6 relative z-10">
             {/* Logo */}
             <div className="relative flex items-center justify-center">
-                {/* Ash glow behind logo */}
-                <motion.div
-                    className="absolute w-20 h-20 rounded-full blur-xl pointer-events-none"
-                    style={{ background: "radial-gradient(circle, #3f4c6b, transparent)" }}
-                    animate={{ 
-                        scale: [1, 1.4, 1],
-                        opacity: [0.4, 0.6, 0.4],
-                    }}
-                    transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-                />
-
-                {/* Spinning logo */}
-                <motion.img
-                    src={resolvedTheme === "dark" ? logoWhite : logoBlack}
-                    alt="Logo"
-                    className="w-16 h-16 relative z-10"
-                    initial={{ scale: 0, rotate: -180 }}
-                    animate={{ scale: 1, rotate: 360 }}
-                    transition={{
-                        scale: { duration: 0.6, ease: "easeOut" },
-                        rotate: { duration: 2.5, ease: "easeInOut", delay: 0.3 },
-                    }}
-                />
+                {/* Draw-path logo */}
+                <svg
+                    ref={svgRef}
+                    className="w-22 h-22 md:w-28 md:h-28 relative z-10"
+                    viewBox="0 0 300 300"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                >
+                    <circle cx="150" cy="150" r="140" stroke={resolvedTheme === "dark" ? "white" : "black"} strokeWidth="20" />
+                    <path d="M41.5 236.5C58.3333 176.833 126.4 61 264 75" stroke={resolvedTheme === "dark" ? "white" : "black"} strokeWidth="20" strokeLinecap="round" />
+                    <path d="M41 235C114.167 229.333 262 190.8 268 82" stroke={resolvedTheme === "dark" ? "white" : "black"} strokeWidth="20" strokeLinecap="round" />
+                    <path d="M106 20.5C102.5 59.6667 113.7 149.4 186.5 195" stroke={resolvedTheme === "dark" ? "white" : "black"} strokeWidth="20" strokeLinecap="round" />
+                </svg>
             </div>
 
-            {/* Staggered letter reveal title */}
-            <motion.h1
-                className="text-2xl md:text-3xl font-bold font-bebas text-neutral-950 dark:text-neutral-50 flex"
-                variants={titleContainerVariants}
-                initial="hidden"
-                animate="visible"
-            >
-                {title.split("").map((char, i) => (
-                    <motion.span
-                        key={i}
-                        variants={letterVariants}
-                        className={char === " " ? "w-2 md:w-3" : ""}
-                    >
-                        {char === " " ? "\u00A0" : char}
-                    </motion.span>
-                ))}
-            </motion.h1>
 
         </div>
     </motion.div>
