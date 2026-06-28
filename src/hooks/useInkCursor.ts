@@ -22,6 +22,15 @@ export function useInkCursor(canvasRef: RefObject<HTMLCanvasElement | null>) {
     let scrollVelX = 0;
     let scrollVelY = 0;
 
+    // Idle state
+    let lastMoveTime = Date.now();
+    let idleProgress = 0;       // 0 = dot, 1 = full amoeba
+    let idleTriggered = false;
+    let idleTriggerTime = 0;
+    let transitioningOut = false;
+    let transitionOutStart = 0;
+    let idleT = 0;
+
     const resize = () => {
       canvas.width = window.innerWidth;
       canvas.height = window.innerHeight;
@@ -32,6 +41,11 @@ export function useInkCursor(canvasRef: RefObject<HTMLCanvasElement | null>) {
     const onMouseMove = (e: MouseEvent) => {
       mouse.x = e.clientX;
       mouse.y = e.clientY;
+      lastMoveTime = Date.now();
+      if (idleProgress > 0 && !transitioningOut) {
+        transitioningOut = true;
+        transitionOutStart = Date.now();
+      }
       if (!active) {
         curr.x = mouse.x;
         curr.y = mouse.y;
@@ -89,8 +103,42 @@ export function useInkCursor(canvasRef: RefObject<HTMLCanvasElement | null>) {
           ctx.stroke();
         }
 
+        // Update idle progress
+        const now = Date.now();
+        if (transitioningOut) {
+          idleProgress = Math.max(0, 1 - (now - transitionOutStart) / 200);
+          if (idleProgress === 0) {
+            transitioningOut = false;
+            idleTriggered = false;
+          }
+        } else if (now - lastMoveTime > 800) {
+          if (!idleTriggered) {
+            idleTriggered = true;
+            idleTriggerTime = now;
+          }
+          idleProgress = Math.min(1, (now - idleTriggerTime) / 400);
+        }
+
+        if (idleProgress > 0) idleT += 0.018;
+
+        // Draw tip — morph between dot and amoeba
+        const POINTS = 32;
         ctx.beginPath();
-        ctx.arc(curr.x, curr.y, TIP_RADIUS, 0, Math.PI * 2);
+        for (let j = 0; j < POINTS; j++) {
+          const angle = (j / POINTS) * Math.PI * 2;
+          const amoebaR =
+            5 +
+            Math.sin(angle * 2 + idleT * 1.1) * 2.5 +
+            Math.sin(angle * 3 - idleT * 0.7) * 1.8 +
+            Math.sin(angle * 1 + idleT * 1.5) * 1.2 +
+            Math.sin(angle * 4 + idleT * 0.9) * 0.8;
+          const r = TIP_RADIUS + (amoebaR - TIP_RADIUS) * idleProgress;
+          const px = curr.x + Math.cos(angle) * r;
+          const py = curr.y + Math.sin(angle) * r;
+          if (j === 0) ctx.moveTo(px, py);
+          else ctx.lineTo(px, py);
+        }
+        ctx.closePath();
         ctx.fillStyle = `rgba(${color}, 1)`;
         ctx.fill();
       }
