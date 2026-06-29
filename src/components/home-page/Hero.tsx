@@ -147,8 +147,8 @@ const Hero = () => {
                             className="relative"
                         >
                             {/* Glow behind image — Ash color scheme */}
-                            <motion.div
-                                className="absolute inset-0 rounded-2xl blur-3xl opacity-30 dark:opacity-20"
+                            {/* <motion.div
+                                className="absolute inset-0 rounded-2xl blur-3xl opacity-10 md:opacity-30 dark:opacity-100 dark:md:opacity-20"
                                 style={{
                                     background: "linear-gradient(135deg, #3f4c6b, #606c88)",
                                 }}
@@ -157,7 +157,7 @@ const Hero = () => {
                                     opacity: [0.3, 0.5, 0.3],
                                 }}
                                 transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                            />
+                            /> */}
                             <motion.img 
                                 src={profileImage} 
                                 alt="Profile" 
