@@ -162,6 +162,11 @@ export function useInkCursor(canvasRef: RefObject<HTMLCanvasElement | null>) {
     document.body.appendChild(splatterContainer);
 
     const onBurst = (e: MouseEvent) => {
+      lastMoveTime = Date.now();
+      if (idleProgress > 0 && !transitioningOut) {
+        transitioningOut = true;
+        transitionOutStart = Date.now();
+      }
       const count = Math.floor(Math.random() * 5) + 8;
       const color = rgb();
 
