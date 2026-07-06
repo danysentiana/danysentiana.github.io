@@ -116,6 +116,7 @@
     @apply border-border outline-ring/50;
     cursor: none;
   }
+  html,
   body {
     @apply bg-background text-foreground;
   }
@@ -131,4 +132,9 @@
   .font-poppins {
     font-family: 'Poppins', sans-serif;
   }
+}
+
+::view-transition-old(root), ::view-transition-new(root) {
+    animation: none;
+    mix-blend-mode: normal;
 }
