@@ -1,14 +1,14 @@
-import marissaImage from "@/assets/projects/marissa.png";
-import bayarajaImage from "@/assets/projects/bayaraja.png";
-import rakitWeb from "@/assets/projects/rakit-web.png";
-import coopinImage from "@/assets/projects/coopin.png";
-import kutImage from "@/assets/projects/kinarya-tech.png";
-import kamilaImage from "@/assets/projects/kamila.png";
-import bisaDesignImage from "@/assets/projects/bisa-design.png";
-import stobarImage from "@/assets/projects/stobar.png";
-import trastImage from "@/assets/projects/trast.png";
-import fmcImage from "@/assets/projects/fmc.png";
-import pmImage from "@/assets/projects/pm.png";
+import marissaImage from "@/assets/projects/marissa.webp";
+import bayarajaImage from "@/assets/projects/bayaraja.webp";
+import rakitWeb from "@/assets/projects/rakit-web.webp";
+import coopinImage from "@/assets/projects/coopin.webp";
+import kutImage from "@/assets/projects/kinarya-tech.webp";
+import kamilaImage from "@/assets/projects/kamila.webp";
+import bisaDesignImage from "@/assets/projects/bisa-design.webp";
+import stobarImage from "@/assets/projects/stobar.webp";
+import trastImage from "@/assets/projects/trast.webp";
+import fmcImage from "@/assets/projects/fmc.webp";
+import pmImage from "@/assets/projects/pm.webp";
 
 // projects data
 const projects = [

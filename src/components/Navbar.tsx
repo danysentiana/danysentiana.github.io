@@ -6,8 +6,8 @@ import { AnimatePresence, motion } from "framer-motion";
 import { Button } from "@/components/ui/button"
 import { useTheme } from "@/context/ThemeContext";
 import { useActiveSection } from "@/hooks/useActiveSection";
-import logoWhite from "@/assets/logo/ds-logo-white.png";
-import logoBlack from "@/assets/logo/ds-logo-black.png";
+import logoWhite from "@/assets/logo/ds-logo-white.webp";
+import logoBlack from "@/assets/logo/ds-logo-black.webp";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
