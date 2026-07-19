@@ -9,9 +9,34 @@ import stobarImage from "@/assets/projects/stobar.webp";
 import trastImage from "@/assets/projects/trast.webp";
 import fmcImage from "@/assets/projects/fmc.webp";
 import pmImage from "@/assets/projects/pm.webp";
+import itPortalImage from "@/assets/projects/it-portal.webp";
+
+interface Project {
+  id: number;
+  title: string;
+  description: string;
+  techStack: string[];
+  image: string;
+  link?: string;
+  details: {
+    images: string[];
+    description: string;
+  };
+}
 
 // projects data
-const projects = [
+const projects: Project[] = [
+  {
+    id: 12,
+    title: "IT Monitoring Portal",
+    description: "Internal IT ops dashboard that monitors service uptime and lets admins start/stop/restart services remotely — from the web UI or a Telegram bot.",
+    techStack: ["Node.js", "Express", "MySQL", "Knex.js", "Socket.IO", "EJS"],
+    image: itPortalImage,
+    details: {
+      images: [itPortalImage],
+      description: "A Node.js/Express admin portal for an internal IT team to monitor a fleet of hosted services (HTTP/port reachability checks polled every 60s) and control them remotely over SSH (pm2 or raw port-based processes). Beyond the dashboard, it ships a Telegram bot as a second control surface — service status, start/stop/restart, ping/telnet diagnostics — plus down/up alerting, a DB-backed activity log, network diagnostic tools, and PDF/analytics reporting. README is generic/stale; scope was inferred from routes, backend modules, and commit history.",
+    },
+  },
   {
     id: 1,
     title: "[Rakit] Website Profile",

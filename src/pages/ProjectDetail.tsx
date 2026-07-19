@@ -161,21 +161,23 @@ const ProjectDetail = () => {
             {details.description}
           </motion.p>
 
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.35, ease: "easeOut" }}
-          >
-            <Button
-              asChild
-              className="font-roboto rounded-full px-8 py-1 bg-neutral-950 text-neutral-50 dark:bg-neutral-50 dark:text-neutral-950 hover:bg-neutral-700 dark:hover:bg-neutral-100"
-              size="xl"
+          {link && (
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.35, ease: "easeOut" }}
             >
-              <a href={link} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
-                Visit Live Site <ExternalLink className="w-4 h-4" />
-              </a>
-            </Button>
-          </motion.div>
+              <Button
+                asChild
+                className="font-roboto rounded-full px-8 py-1 bg-neutral-950 text-neutral-50 dark:bg-neutral-50 dark:text-neutral-950 hover:bg-neutral-700 dark:hover:bg-neutral-100"
+                size="xl"
+              >
+                <a href={link} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
+                  Visit Live Site <ExternalLink className="w-4 h-4" />
+                </a>
+              </Button>
+            </motion.div>
+          )}
         </div>
       </motion.section>
 
