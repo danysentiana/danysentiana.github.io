@@ -10,6 +10,8 @@ import trastImage from "@/assets/projects/trast.webp";
 import fmcImage from "@/assets/projects/fmc.webp";
 import pmImage from "@/assets/projects/pm.webp";
 import itPortalImage from "@/assets/projects/it-portal.webp";
+import diraImage from "@/assets/projects/dira.webp";
+import bukuBantuImage from "@/assets/projects/buku-bantu.webp";
 
 interface Project {
   id: number;
@@ -27,7 +29,7 @@ interface Project {
 // projects data
 const projects: Project[] = [
   {
-    id: 12,
+    id: 1,
     title: "IT Monitoring Portal",
     description: "Internal IT ops dashboard that monitors service uptime and lets admins start/stop/restart services remotely — from the web UI or a Telegram bot.",
     techStack: ["Node.js", "Express", "MySQL", "Knex.js", "Socket.IO", "EJS"],
@@ -38,7 +40,7 @@ const projects: Project[] = [
     },
   },
   {
-    id: 1,
+    id: 2,
     title: "[Rakit] Website Profile",
     description: "A company profile website, built to showcase services, contact info, and key company details.",
     techStack: ["Node.js", "Express", "Bootstrap", "MySQL"],
@@ -50,7 +52,7 @@ const projects: Project[] = [
     },
   },
   {
-    id: 2,
+    id: 3,
     title: "BayarAja",
     description: "Node.js/Express back-office admin for a mobile airtime/PPOB top-up distribution network — manages stock allocation, deposits, and multi-level approvals.",
     techStack: ["Express", "Node.js", "Bootstrap", "MySQL"],
@@ -62,7 +64,7 @@ const projects: Project[] = [
     },
   },
   {
-    id: 3,
+    id: 4,
     title: "Marissa",
     description: "Full-featured HRIS for an Indonesian company: attendance, leave, payroll, KPI, and approval workflows for HR and employees.",
     techStack: ["Laravel", "Bootstrap", "MySQL"],
@@ -74,7 +76,19 @@ const projects: Project[] = [
     },
   },
   {
-    id: 4,
+    id: 5,
+    title: "Dira",
+    description: "Internal helpdesk/ticketing admin panel for company employees to log, route, and track support tickets by division and topic.",
+    techStack: ["Node.js", "Express", "EJS", "MySQL", "JWT", "ExcelJS"],
+    image: diraImage,
+    link: "https://dira.kiselindonesia.com/",
+    details: {
+      images: [diraImage],
+      description: "Node.js/Express admin web app (name: 'node-web', described in package.json as 'website admin develop with nodejs') for internal IT/helpdesk ticket management. Employees log in against an HR employee table, then create, monitor, and update support tickets tied to division/topic/PIC reference data, with Excel export of incoming-ticket reports and WhatsApp alerts on new tickets. Master-data setup screens (topic, subject, division, PIC, FAQ) round out the admin scope.",
+    },
+  },
+  {
+    id: 6,
     title: "[Rakit] Coopin",
     description: "A dashboard for managing cooperative activities, including member data, transactions, reports, etc.",
     techStack: ["Node.js", "Express", "Bootstrap", "MySQL"],
@@ -86,7 +100,7 @@ const projects: Project[] = [
     },
   },
   {
-    id: 5,
+    id: 7,
     title: "[Rakit] Trast",
     description: "A management system for drivers, vehicles, users, and car pooling operations",
     techStack: ["Node.js", "Express", "Bootstrap", "MySQL"],
@@ -98,7 +112,7 @@ const projects: Project[] = [
     },
   },
   {
-    id: 6,
+    id: 8,
     title: "Kinarya Tech Company Profile",
     description: "Node.js/Express company-profile site for IT & telco firm KUT — landing, portfolio, pricing, blog pages.",
     techStack: ["Node.js", "Express", "Bootstrap", "MySQL"],
@@ -110,19 +124,18 @@ const projects: Project[] = [
     },
   },
   {
-    id: 7,
+    id: 9,
     title: "Kamila",
     description: "A web based HRIS dashboard for managing employees, payroll, and other HR activities.",
     techStack: ["Node.js", "Express", "Bootstrap", "MySQL"],
     image: kamilaImage,
-    link: "https://kamila.ptkam.co.id/",
     details: {
       images: [kamilaImage],
       description: "Detailed case study for Kamila is coming soon — overview, key features, and technical decisions will be added here.",
     },
   },
   {
-    id: 8,
+    id: 10,
     title: "Stobar (Thesis Project)",
     description: "A stock management system for retail stores, built to track inventory and manage stock levels.",
     techStack: ["PHP", "Javascript", "Bootstrap", "MySQL"],
@@ -134,7 +147,7 @@ const projects: Project[] = [
     },
   },
   {
-    id: 9,
+    id: 11,
     title: "Bisa Design",
     description: "An online design learning platform, certification, and publishing features for aspiring designers.",
     techStack: ["Laravel", "Javascript", "Bootstrap"],
@@ -146,7 +159,7 @@ const projects: Project[] = [
     },
   },
   {
-    id: 10,
+    id: 12,
     title: "FMC",
     description: "A dashboard for managing regional activities, including member data, transactions, reports, etc.",
     techStack: ["Node.js", "Express", "Bootstrap", "MySQL"],
@@ -158,7 +171,7 @@ const projects: Project[] = [
     },
   },
   {
-    id: 11,
+    id: 13,
     title: "Project Management",
     description: "A management system for project management, including member data, transactions, reports, etc.",
     techStack: ["Laravel", "Javascript", "Bootstrap"],
@@ -167,6 +180,17 @@ const projects: Project[] = [
     details: {
       images: [pmImage],
       description: "Detailed case study for Project Management is coming soon — overview, key features, and technical decisions will be added here.",
+    },
+  },
+  {
+    id: 14,
+    title: "Buku Bantu",
+    description: "Back-office web app for a savings & loan cooperative — digitizes loan origination, two-level approval, disbursement, and settlement.",
+    techStack: ["Node.js", "Express", "EJS", "MySQL", "Knex.js", "JWT", "ExcelJS"],
+    image: bukuBantuImage,
+    details: {
+      images: [bukuBantuImage],
+      description: "MyKisel Buku Bantu is an internal Node.js/Express admin system for Kisel, a savings and loan cooperative (Koperasi Simpan Pinjam). It replaces manual spreadsheet and email-based loan processing with a structured workflow covering cooperation agreement (PKS) setup, loan creation with auto-calculated installments/interest/fees, batch grouping, two-level Manager/GM approval, fund disbursement, and settlement — plus Excel-exportable reporting. Built as a full CRUD system on top of MySQL with JWT auth and role-based access for admin, manager, and general manager roles.",
     },
   },
 ];
