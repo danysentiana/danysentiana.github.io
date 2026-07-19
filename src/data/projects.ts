@@ -84,7 +84,7 @@ const projects: Project[] = [
     link: "https://dira.kiselindonesia.com/",
     details: {
       images: [diraImage],
-      description: "Node.js/Express admin web app (name: 'node-web', described in package.json as 'website admin develop with nodejs') for internal IT/helpdesk ticket management. Employees log in against an HR employee table, then create, monitor, and update support tickets tied to division/topic/PIC reference data, with Excel export of incoming-ticket reports and WhatsApp alerts on new tickets. Master-data setup screens (topic, subject, division, PIC, FAQ) round out the admin scope.",
+      description: "Node.js/Express admin web app for internal IT/helpdesk ticket management. Employees log in against an HR employee table, then create, monitor, and update support tickets tied to division/topic/PIC reference data, with Excel export of incoming-ticket reports and WhatsApp alerts on new tickets. Master-data setup screens (topic, subject, division, PIC, FAQ) round out the admin scope.",
     },
   },
   {
