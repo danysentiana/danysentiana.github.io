@@ -12,7 +12,7 @@ const MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "
 const DAY_LABELS = ["Mon", "", "Wed", "", "Fri", "", ""];
 
 const DARK_COLORS = ["rgba(255,255,255,0.05)", "#854d0e", "#a16207", "#ca8a04", "#facc15"];
-const LIGHT_COLORS = ["rgba(0,0,0,0.05)", "#d4d4d4", "#a3a3a3", "#525252", "#171717"];
+const LIGHT_COLORS = ["rgba(0,0,0,0.05)", "#a3a3a3", "#737373", "#404040", "#0a0a0a"];
 
 const GitHubCalendar = ({ username }: { username: string }) => {
     const { theme } = useTheme();

@@ -62,7 +62,6 @@ const Hero = () => {
     const textY = useTransform(scrollYProgress, [0, 1], [0, 150]);
     const imageY = useTransform(scrollYProgress, [0, 1], [0, 80]);
     const imageScale = useTransform(scrollYProgress, [0, 1], [1, 1.1]);
-    const opacity = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
 
     return (
         <>
@@ -80,7 +79,7 @@ const Hero = () => {
                         variants={textContainerVariants}
                         initial="hidden"
                         animate="visible"
-                        style={{ y: textY, opacity }}
+                        style={{ y: textY }}
                     >
                         <motion.p 
                             className="text-3xl md:text-2xl lg:text-xl xl:text-2xl font-roboto text-neutral-800 dark:text-neutral-50 mb-2 mt-3"

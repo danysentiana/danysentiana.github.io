@@ -61,7 +61,8 @@ const ProjectDetail = () => {
         <div className="container pt-40 pb-28 mx-auto max-w-4xl relative z-10">
           <motion.div
             initial={{ opacity: 0, y: -10 }}
-            animate={{ opacity: 1, y: 0 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.4, ease: "easeOut" }}
           >
             <Link
@@ -75,7 +76,8 @@ const ProjectDetail = () => {
           <motion.h1
             className="font-bebas text-4xl md:text-6xl font-bold mb-3"
             initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.6, ease: "easeOut" }}
           >
             {title}
@@ -84,14 +86,16 @@ const ProjectDetail = () => {
           <motion.div
             className="w-20 h-1 bg-neutral-950 dark:bg-yellow-400 mb-6 rounded-full origin-left"
             initial={{ scaleX: 0 }}
-            animate={{ scaleX: 1 }}
+            whileInView={{ scaleX: 1 }}
+            viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
           />
 
           <motion.div
             className="rounded-2xl overflow-hidden shadow-md dark:shadow-neutral-800/50 mb-4"
             initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.5, delay: 0.1, ease: "easeOut" }}
           >
             <img
@@ -122,7 +126,8 @@ const ProjectDetail = () => {
           <motion.div
             className="mt-3 flex flex-wrap gap-2 mb-6"
             initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.5, delay: 0.2, ease: "easeOut" }}
           >
             {techStack.map((tech) => {
@@ -146,7 +151,8 @@ const ProjectDetail = () => {
           <motion.p
             className="font-roboto text-base md:text-lg text-gray-600 dark:text-gray-300 leading-relaxed mb-4"
             initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.5, delay: 0.25, ease: "easeOut" }}
           >
             {description}
@@ -155,7 +161,8 @@ const ProjectDetail = () => {
           <motion.p
             className="font-roboto text-base md:text-lg text-gray-600 dark:text-gray-300 leading-relaxed mb-10"
             initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.5, delay: 0.3, ease: "easeOut" }}
           >
             {details.description}
@@ -164,7 +171,8 @@ const ProjectDetail = () => {
           {link && (
             <motion.div
               initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
               transition={{ duration: 0.5, delay: 0.35, ease: "easeOut" }}
             >
               <Button

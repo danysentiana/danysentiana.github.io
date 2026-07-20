@@ -30,8 +30,8 @@ const accentVariants = {
 
 const Stack = () => {
     return (
-        <section 
-            id="tech-stack" 
+        <section
+            id="tech-stack"
             className="w-full px-6 md:px-14 lg:px-40 xl:px-60 2xl:px-72 min-h-screen flex flex-col justify-center items-center"
         >
             <motion.div 

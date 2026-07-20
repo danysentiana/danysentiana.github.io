@@ -34,8 +34,8 @@ export default function Timeline() {
     const [expandedCardId, setExpandedCardId] = useState<number | null>(null);
 
     return (
-        <section 
-            id="timeline" 
+        <section
+            id="timeline"
             className="px-8 pb-32 md:pb-5 md:px-14 lg:px-40 xl:px-60 2xl:px-72 min-h-screen overflow-hidden"
         >
             <div className="container max-w-5xl mx-auto">

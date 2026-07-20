@@ -78,7 +78,8 @@ const Projects = () => {
         <motion.div
           className="mb-12 max-w-4xl mx-auto"
           initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.6, delay: 0.1, ease: "easeOut" }}
         >
           <GitHubCalendar username="danysentiana" />
@@ -88,7 +89,8 @@ const Projects = () => {
         <motion.h1 
           className="font-bebas text-4xl md:text-7xl font-bold text-center mb-3"
           initial={{ opacity: 0, y: -30, scale: 0.9 }}
-          animate={{ opacity: 1, y: 0, scale: 1 }}
+          whileInView={{ opacity: 1, y: 0, scale: 1 }}
+          viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
         >
           My Projects
@@ -98,7 +100,8 @@ const Projects = () => {
         <motion.div
           className="w-20 h-1 bg-neutral-950 dark:bg-yellow-400 mx-auto mt-4 mb-8 rounded-full origin-center"
           initial={{ scaleX: 0 }}
-          animate={{ scaleX: 1 }}
+          whileInView={{ scaleX: 1 }}
+          viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.6, ease: "easeOut", delay: 0.3 }}
         />
 
@@ -106,7 +109,8 @@ const Projects = () => {
         <motion.div 
           className="flex justify-center mb-5"
           initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.6, delay: 0.15, ease: "easeOut" }}
         >
           <p className="font-roboto text-base md:text-lg text-gray-600 dark:text-gray-300 max-w-3xl text-justify md:text-center">
@@ -118,7 +122,8 @@ const Projects = () => {
         <motion.div 
           className="mb-10 w-[80%] md:w-[50%] mx-auto"
           initial={{ opacity: 0, y: 20, scale: 0.95 }}
-          animate={{ opacity: 1, y: 0, scale: 1 }}
+          whileInView={{ opacity: 1, y: 0, scale: 1 }}
+          viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.5, delay: 0.25, ease: "easeOut" }}
         >
           <SearchBar query={query} setQuery={setQuery} />
@@ -136,17 +141,18 @@ const Projects = () => {
                   key={project.id}
                   layout
                   initial={{ opacity: 0, y: 30, scale: 0.95 }}
-                  animate={{ 
-                    opacity: 1, 
-                    y: 0, 
+                  whileInView={{
+                    opacity: 1,
+                    y: 0,
                     scale: 1,
-                    transition: { 
-                      duration: 0.4, 
+                    transition: {
+                      duration: 0.4,
                       delay: index * 0.08,
                       ease: "easeOut",
                     }
                   }}
-                  exit={{ 
+                  viewport={{ once: true, amount: 0.2 }}
+                  exit={{
                     opacity: 0, 
                     scale: 0.9,
                     transition: { duration: 0.2 }
@@ -174,7 +180,8 @@ const Projects = () => {
         <motion.div 
           className="flex justify-center mt-12 space-x-4"
           initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.4, delay: 0.5, ease: "easeOut" }}
         >
             <motion.button
