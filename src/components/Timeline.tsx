@@ -55,7 +55,7 @@ export default function Timeline() {
                                 Experience
                             </motion.h2>
                             <motion.div
-                                className="w-20 h-1 bg-blue-500 dark:bg-yellow-400 mt-4 rounded-full origin-center"
+                                className="w-20 h-1 bg-neutral-950 dark:bg-yellow-400 mt-4 rounded-full origin-center"
                                 variants={accentVariants}
                             />
                             <motion.p 
@@ -129,7 +129,7 @@ export default function Timeline() {
                                                                 <p className={isExpanded ? "" : "line-clamp-2"}>
                                                                     {item.description}
                                                                 </p>
-                                                                <span className="text-xs text-blue-500 dark:text-yellow-400 mt-1 inline-block">
+                                                                <span className="text-xs text-neutral-950 dark:text-yellow-400 mt-1 inline-block">
                                                                     {isExpanded ? "Show less" : "Read more..."}
                                                                 </span>
                                                             </motion.div>

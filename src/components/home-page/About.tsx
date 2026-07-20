@@ -85,7 +85,7 @@ const About = () => {
                 </motion.h2>
 
                 <motion.div
-                    className="w-20 h-1 bg-blue-500 dark:bg-yellow-400 mx-auto mt-4 rounded-full origin-center"
+                    className="w-20 h-1 bg-neutral-950 dark:bg-yellow-400 mx-auto mt-4 rounded-full origin-center"
                     variants={accentVariants}
                 />
 

@@ -12,7 +12,7 @@ const MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "
 const DAY_LABELS = ["Mon", "", "Wed", "", "Fri", "", ""];
 
 const DARK_COLORS = ["rgba(255,255,255,0.05)", "#854d0e", "#a16207", "#ca8a04", "#facc15"];
-const LIGHT_COLORS = ["rgba(0,0,0,0.05)", "#bfdbfe", "#93c5fd", "#3b82f6", "#1d4ed8"];
+const LIGHT_COLORS = ["rgba(0,0,0,0.05)", "#d4d4d4", "#a3a3a3", "#525252", "#171717"];
 
 const GitHubCalendar = ({ username }: { username: string }) => {
     const { theme } = useTheme();
@@ -164,7 +164,7 @@ const GitHubCalendar = ({ username }: { username: string }) => {
                         href={`https://github.com/${username}`}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="font-roboto text-sm text-blue-500 dark:text-yellow-400 hover:underline"
+                        className="font-roboto text-sm text-neutral-950 dark:text-yellow-400 hover:underline"
                     >
                         View @{username} on GitHub →
                     </a>
@@ -200,7 +200,7 @@ const GitHubCalendar = ({ username }: { username: string }) => {
                         href={`https://github.com/${username}`}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="font-roboto text-xs text-blue-500 dark:text-yellow-400 hover:underline"
+                        className="font-roboto text-xs text-neutral-950 dark:text-yellow-400 hover:underline"
                     >
                         @{username}
                     </a>

@@ -96,7 +96,7 @@ const Projects = () => {
 
         {/* Accent line */}
         <motion.div
-          className="w-20 h-1 bg-blue-500 dark:bg-yellow-400 mx-auto mt-4 mb-8 rounded-full origin-center"
+          className="w-20 h-1 bg-neutral-950 dark:bg-yellow-400 mx-auto mt-4 mb-8 rounded-full origin-center"
           initial={{ scaleX: 0 }}
           animate={{ scaleX: 1 }}
           transition={{ duration: 0.6, ease: "easeOut", delay: 0.3 }}

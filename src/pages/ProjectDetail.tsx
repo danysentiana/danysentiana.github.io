@@ -23,7 +23,7 @@ const ProjectDetail = () => {
         <h1 className="font-bebas text-4xl md:text-6xl">Project not found</h1>
         <Link
           to="/projects"
-          className="font-roboto text-blue-500 dark:text-yellow-400 hover:underline flex items-center gap-1"
+          className="font-roboto text-neutral-950 dark:text-yellow-400 hover:underline flex items-center gap-1"
         >
           <ArrowLeft className="w-4 h-4" /> Back to Projects
         </Link>
@@ -82,7 +82,7 @@ const ProjectDetail = () => {
           </motion.h1>
 
           <motion.div
-            className="w-20 h-1 bg-blue-500 dark:bg-yellow-400 mb-6 rounded-full origin-left"
+            className="w-20 h-1 bg-neutral-950 dark:bg-yellow-400 mb-6 rounded-full origin-left"
             initial={{ scaleX: 0 }}
             animate={{ scaleX: 1 }}
             transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}

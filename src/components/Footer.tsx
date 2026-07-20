@@ -118,7 +118,7 @@ const Footer = () => {
                                     asChild
                                     size={"icon"}
                                     variant={"outline"}
-                                    className="rounded-full dark:border-neutral-800 hover:text-neutral-600 hover:border-blue-400 dark:hover:border-yellow-400 transition-colors duration-300"
+                                    className="rounded-full dark:border-neutral-800 hover:bg-neutral-950 hover:text-neutral-50 dark:hover:bg-neutral-50 dark:hover:text-neutral-950 transition-colors duration-300"
                                 >
                                     <Link
                                         to={social.url}
@@ -144,7 +144,7 @@ const Footer = () => {
                             {isTouch ? (
                                 <Popover>
                                     <PopoverTrigger asChild>
-                                        <Button size={"icon"} variant={"outline"} className="rounded-full dark:border-neutral-800 hover:text-neutral-600 hover:border-blue-400 dark:hover:border-yellow-400 cursor-pointer transition-colors duration-300">
+                                        <Button size={"icon"} variant={"outline"} className="rounded-full dark:border-neutral-800 hover:bg-neutral-950 hover:text-neutral-50 dark:hover:bg-neutral-50 dark:hover:text-neutral-950 cursor-pointer transition-colors duration-300">
                                             <FontAwesomeIcon icon={faLocationDot} size="1x"/>
                                         </Button>
                                     </PopoverTrigger>
@@ -155,7 +155,7 @@ const Footer = () => {
                             ) : (
                                 <Tooltip>
                                     <TooltipTrigger asChild>
-                                        <Button size={"icon"} variant={"outline"} className="rounded-full dark:border-neutral-800 hover:text-neutral-600 hover:border-blue-400 dark:hover:border-yellow-400 cursor-pointer transition-colors duration-300">
+                                        <Button size={"icon"} variant={"outline"} className="rounded-full dark:border-neutral-800 hover:bg-neutral-950 hover:text-neutral-50 dark:hover:bg-neutral-50 dark:hover:text-neutral-950 cursor-pointer transition-colors duration-300">
                                             <FontAwesomeIcon icon={faLocationDot} size="1x"/>
                                         </Button>
                                     </TooltipTrigger>

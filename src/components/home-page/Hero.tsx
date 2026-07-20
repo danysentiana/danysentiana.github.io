@@ -35,8 +35,8 @@ const buttonContainerVariants = {
     visible: {
         opacity: 1,
         transition: {
-            staggerChildren: 0.15,
-            delayChildren: 1.2,
+            staggerChildren: 0.08,
+            delayChildren: 0.3,
         },
     },
 };
@@ -101,7 +101,7 @@ const Hero = () => {
                             variants={textItemVariants}
                         >
                             Focusing on <br className="block md:hidden" />
-                            <span className="text-blue-500 dark:text-yellow-400">
+                            <span className="text-neutral-950 dark:text-yellow-400">
                                 <Typewriter
                                     words={[' Web', ' Back End']}
                                     loop={true}
@@ -114,20 +114,34 @@ const Hero = () => {
                             </span>
                         </motion.h1>
 
-                        <motion.div 
-                            className="flex justify-center lg:justify-start w-full mt-8 lg:mt-2 lg:pt-4"
+                        <motion.div
+                            className="flex flex-col sm:flex-row justify-center lg:justify-start w-full gap-3 sm:gap-4 mt-8 lg:mt-2 lg:pt-4"
                             variants={buttonContainerVariants}
                         >
-                            <motion.div variants={buttonItemVariants}>
-                                <Button asChild variant={"outline"} size={"xl"} className="font-roboto rounded-4xl px-11 py-4 flex items-center bg-neutral-950 text-neutral-50 dark:bg-neutral-50 dark:text-neutral-950 hover:bg-neutral-700 hover:text-neutral-50 dark:hover:bg-neutral-100">
-                                    <Link to={"/projects"}> My Projects <ChevronRight className="w-6 h-6" /> </Link>
+                            <motion.div
+                                variants={buttonItemVariants}
+                                whileHover={{ scale: 1.03 }}
+                                whileTap={{ scale: 0.97 }}
+                                className="w-full sm:w-auto"
+                            >
+                                <Button asChild variant={"outline"} size={"xl"} className="group w-full sm:w-auto font-roboto rounded-4xl px-6 py-3 sm:px-8 lg:px-9 sm:py-3.5 text-sm sm:text-base lg:text-lg flex items-center justify-center gap-2 bg-neutral-950 text-neutral-50 dark:bg-neutral-50 dark:text-neutral-950 hover:bg-neutral-700 hover:text-neutral-50 dark:hover:bg-neutral-100 transition-colors duration-300">
+                                    <Link to={"/projects"}>
+                                        My Projects
+                                        <ChevronRight className="w-4 h-4 sm:w-5 sm:h-5 transition-transform duration-300 group-hover:translate-x-1.5" />
+                                    </Link>
                                 </Button>
                             </motion.div>
 
-                            <motion.div variants={buttonItemVariants}>
-                                <a href="/files/CV_DANY_SENTIANA.pdf" download>
-                                    <Button variant="outline" size="xl" className="ml-2 font-roboto rounded-4xl px-11 py-4 flex items-center">
-                                        Download CV <ArrowDownToLine className="w-6 h-6 ml-2" />
+                            <motion.div
+                                variants={buttonItemVariants}
+                                whileHover={{ scale: 1.03 }}
+                                whileTap={{ scale: 0.97 }}
+                                className="w-full sm:w-auto"
+                            >
+                                <a href="/files/CV_DANY_SENTIANA.pdf" download className="group block">
+                                    <Button variant="outline" size="xl" className="w-full sm:w-auto font-roboto rounded-4xl px-6 py-3 sm:px-8 lg:px-9 sm:py-3.5 text-sm sm:text-base lg:text-lg flex items-center justify-center gap-2">
+                                        Download CV
+                                        <ArrowDownToLine className="w-4 h-4 sm:w-5 sm:h-5 transition-transform duration-300 group-hover:translate-y-1" />
                                     </Button>
                                 </a>
                             </motion.div>

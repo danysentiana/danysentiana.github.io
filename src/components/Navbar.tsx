@@ -178,7 +178,7 @@ const Navbar = () => {
             />
             {/* Logo glow on hover */}
             <motion.div
-              className="absolute inset-0 rounded-full bg-blue-500/20 dark:bg-yellow-400/20 blur-xl"
+              className="absolute inset-0 rounded-full bg-neutral-950/20 dark:bg-yellow-400/20 blur-xl"
               initial={{ opacity: 0, scale: 0.5 }}
               whileHover={{ opacity: 1, scale: 1.5 }}
               transition={{ duration: 0.3 }}
@@ -209,7 +209,7 @@ const Navbar = () => {
                           transition-colors duration-300
                           hover:text-neutral-950 dark:hover:text-neutral-50
                           ${isActive 
-                            ? "text-blue-500 dark:text-yellow-400 font-semibold" 
+                            ? "text-neutral-950 dark:text-yellow-400 font-semibold" 
                             : "text-neutral-600 dark:text-neutral-400"
                           }
                         `}
@@ -225,7 +225,7 @@ const Navbar = () => {
                           transition-colors duration-300
                           hover:text-neutral-950 dark:hover:text-neutral-50
                           ${isActive 
-                            ? "text-blue-500 dark:text-yellow-400 font-semibold" 
+                            ? "text-neutral-950 dark:text-yellow-400 font-semibold" 
                             : "text-neutral-600 dark:text-neutral-400"
                           }
                         `}
@@ -341,7 +341,7 @@ const Navbar = () => {
                           {item.label}
                           {isActive && (
                             <motion.div
-                              className="w-2 h-2 rounded-full bg-blue-500 dark:bg-yellow-400"
+                              className="w-2 h-2 rounded-full bg-neutral-950 dark:bg-yellow-400"
                               initial={{ scale: 0 }}
                               animate={{ scale: 1 }}
                               transition={{ type: "spring", stiffness: 500, damping: 20 }}
@@ -367,7 +367,7 @@ const Navbar = () => {
                           {item.label}
                           {isActive && (
                             <motion.div
-                              className="w-2 h-2 rounded-full bg-blue-500 dark:bg-yellow-400"
+                              className="w-2 h-2 rounded-full bg-neutral-950 dark:bg-yellow-400"
                               initial={{ scale: 0 }}
                               animate={{ scale: 1 }}
                               transition={{ type: "spring", stiffness: 500, damping: 20 }}
