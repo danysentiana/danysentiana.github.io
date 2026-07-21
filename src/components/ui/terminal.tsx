@@ -29,7 +29,7 @@ export function Terminal({ children, title = "danys@portfolio: ~", className }: 
           <span className="w-3 h-3 rounded-full bg-green-500" />
           <span className="ml-2 text-xs text-neutral-400">{title}</span>
         </div>
-        <div className="p-5 md:p-7 text-sm md:text-base leading-relaxed space-y-4">
+        <div className="p-4 sm:p-5 md:p-7 text-xs sm:text-sm md:text-base leading-relaxed space-y-3 sm:space-y-4">
           {children}
         </div>
       </div>

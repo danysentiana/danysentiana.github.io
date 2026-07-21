@@ -36,7 +36,7 @@ export default function Timeline() {
     return (
         <section
             id="timeline"
-            className="px-8 pb-32 md:pb-5 md:px-14 lg:px-40 xl:px-60 2xl:px-72 min-h-screen overflow-hidden"
+            className="px-8 md:px-14 lg:px-40 xl:px-60 2xl:px-72 py-32 sm:py-36 md:py-40 overflow-hidden"
         >
             <div className="container max-w-5xl mx-auto">
                 <div className="flex flex-wrap">

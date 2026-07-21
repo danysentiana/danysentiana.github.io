@@ -73,7 +73,7 @@ const Projects = () => {
         transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
       />
 
-      <div className="container bg-transparent pt-40 pb-28 mx-auto min-h-screen relative z-10">
+      <div className="container bg-transparent pt-28 sm:pt-32 md:pt-36 lg:pt-40 pb-20 sm:pb-24 md:pb-28 mx-auto min-h-screen relative z-10">
         {/* GitHub Contributions */}
         <motion.div
           className="mb-12 max-w-4xl mx-auto"

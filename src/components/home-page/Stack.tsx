@@ -32,7 +32,7 @@ const Stack = () => {
     return (
         <section
             id="tech-stack"
-            className="w-full px-6 md:px-14 lg:px-40 xl:px-60 2xl:px-72 min-h-screen flex flex-col justify-center items-center"
+            className="w-full px-6 md:px-14 lg:px-40 xl:px-60 2xl:px-72 py-32 sm:py-36 md:py-40 flex flex-col items-center"
         >
             <motion.div 
                 className="text-center max-w-5xl"

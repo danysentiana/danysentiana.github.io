@@ -73,7 +73,7 @@ const Hero = () => {
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.5, ease: "easeInOut" }}
             >
-                <div className="container bg-transparent py-28 lg:min-h-screen flex flex-col-reverse lg:flex-row lg:justify-between lg:items-center lg:space-x-10">
+                <div className="container bg-transparent py-32 sm:py-36 md:py-40 lg:min-h-screen flex flex-col-reverse lg:flex-row lg:justify-between lg:items-center lg:space-x-10">
                     <motion.div 
                         className="hero-text w-full text-left md:justify-items-center lg:justify-items-start"
                         variants={textContainerVariants}

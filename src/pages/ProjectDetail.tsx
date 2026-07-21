@@ -58,7 +58,7 @@ const ProjectDetail = () => {
           transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
         />
 
-        <div className="container pt-40 pb-28 mx-auto max-w-4xl relative z-10">
+        <div className="container pt-28 sm:pt-32 md:pt-36 lg:pt-40 pb-20 sm:pb-24 md:pb-28 mx-auto max-w-4xl relative z-10">
           <motion.div
             initial={{ opacity: 0, y: -10 }}
             whileInView={{ opacity: 1, y: 0 }}
