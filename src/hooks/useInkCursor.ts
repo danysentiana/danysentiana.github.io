@@ -3,8 +3,14 @@ import gsap from "gsap";
 
 const TAIL_LENGTH = 60;
 const LERP = 0.35;
-const TIP_RADIUS = 4;
-const MAX_WIDTH = 2;
+const TIP_RADIUS = 3;
+const TRAIL_TAPER = 1.5;
+const TRAIL_WIDTH_RATIO = 0.55;
+const IDLE_DELAY = 800;
+const IDLE_IN_DURATION = 380;
+const IDLE_OUT_DURATION = 280;
+
+const easeInOutCubic = (t: number) => (t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2);
 
 export function useInkCursor(canvasRef: RefObject<HTMLCanvasElement | null>) {
   useEffect(() => {
@@ -19,6 +25,8 @@ export function useInkCursor(canvasRef: RefObject<HTMLCanvasElement | null>) {
     let curr = { x: 0, y: 0 };
     let tail: { x: number; y: number }[] = [];
     let active = false;
+    let speed = 0;
+    let prevCurr = { x: 0, y: 0 };
     let scrollVelX = 0;
     let scrollVelY = 0;
 
@@ -49,6 +57,8 @@ export function useInkCursor(canvasRef: RefObject<HTMLCanvasElement | null>) {
       if (!active) {
         curr.x = mouse.x;
         curr.y = mouse.y;
+        prevCurr.x = curr.x;
+        prevCurr.y = curr.y;
         tail = Array.from({ length: TAIL_LENGTH }, () => ({ x: curr.x, y: curr.y }));
         active = true;
       }
@@ -80,6 +90,13 @@ export function useInkCursor(canvasRef: RefObject<HTMLCanvasElement | null>) {
         curr.x += (mouse.x - curr.x) * LERP;
         curr.y += (mouse.y - curr.y) * LERP;
 
+        // Track smoothed movement speed to react the trail width to it.
+        const instantSpeed = Math.hypot(curr.x - prevCurr.x, curr.y - prevCurr.y);
+        speed += (instantSpeed - speed) * 0.25;
+        prevCurr.x = curr.x;
+        prevCurr.y = curr.y;
+        const widthBoost = 1 + Math.min(speed / 16, 1.3);
+
         if (Math.abs(scrollVelX) > 0.1 || Math.abs(scrollVelY) > 0.1) {
           const f = 0.35;
           tail.forEach(pt => {
@@ -94,14 +111,17 @@ export function useInkCursor(canvasRef: RefObject<HTMLCanvasElement | null>) {
         if (tail.length > TAIL_LENGTH) tail.length = TAIL_LENGTH;
 
         const color = rgb();
+        // Trail starts at the tip's own diameter so it connects to the tip
+        // seamlessly instead of stepping down to a separate fixed width.
+        const baseWidth = TIP_RADIUS * 2 * TRAIL_WIDTH_RATIO * widthBoost;
 
         for (let i = 0; i < tail.length - 1; i++) {
           const t = i / (tail.length - 1);
-          const f = 1 - Math.pow(t, 1.5);
+          const f = 1 - Math.pow(t, TRAIL_TAPER);
 
           ctx.beginPath();
           ctx.strokeStyle = `rgba(${color}, ${f * 0.9})`;
-          ctx.lineWidth = Math.max(0.1, MAX_WIDTH * f);
+          ctx.lineWidth = Math.max(0.1, baseWidth * f);
           ctx.lineCap = "round";
           ctx.moveTo(tail[i].x, tail[i].y);
           ctx.lineTo(tail[i + 1].x, tail[i + 1].y);
@@ -111,20 +131,26 @@ export function useInkCursor(canvasRef: RefObject<HTMLCanvasElement | null>) {
         // Update idle progress
         const now = Date.now();
         if (transitioningOut) {
-          idleProgress = Math.max(0, 1 - (now - transitionOutStart) / 200);
-          if (idleProgress === 0) {
+          const t = Math.min(1, (now - transitionOutStart) / IDLE_OUT_DURATION);
+          idleProgress = 1 - easeInOutCubic(t);
+          if (t >= 1) {
+            idleProgress = 0;
             transitioningOut = false;
             idleTriggered = false;
           }
-        } else if (now - lastMoveTime > 800) {
+        } else if (now - lastMoveTime > IDLE_DELAY) {
           if (!idleTriggered) {
             idleTriggered = true;
             idleTriggerTime = now;
           }
-          idleProgress = Math.min(1, (now - idleTriggerTime) / 400);
+          const t = Math.min(1, (now - idleTriggerTime) / IDLE_IN_DURATION);
+          idleProgress = easeInOutCubic(t);
         }
 
-        if (idleProgress > 0) idleT += 0.018;
+        // Freeze the wobble shape while shrinking back to a dot, so it
+        // doesn't keep morphing while also collapsing — only grow it while
+        // actually idle.
+        if (idleProgress > 0 && !transitioningOut) idleT += 0.018;
 
         // Draw tip — morph between dot and amoeba
         const POINTS = 32;
@@ -161,7 +187,7 @@ export function useInkCursor(canvasRef: RefObject<HTMLCanvasElement | null>) {
     });
     document.body.appendChild(splatterContainer);
 
-    const onBurst = (e: MouseEvent) => {
+    const onBurst = () => {
       lastMoveTime = Date.now();
       if (idleProgress > 0 && !transitioningOut) {
         transitioningOut = true;
@@ -178,8 +204,8 @@ export function useInkCursor(canvasRef: RefObject<HTMLCanvasElement | null>) {
 
         Object.assign(dot.style, {
           position: "fixed",
-          left: `${e.clientX}px`,
-          top: `${e.clientY}px`,
+          left: `${curr.x}px`,
+          top: `${curr.y}px`,
           width: `${size}px`,
           height: `${size}px`,
           borderRadius: "50%",
