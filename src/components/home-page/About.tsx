@@ -1,4 +1,5 @@
 import { motion } from "framer-motion"
+import { Terminal, TypingAnimation, AnimatedSpan, TerminalCursor } from "@/components/ui/terminal"
 
 const headingVariants = {
     hidden: { opacity: 0, y: 40, filter: "blur(12px)" },
@@ -18,34 +19,7 @@ const accentVariants = {
     },
 };
 
-const paragraphContainerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-        opacity: 1,
-        transition: {
-            staggerChildren: 0.15,
-            delayChildren: 0.4,
-        },
-    },
-};
-
-const paragraphChunkVariants = {
-    hidden: { opacity: 0, y: 20, filter: "blur(6px)" },
-    visible: {
-        opacity: 1,
-        y: 0,
-        filter: "blur(0px)",
-        transition: { duration: 0.6, ease: "easeOut" },
-    },
-};
-
 const About = () => {
-    const paragraphs = [
-        "Hello everyone, I hold a Bachelor's degree in Information Systems and have over 2 years of professional experience as a web developer. What started as a passion for coding has grown into a career where I continuously sharpen my skills and deliver meaningful digital solutions.",
-        "Over the years, I've worked with various programming languages and modern web technologies. I enjoy collaborating with other developers and designers to build innovative, high-quality websites. Currently, I'm exploring agentic AI and integrating AI-powered tools into my workflow to stay ahead of the curve and boost productivity.",
-        "Beyond work, I love taking on personal projects and experimenting with new technologies. Thank you for visiting my portfolio — I'm excited about the opportunities ahead and always open to collaborating on impactful projects."
-    ];
-
     return (
         <section
             id="about"
@@ -89,15 +63,47 @@ const About = () => {
                     variants={accentVariants}
                 />
 
-                <motion.div 
-                    className="font-roboto mt-6 lg:text-xl text-neutral-600 dark:text-gray-300 md:leading-relaxed md:tracking-wide text-justify space-y-4"
-                    variants={paragraphContainerVariants}
+                <motion.div
+                    className="mt-8 max-w-3xl mx-auto text-left"
+                    variants={accentVariants}
                 >
-                    {paragraphs.map((text, index) => (
-                        <motion.p key={index} variants={paragraphChunkVariants}>
-                            {text}
-                        </motion.p>
-                    ))}
+                    <Terminal>
+                        <div>
+                            <span className="text-green-400">$</span>{" "}
+                            <TypingAnimation delay={150} duration={28}>whoami</TypingAnimation>
+                        </div>
+                        <AnimatedSpan delay={450} className="text-neutral-300">
+                            Dany Sentiana — Back End-leaning Full-Stack Developer based in Depok, Indonesia
+                        </AnimatedSpan>
+
+                        <div>
+                            <span className="text-green-400">$</span>{" "}
+                            <TypingAnimation delay={950} duration={22}>cat about.txt</TypingAnimation>
+                        </div>
+                        <AnimatedSpan delay={1400} className="text-neutral-300">
+                            Bachelor's degree in Information Systems, 2+ years professional experience
+                            building web applications. Started as a passion for coding, grew into a
+                            career of continuous learning.
+                        </AnimatedSpan>
+
+                        <div>
+                            <span className="text-green-400">$</span>{" "}
+                            <TypingAnimation delay={1900} duration={22}>cat currently.txt</TypingAnimation>
+                        </div>
+                        <AnimatedSpan delay={2450} className="text-neutral-300">
+                            Exploring agentic AI, integrating AI-powered tools into my workflow to stay
+                            ahead of the curve and boost productivity.
+                        </AnimatedSpan>
+
+                        <div>
+                            <span className="text-green-400">$</span>{" "}
+                            <TypingAnimation delay={2950} duration={25}>echo $STATUS</TypingAnimation>
+                        </div>
+                        <AnimatedSpan delay={3400} className="text-neutral-300">
+                            Open to collaborating on impactful projects. Thanks for stopping by 👋
+                            <TerminalCursor delay={3400} />
+                        </AnimatedSpan>
+                    </Terminal>
                 </motion.div>
             </motion.div>
         </section>
