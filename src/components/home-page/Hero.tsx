@@ -137,7 +137,7 @@ const Hero = () => {
                                 whileTap={{ scale: 0.97 }}
                                 className="w-full sm:w-auto"
                             >
-                                <a href="/files/CV_DANY_SENTIANA.pdf" download className="group block">
+                                <a href="/files/CV_DANY_SENTIANA.pdf" target="_blank" rel="noopener noreferrer" className="group block">
                                     <Button variant="outline" size="xl" className="w-full sm:w-auto font-roboto rounded-4xl px-6 py-3 sm:px-8 lg:px-9 sm:py-3.5 text-sm sm:text-base lg:text-lg flex items-center justify-center gap-2">
                                         Download CV
                                         <ArrowDownToLine className="w-4 h-4 sm:w-5 sm:h-5 transition-transform duration-300 group-hover:translate-y-1" />
